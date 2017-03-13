@@ -6,7 +6,8 @@
   display: flex;
 
   .input {
-    flex: 1 1 auto;
+    flex-grow: 1;
+    flex-basis: 0;
     padding:  $input-padding-vertical ($input-padding-horizontal / 2);
 
     &:first-child {

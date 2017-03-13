@@ -1,6 +1,6 @@
 import './login.scss';
 import React, { Component } from 'react';
-import { Container, Input, Button, Form } from 'views/generic';
+import { Container, Input, Button, ButtonGroup, Form } from 'views/generic';
 
 
 class Login extends Component {
@@ -14,6 +14,10 @@ class Login extends Component {
       <Container className="login">
         <h2>Login</h2>
         <Form onSubmit={this.handleSubmit}>
+          <ButtonGroup>
+            <Button type="default" icon="person" column>Customer</Button>
+            <Button type="default" icon="store_mall_directory" column>Owner</Button>
+          </ButtonGroup>
           <Input
             type="text"
             placeholder="Username"

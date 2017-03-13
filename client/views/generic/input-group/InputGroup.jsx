@@ -15,7 +15,7 @@ class InputGroup extends Component {
     const { className, children, ...restProps } = this.props;
 
     return (
-      <div className={`input-group ${className}`} {...restProps}>
+      <div {...restProps} className={`input-group ${className}`}>
         {children}
       </div>
     );
