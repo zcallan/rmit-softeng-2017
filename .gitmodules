@@ -4,3 +4,6 @@
 [submodule "server/swagger-ui"]
 	path = server/swagger-ui
 	url = https://github.com/swagger-api/swagger-ui
+[submodule "server/public/swagger-ui"]
+	path = server/public/swagger-ui
+	url = https://github.com/swagger-api/swagger-ui
