@@ -9,6 +9,7 @@ class Home extends Component {
     return (
       <Container className="home">
         <h2>Appointment Bookings</h2>
+        <Link to="/employee/list">View employee list</Link>
       </Container>
     );
   }

@@ -4,9 +4,12 @@ const config = require( './config/config.json' );
 const routes = require( './config/routes.json' );
 const swagger = require( 'swagger-express' );
 const cors = require( 'cors' );
+const mongoose = require( 'mongoose' );
 
+mongoose.connect( config.databaseUri );
 /* Create the HTTP server */
 const server = express();
+const db = mongoose.connection;
 
 /* Enable CORS. */
 server.use( cors() );
@@ -37,6 +40,13 @@ routes.forEach( route => {
   });
 });
 
-server.listen( config.port, () => {
-  console.log( `Server listening on ${config.port}` );
+db.on( 'error', console.error.bind( console.log, 'MongoDB connection failed: ' ));
+
+db.once( 'open', () => {
+  console.log( '=> Started MongoDB' );
+
+  server.listen( config.port, () => {
+    console.log( `Server listening on ${config.port}` );
+  });
 });
+

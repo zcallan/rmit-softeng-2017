@@ -28,7 +28,7 @@ class EmployeeRegister extends Component {
   }
 
   render() {
-    const { created } = this.state;
+    const { created, creating } = this.state;
 
     if ( created ) {
       return <Redirect to="/employee/list" />;
@@ -64,7 +64,7 @@ class EmployeeRegister extends Component {
             name="password"
             required
           />
-          <Button type="default" submit>Create</Button>
+          <Button type="default" submit disabled={creating}>{creating ? 'Creating...' : 'Create'}</Button>
         </Form>
       </Container>
     );
