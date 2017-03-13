@@ -8,5 +8,10 @@
     "name": "Login",
     "path": "/login",
     "icon": "person"
+  },
+  {
+    "name": "Register",
+    "path": "/register",
+    "icon": "person_add"
   }
 ]

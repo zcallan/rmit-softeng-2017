@@ -19,22 +19,26 @@ class Register extends Component {
               type="text"
               placeholder="First name"
               name="firstname"
+              required
             />
             <Input
               type="text"
               placeholder="Last name"
               name="lastname"
+              required
             />
           </InputGroup>
           <Input
             type="text"
             placeholder="Username"
             name="username"
+            required
           />
           <Input
             type="password"
             placeholder="Password"
             name="password"
+            required
           />
           <Button type="default" submit>Register</Button>
         </Form>
