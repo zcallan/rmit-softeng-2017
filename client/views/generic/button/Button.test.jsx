@@ -8,5 +8,5 @@ test( 'Text displaying properly', () => {
     <Button type="default">Test Button Text</Button>
   );
   const tree = component.toJSON();
-  expect( tree.children[0] ).toEqual( 'Test Button Text' );
+  expect( tree.children[0].children[0] ).toEqual( 'Test Button Text' );
 });
