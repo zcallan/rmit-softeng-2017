@@ -1,0 +1,46 @@
+import './register.scss';
+import React, { Component } from 'react';
+import { Container, Input, InputGroup, Button, Form } from 'views/generic';
+
+
+class Register extends Component {
+  handleSubmit = ( event, data ) => {
+    // Do your register here
+    console.log( data );
+  }
+
+  render() {
+    return (
+      <Container className="register">
+        <h2>Register</h2>
+        <Form onSubmit={this.handleSubmit}>
+          <InputGroup>
+            <Input
+              type="text"
+              placeholder="First name"
+              name="firstname"
+            />
+            <Input
+              type="text"
+              placeholder="Last name"
+              name="lastname"
+            />
+          </InputGroup>
+          <Input
+            type="text"
+            placeholder="Username"
+            name="username"
+          />
+          <Input
+            type="password"
+            placeholder="Password"
+            name="password"
+          />
+          <Button type="default" submit>Register</Button>
+        </Form>
+      </Container>
+    );
+  }
+}
+
+export default Register;

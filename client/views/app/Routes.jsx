@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 import {
 	Home,
 	Login,
+	Register,
 	NotFound,
 } from 'views';
 
@@ -12,6 +13,7 @@ class Routes extends Component {
 		return (
 			<Switch>
 				<Route path="/login" component={Login} />
+				<Route path="/register" component={Register} />
 				<Route exact path="/" component={Home} />
 				<Route component={NotFound} />
 			</Switch>

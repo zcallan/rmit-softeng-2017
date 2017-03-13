@@ -6,7 +6,7 @@ import SidebarMenuItems from './items';
 const SidebarMenu = () => {
   return (
     <div className="sidebar-menu">
-      <img src="/images/react-logo.png" />
+      <img src="/images/sidebar-logo.png" />
       <SidebarMenuItems />
     </div>
   );
