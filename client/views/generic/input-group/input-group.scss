@@ -1,0 +1,21 @@
+@import '../../../styles/colors';
+@import '../input/input';
+
+
+.input-group {
+  display: flex;
+
+  .input {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding:  $input-padding-vertical ($input-padding-horizontal / 2);
+
+    &:first-child {
+      padding-left: $input-padding-horizontal;
+    }
+
+    &:last-child {
+      padding-right: $input-padding-horizontal;
+    }
+  }
+}

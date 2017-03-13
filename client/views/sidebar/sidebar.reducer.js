@@ -6,4 +6,4 @@ export default ( state = false, { type, payload }) => {
     default:
       return state;
   }
-}
+};

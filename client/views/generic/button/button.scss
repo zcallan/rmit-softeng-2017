@@ -1,8 +1,29 @@
 @import '../../../styles/colors';
 
+$button-padding-vertical: 5px;
+$button-padding-horizontal: 10px;
 
 .button {
   padding: 5px 10px;
+
+  &.button-column {
+
+    button {
+      flex-flow: column;
+    }
+  }
+
+  &.selected {
+
+    button {
+      background: $primary-color-light;
+      border-color: $primary-color-light;
+
+      &:focus {
+        border-color: $primary-color-fade;
+      }
+    }
+  }
 
   button {
     background: $primary-color;
@@ -15,6 +36,9 @@
     cursor: pointer;
     user-select: none;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
 
     &:hover {
       background: $primary-color-light;

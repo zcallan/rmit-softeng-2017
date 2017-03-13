@@ -1,0 +1,21 @@
+@import '../../../styles/colors';
+@import '../button/button';
+
+
+.button-group {
+  display: flex;
+
+  .button {
+    flex-grow: 1;
+    flex-basis: 0;
+    padding:  $button-padding-vertical ($button-padding-horizontal / 2);
+
+    &:first-child {
+      padding-left: $button-padding-horizontal;
+    }
+
+    &:last-child {
+      padding-right: $button-padding-horizontal;
+    }
+  }
+}

@@ -1,8 +1,10 @@
 @import '../../../styles/colors';
 
+$input-padding-vertical: 5px;
+$input-padding-horizontal: 10px;
 
 .input {
-  padding: 5px 10px;
+  padding: $input-padding-vertical $input-padding-horizontal;
 
   input {
     padding: 10px;
