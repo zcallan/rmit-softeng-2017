@@ -13,7 +13,7 @@ export const userLoggedIn = success => ({
 });
 
 export const userLogout = () => ({
-  type: 'USER_UNAUTHENTICATING',
+  type: 'USER_UNAUTHENTICATED',
 });
 
 export const userRegister = () => ({

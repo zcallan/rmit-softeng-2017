@@ -6,6 +6,7 @@ import {
 	Login,
 	Register,
 	NotFound,
+	Logout,
 } from 'views';
 
 
@@ -15,7 +16,7 @@ class Routes extends Component {
 			<Switch>
 				<Route path="/login" component={Login} />
 				<Route path="/register" component={Register} />
-				<PrivateRoute path="/protected" component={Home} />
+				<Route path="/logout" component={Logout} />
 				<PrivateRoute exact path="/" component={Home} />
 				<Route component={NotFound} />
 			</Switch>

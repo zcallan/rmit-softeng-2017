@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
-import SideNavigation from './Sidebar.jsx';
+import Sidebar from './Sidebar.jsx';
 import { toggleSidebar } from './sidebar.actions.js';
 
 
@@ -12,4 +12,4 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({ toggleSidebar }, dispatch );
 };
 
-export default connect( mapStateToProps, mapDispatchToProps )( SideNavigation );
+export default connect( mapStateToProps, mapDispatchToProps )( Sidebar );
