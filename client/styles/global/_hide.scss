@@ -1,0 +1,35 @@
+@import '../screen-sizes';
+
+
+@media screen and (max-width: $xs-max) {
+  .hide-xs-and-up,
+  .hide-xs {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: $sm-min) and (max-width: $sm-max) {
+  .hide-xs-and-up,
+  .hide-sm-and-up,
+  .hide-sm {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: $md-min) and (max-width: $md-max) {
+  .hide-xs-and-up,
+  .hide-sm-and-up,
+  .hide-md-and-up {
+  .hide-md {
+    display: none !important;
+  }
+}
+
+@media screen and (min-width: $lg-min) {
+  .hide-xs-and-up,
+  .hide-sm-and-up,
+  .hide-md-and-up,
+  .hide-lg {
+    display: none !important;
+  }
+}
