@@ -1,17 +1,31 @@
-[
-  {
-    "name": "Home",
-    "path": "/",
-    "icon": "home"
-  },
-  {
-    "name": "Login",
-    "path": "/login",
-    "icon": "person"
-  },
-  {
-    "name": "Register",
-    "path": "/register",
-    "icon": "person_add"
-  }
-]
+{
+  "private": [
+    {
+      "name": "Home",
+      "path": "/",
+      "icon": "home"
+    },
+    {
+      "name": "Logout",
+      "path": "/logout",
+      "icon": "power_settings_new"
+    }
+  ],
+  "public": [
+    {
+      "name": "Home",
+      "path": "/",
+      "icon": "home"
+    },
+    {
+      "name": "Login",
+      "path": "/login",
+      "icon": "person"
+    },
+    {
+      "name": "Register",
+      "path": "/register",
+      "icon": "person_add"
+    }
+  ]
+}

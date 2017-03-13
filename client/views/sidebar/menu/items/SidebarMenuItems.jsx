@@ -4,10 +4,12 @@ import SidebarLink from './link';
 import routes from 'config/sidebar-menu.json';
 
 
-const SidebarMenuItems = () => {
+const SidebarMenuItems = ({ user }) => {
+  const routeSet = ( user.authenticated ) ? 'private' : 'public';
+
   return (
     <div className="sidebar-menu-items text-uppercase">
-      {routes && routes.map(( route, i ) => {
+      {routes && routes[routeSet].map(( route, i ) => {
         return route.divider
           ? <hr />
           : <SidebarLink
@@ -19,6 +21,10 @@ const SidebarMenuItems = () => {
       })}
     </div>
   );
+};
+
+SidebarMenuItems.propTypes = {
+  user: PropTypes.object,
 };
 
 export default SidebarMenuItems;
