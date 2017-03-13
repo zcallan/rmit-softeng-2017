@@ -24,13 +24,14 @@ class Button extends Component {
 
     const btn = (
       <div {...restProps} className={`button ${columnCls} ${selectedCls} ${className}`}>
-        <button type={submit ? 'submit' : 'button'}>
+        <button type={submit ? 'submit' : 'button'} name="test">
           {icon && <i className="material-icons">{icon}</i>}
           {text || children}
         </button>
       </div>
     );
 
+    /* If the button should link to a new page, wrap it in a Link. */
     return ( href )
       ? <Link to={href}>{btn}</Link>
       : btn;
