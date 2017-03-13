@@ -30,7 +30,11 @@ server.use(
 
 /* Create an endpoint for each route in the config. */
 routes.forEach( route => {
-  server[route.method]( route.path, require( route.handler ));
+  const requiredRoute = require( route.handler );
+
+  Object.keys( requiredRoute ).forEach( method => {
+    server[method]( route.path, requiredRoute[method]);
+  });
 });
 
 server.listen( config.port, () => {
