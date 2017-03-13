@@ -1,3 +1,15 @@
 {
-  "port": 3001
+  "port": 3001,
+  "swagger": {
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.0",
+    "swaggerJSON": "/api-docs.json",
+    "swaggerURL": "/swagger",
+    "swaggerUI": "./public/swagger-ui",
+    "basePath": "http://localhost:3001",
+    "info": {
+      "title": "Booka API",
+      "description": "The REST API for Booka"
+    }
+  }
 }
