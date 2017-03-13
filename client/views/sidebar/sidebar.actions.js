@@ -1,5 +1,3 @@
-export function toggleSidebar() {
-  return {
-    type: 'SIDEBAR_TOGGLE',
-  };
-}
+export const toggleSidebar = () => ({
+  type: 'SIDEBAR_TOGGLE',
+});
