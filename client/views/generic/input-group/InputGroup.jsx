@@ -12,10 +12,10 @@ class InputGroup extends Component {
   }
 
   render() {
-    const { className, children } = this.props;
+    const { className, children, ...restProps } = this.props;
 
     return (
-      <div className={`input-group ${className}`}>
+      <div className={`input-group ${className}`} {...restProps}>
         {children}
       </div>
     );
