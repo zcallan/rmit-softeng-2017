@@ -1,0 +1,74 @@
+@import '../../styles/colors';
+@import '../../styles/sizes';
+
+
+.navbar {
+  background: $primary-color-dark;
+  color: $primary-color-text;
+  height: $navbar-height;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding: 5px 40px 5px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  a {
+    transition: 300ms ease opacity;
+
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+
+  .navbar-logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+
+    i.material-icons {
+      height: 100%;
+      padding: 0 20px;
+      cursor: pointer;
+      transition: 300ms ease opacity;
+      display: flex;
+      align-items: center;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    a {
+      height: 100%;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+      display: flex;
+      align-items: center;
+      margin: 0;
+      height: 100%;
+    }
+  }
+
+  ul {
+    list-style: none;
+    display: flex;
+    height: 100%;
+    margin: 0;
+
+    li {
+
+      a {
+        height: 100%;
+        padding: 0 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

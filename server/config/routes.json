@@ -1,0 +1,12 @@
+[
+  {
+    "method": "get",
+    "path": "/",
+    "handler": "./routes/get/test.js"
+  },
+  {
+    "method": "get",
+    "path": "/hello",
+    "handler": "./routes/get/hello.js"
+  }
+]

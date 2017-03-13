@@ -1,0 +1,29 @@
+@import '../../../styles/colors';
+
+
+.button {
+  padding: 5px 10px;
+
+  button {
+    background: $primary-color;
+    color: $primary-color-text;
+    border-radius: 5px;
+    font-size: 1rem;
+    padding: 15px 20px;
+    border: 4px solid $primary-color;
+    transition: 300ms ease background, 300ms ease border;
+    cursor: pointer;
+    user-select: none;
+    width: 100%;
+
+    &:hover {
+      background: $primary-color-light;
+      border-color: $primary-color-light;
+    }
+
+    &:focus {
+      border-color: $primary-color-light;
+      outline: 0;
+    }
+  }
+}
