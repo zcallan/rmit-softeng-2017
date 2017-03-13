@@ -8,7 +8,8 @@
     "dev-client": "webpack-dev-server",
     "server": "node ./server/server.js",
     "dev-server": "nodemon ./server/server.js",
-    "test": "jest"
+    "test-client": "jest",
+    "test-server": "node ./server/server.js & sleep 5; jest server/*"
   },
   "repository": {
     "type": "git",
@@ -30,6 +31,7 @@
   "homepage": "https://github.com/zcallan/rmit-softeng-2017#readme",
   "devDependencies": {
     "autoprefixer": "^6.7.2",
+    "axios": "^0.15.3",
     "babel": "^6.5.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
