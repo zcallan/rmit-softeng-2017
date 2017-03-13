@@ -1,25 +1,42 @@
-import './register.scss';
+import './employeeRegister.scss';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Container, Input, InputGroup, Button, Form } from 'views/generic';
 
 
-class Register extends Component {
+class EmployeeRegister extends Component {
+  state = {
+    creating: false,
+    created: false,
+    error: null,
+  }
+
   handleSubmit = ( event, data ) => {
     // Do your register here
     console.log( data );
+
+    this.setState({ creating: true }, () => {
+      setTimeout(() => {
+        const createdData = {
+          fullName: `${data.firstname} ${data.lastname}`,
+          email: data.email,
+        };
+        this.props.receivedEmployee( createdData );
+        this.setState({ created: true });
+      }, 500 );
+    });
   }
 
   render() {
-    const { authenticated } = this.props.user;
+    const { created } = this.state;
 
-    if ( authenticated ) {
-      return <Redirect to="/" />;
+    if ( created ) {
+      return <Redirect to="/employee/list" />;
     }
-    
+
     return (
-      <Container className="register">
-        <h2>Register</h2>
+      <Container className="employee-register">
+        <h2>Create Employee</h2>
         <Form onSubmit={this.handleSubmit}>
           <InputGroup>
             <Input
@@ -37,8 +54,8 @@ class Register extends Component {
           </InputGroup>
           <Input
             type="text"
-            placeholder="Username"
-            name="username"
+            placeholder="Email"
+            name="email"
             required
           />
           <Input
@@ -47,11 +64,11 @@ class Register extends Component {
             name="password"
             required
           />
-          <Button type="default" submit>Register</Button>
+          <Button type="default" submit>Create</Button>
         </Form>
       </Container>
     );
   }
 }
 
-export default Register;
+export default EmployeeRegister;

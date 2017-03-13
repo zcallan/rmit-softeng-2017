@@ -15,7 +15,7 @@ class Navbar extends Component {
 
   renderPublicButtons() {
     return (
-      <ul>
+      <ul className="hide-xs">
         <li>
           <Link to="/login">Login</Link>
         </li>
@@ -39,7 +39,7 @@ class Navbar extends Component {
         </div>
 
         {authenticated ? (
-          <ul>
+          <ul className="hide-xs">
             <li>
               <Link to="/logout">Logout</Link>
             </li>

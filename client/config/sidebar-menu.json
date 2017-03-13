@@ -6,6 +6,11 @@
       "icon": "home"
     },
     {
+      "name": "Employees",
+      "path": "/employee/list",
+      "icon": "group"
+    },
+    {
       "name": "Logout",
       "path": "/logout",
       "icon": "power_settings_new"
