@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import AuthenticatedRoutes from './authenticated-routes';
+import { PrivateRoute } from 'views/generic';
 import {
 	Home,
 	Login,
@@ -15,11 +15,8 @@ class Routes extends Component {
 			<Switch>
 				<Route path="/login" component={Login} />
 				<Route path="/register" component={Register} />
-
-				<AuthenticatedRoutes>
-					<Route exact path="/" component={Home} />
-				</AuthenticatedRoutes>
-
+				<PrivateRoute path="/protected" component={Home} />
+				<PrivateRoute exact path="/" component={Home} />
 				<Route component={NotFound} />
 			</Switch>
 		);

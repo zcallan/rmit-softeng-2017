@@ -1,15 +1,9 @@
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import Navbar from './Navbar.jsx';
-import { toggleSidebar } from '../sidebar/sidebar.actions';
+import Register from './Register.jsx';
 
 
 const mapStateToProps = state => ({
-  sidebar: state.sidebar,
+  user: state.user,
 });
 
-function mapDispatchToProps( dispatch ) {
-  return bindActionCreators({ toggleSidebar }, dispatch );
-}
-
-export default connect( mapStateToProps, mapDispatchToProps )( Navbar );
+export default connect( mapStateToProps )( Register );
