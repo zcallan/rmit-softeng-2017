@@ -1,5 +1,6 @@
 import './register.scss';
 import React, { Component } from 'react';
+import { Redirect } from 'react-router-dom';
 import { Container, Input, InputGroup, Button, Form } from 'views/generic';
 
 
@@ -10,6 +11,12 @@ class Register extends Component {
   }
 
   render() {
+    const { authenticated } = this.props.user;
+
+    if ( authenticated ) {
+      return <Redirect to="/" />;
+    }
+    
     return (
       <Container className="register">
         <h2>Register</h2>
