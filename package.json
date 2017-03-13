@@ -8,8 +8,7 @@
     "dev-client": "webpack-dev-server",
     "server": "node ./server/server.js",
     "dev-server": "nodemon ./server/server.js",
-    "test-client": "jest",
-    "test-server": "node ./server/server.js & sleep 5; jest server/*"
+    "test-client": "jest"
   },
   "repository": {
     "type": "git",
