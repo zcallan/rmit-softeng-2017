@@ -1,0 +1,9 @@
+mongo:
+  image: mongo
+  ports:
+    - "27017:27017"
+  volumes_from:
+    - mongo-data
+
+mongo-data:
+  image: busybox
