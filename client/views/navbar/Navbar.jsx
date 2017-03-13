@@ -1,7 +1,6 @@
 import './navbar.scss';
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
-import { Container } from 'views/generic';
 
 
 class Navbar extends Component {
@@ -25,7 +24,10 @@ class Navbar extends Component {
 
         <ul>
           <li>
-            <Link to="/login">Login</Link>ß
+            <Link to="/login">Login</Link>
+          </li>
+          <li>
+            <Link to="/register">Register</Link>
           </li>
         </ul>
       </nav>
