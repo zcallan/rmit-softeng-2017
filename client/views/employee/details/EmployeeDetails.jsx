@@ -26,6 +26,10 @@ class EmployeeDetails extends Component {
     return employees.list.find( employee => employee.id === this._employeeId );
   }
 
+  handleSave = ( schedule, day ) => {
+    this.props.updateEmployeeSchedule( this._employeeId, schedule, day );
+  }
+
   render() {
     const employee = this.getEmployee();
 
@@ -45,11 +49,11 @@ class EmployeeDetails extends Component {
         <h4>{employee.email}</h4>
 
         <div className="employee-details-schedule">
-          <TimeSchedule monday schedule={employee.schedule} />
-          <TimeSchedule tuesday schedule={employee.schedule} />
-          <TimeSchedule wednesday schedule={employee.schedule} />
-          <TimeSchedule thursday schedule={employee.schedule} />
-          <TimeSchedule friday schedule={employee.schedule} />
+          <TimeSchedule monday schedule={employee.schedule} onSave={this.handleSave} />
+          <TimeSchedule tuesday schedule={employee.schedule} onSave={this.handleSave} />
+          <TimeSchedule wednesday schedule={employee.schedule} onSave={this.handleSave} />
+          <TimeSchedule thursday schedule={employee.schedule} onSave={this.handleSave} />
+          <TimeSchedule friday schedule={employee.schedule} onSave={this.handleSave} />
         </div>
       </Container>
     );

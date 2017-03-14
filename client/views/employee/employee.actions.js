@@ -20,3 +20,12 @@ export const receivedEmployees = employees => ({
 export const fetchEmployeesFail = () => ({
   type: 'FETCH_EMPLOYEES_FAILED',
 });
+
+export const updateEmployeeSchedule = ( employeeId, schedule, day ) => ({
+  type: 'UPDATED_EMPLOYEE_SCHEDULE',
+  payload: {
+    employeeId,
+    schedule,
+    day,
+  },
+});

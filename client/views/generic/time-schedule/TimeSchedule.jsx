@@ -1,8 +1,6 @@
 import './timeSchedule.scss';
 import 'rc-time-picker/assets/index.css';
 import React, { Component, PropTypes } from 'react';
-import moment from 'moment';
-import { Link } from 'react-router-dom';
 import TimePicker from 'rc-time-picker';
 
 
@@ -25,6 +23,7 @@ class TimeSchedule extends Component {
 
   static propTypes = {
     className: PropTypes.string,
+    onSave: PropTypes.func,
     schedule: PropTypes.object,
     monday: PropTypes.bool,
     tuesday: PropTypes.bool,
@@ -56,7 +55,8 @@ class TimeSchedule extends Component {
   }
 
   handleSave = () => {
-
+    const { start, end } = this.state;
+    this.props.onSave({ start, end }, this.getDay());
   }
 
   handleRefresh = () => {

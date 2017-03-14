@@ -76,6 +76,22 @@ export default ( state = initialState, { type, payload }) => {
         error: null,
       };
 
+    case 'UPDATED_EMPLOYEE_SCHEDULE': {
+      const employee = Object.assign( {}, state.list.find( empl => empl.id === payload.employeeId ) );
+
+      if ( employee ) {
+        employee.schedule[payload.day] = payload.schedule;
+        return {
+          ...state,
+          list: [
+            ...state.list,
+          ],
+        };
+      } else {
+        return state;
+      }
+    }
+
     default:
       return state;
   }
