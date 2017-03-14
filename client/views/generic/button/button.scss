@@ -25,6 +25,22 @@ $button-padding-horizontal: 10px;
     }
   }
 
+  &.disabled {
+
+    button {
+      background: $primary-color-darker;
+      border-color: $primary-color-darker;
+
+      &:focus {
+        border-color: $primary-color;
+      }
+
+      &:hover {
+        cursor: not-allowed;
+      }
+    }
+  }
+
   button {
     background: $primary-color;
     color: $primary-color-text;

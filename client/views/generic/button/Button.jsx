@@ -8,6 +8,7 @@ class Button extends Component {
     className: '',
     column: false,
     selected: false,
+    disabled: false,
   }
 
   static propTypes = {
@@ -15,16 +16,18 @@ class Button extends Component {
     className: PropTypes.string,
     column: PropTypes.bool,
     selected: PropTypes.bool,
+    disabled: PropTypes.bool,
   }
 
   render() {
-    const { className, icon, children, href, text, submit, column, selected, ...restProps} = this.props;
-    const selectedCls = selected ? 'selected' : '';
-    const columnCls = column ? 'button-column' : '';
+    const { className, icon, children, href, text, submit, column, selected, disabled, ...restProps} = this.props;
+    const selectedCls = ( selected ) ? 'selected' : '';
+    const columnCls = ( column ) ? 'button-column' : '';
+    const disabledCls = ( disabled ) ? 'disabled' : '';
 
     const btn = (
-      <div {...restProps} className={`button ${columnCls} ${selectedCls} ${className}`}>
-        <button type={submit ? 'submit' : 'button'} name="test">
+      <div {...restProps} className={`button ${columnCls} ${selectedCls} ${disabledCls} ${className}`}>
+        <button type={submit ? 'submit' : 'button'} name="test" disabled={disabled}>
           {icon && <i className="material-icons">{icon}</i>}
           {text || children}
         </button>
