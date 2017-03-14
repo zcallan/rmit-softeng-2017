@@ -1,8 +1,32 @@
+import moment from 'moment';
+
 const fakeData = [
   {
     id: 0,
     fullName: 'Callan Delbridge',
     email: 'callan@pleasedproperty.com.au',
+    schedule: {
+      monday: {
+        start: moment(),
+        end: moment(),
+      },
+      tuesday: {
+        start: moment(),
+        end: moment(),
+      },
+      wednesday: {
+        start: moment(),
+        end: moment(),
+      },
+      thursday: {
+        start: moment(),
+        end: moment(),
+      },
+      friday: {
+        start: moment(),
+        end: moment(),
+      },
+    }
   },
   {
     id: 1,

@@ -9,7 +9,7 @@ class Button extends Component {
     column: false,
     selected: false,
     disabled: false,
-    disabled: false,
+    loading: false,
   }
 
   static propTypes = {

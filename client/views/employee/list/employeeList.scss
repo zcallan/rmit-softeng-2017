@@ -11,13 +11,38 @@
 
     .employee-list-item {
       padding: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+      transition: 300ms ease opacity;
 
-       h3 {
-         color: $primary-color-dark;
-       }
+      &:hover {
+        opacity: 0.5;
+      }
 
       &:not(:first-child) {
         border-top: 1px solid #ddd;
+      }
+
+      .employee-list-item-details {
+
+        h3 {
+          color: $primary-color-dark;
+        }
+      }
+
+      .employee-list-item-action {
+        display: flex;
+        align-items: center;
+        color: $primary-color;
+        padding: 20px;
+        user-select: none;
+
+        p {
+          margin: 0;
+          text-transform: uppercase;
+        }
       }
     }
   }
