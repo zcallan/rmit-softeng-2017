@@ -30,14 +30,18 @@ $button-padding-horizontal: 10px;
     button {
       background: $primary-color-darker;
       border-color: $primary-color-darker;
+      cursor: not-allowed;
 
       &:focus {
         border-color: $primary-color;
       }
+    }
+  }
 
-      &:hover {
-        cursor: not-allowed;
-      }
+  &.loading {
+
+    button {
+      cursor: wait;
     }
   }
 

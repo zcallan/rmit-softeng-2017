@@ -21,7 +21,6 @@ class Login extends Component {
     this.setState({ loggingIn: true }, () => {
       setTimeout(() => {
         this.props.userLogin( data );
-        this.setState({ redirect: true });
       }, 500 );
     });
   }
@@ -31,7 +30,7 @@ class Login extends Component {
     const { authenticated } = this.props.user;
     const { loggingIn } = this.state;
 
-    /* Redirect the user to either their previous location (if from a orivate route), or to home. */
+    /* Redirect the user to either their previous location (if from a private route), or to home. */
     if ( authenticated ) {
       return <Redirect to={from} />;
     }
@@ -54,7 +53,9 @@ class Login extends Component {
             placeholder="Password"
             name="password"
           />
-          <Button type="default" submit disabled={loggingIn}>{loggingIn ? 'Logging in...' : 'Submit'}</Button>
+          <Button type="default" submit disabled={loggingIn} loading={loggingIn}>
+            {( loggingIn ) ? 'Logging in...' : 'Login'}
+            </Button>
         </Form>
       </Container>
     );
