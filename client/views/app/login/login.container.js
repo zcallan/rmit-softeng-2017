@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Login from './Login.jsx';
-import { userLogin, userLoggedIn, userLoginFail } from 'views/user/user.actions';
+import { userLogin, userLoginFail } from 'views/user/user.actions';
 
 
 const mapStateToProps = state => ({
@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 });
 
 function mapDispatchToProps( dispatch ) {
-  return bindActionCreators({ userLogin, userLoggedIn, userLoginFail }, dispatch );
+  return bindActionCreators({ userLogin, userLoginFail }, dispatch );
 }
 
 export default connect( mapStateToProps, mapDispatchToProps )( Login );

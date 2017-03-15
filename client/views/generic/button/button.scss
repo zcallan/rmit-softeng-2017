@@ -25,6 +25,26 @@ $button-padding-horizontal: 10px;
     }
   }
 
+  &.disabled {
+
+    button {
+      background: $primary-color-darker;
+      border-color: $primary-color-darker;
+      cursor: not-allowed;
+
+      &:focus {
+        border-color: $primary-color;
+      }
+    }
+  }
+
+  &.loading {
+
+    button {
+      cursor: wait;
+    }
+  }
+
   button {
     background: $primary-color;
     color: $primary-color-text;

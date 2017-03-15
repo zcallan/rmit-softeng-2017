@@ -1,0 +1,71 @@
+@import '../../../styles/colors';
+
+
+.time-schedule {
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+  background: $border-color;
+  border-radius: 5px;
+  padding: 5px 0 10px;
+  flex-grow: 1;
+  margin: 5px;
+
+  h3 {
+    color: $primary-color !important;
+  }
+
+  .time-schedule-start,
+  .time-schedule-end {
+    display: flex;
+    flex-flow: column;
+    text-align: center;
+
+    label {
+      font-size: 0.8rem;
+      margin: 5px 0;
+    }
+
+    .rc-time-picker {
+      margin-bottom: 10px;
+
+      input {
+        text-align: center;
+      }
+    }
+  }
+
+  .time-schedule-actions {
+    display: flex;
+    align-items: center;
+
+    div {
+      width: 40px;
+      height: 40px;
+      background: $white;
+      border-radius: 10px;
+      border: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 5px;
+      cursor: pointer;
+      transition: 300ms ease opacity;
+      user-select: none;
+
+      &:hover {
+        opacity: 0.5;
+      }
+    }
+
+    .time-schedule-save {
+      color: $success;
+    }
+
+    .time-schedule-refresh {
+      color: $dark-text-color;
+    }
+  }
+}

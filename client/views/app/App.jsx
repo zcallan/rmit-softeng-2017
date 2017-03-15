@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import Routes from './Routes.jsx';
 import { Sidebar, Navbar } from 'views';
 
+window.moment = require( 'moment' );
 
 class App extends Component {
   static propTypes = {}

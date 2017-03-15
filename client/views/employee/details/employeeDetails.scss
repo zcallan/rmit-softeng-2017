@@ -1,6 +1,28 @@
 @import '../../../styles/colors';
+@import '../../../styles/screen-sizes';
 
+
+.employee-details-empty {
+
+}
 
 .employee-details {
 
+  h2 {
+    text-align: center;
+  }
+
+  h3 {
+    color: $primary-color-dark;
+  }
+
+  h4 {
+
+  }
+
+  .employee-details-schedule {
+    @media screen and (min-width: $sm-min) {
+      display: flex;
+    }
+  }
 }

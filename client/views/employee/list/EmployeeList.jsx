@@ -24,10 +24,18 @@ class EmployeeList extends Component {
         {( list ) ? (
           <div className="employee-list-group">
             {( list.length > 0 ) ? list.map( employee => (
-              <div className="employee-list-item" key={employee.id}>
-                <h3>{employee.fullName}</h3>
-                <h4>{employee.email}</h4>
-              </div>
+              <Link to={`/employee/${employee.id}/details`} key={employee.id}>
+                <div className="employee-list-item">
+                  <div className="employee-list-item-details">
+                    <h3>{employee.fullName}</h3>
+                    <h4>{employee.email}</h4>
+                  </div>
+                  <div className="employee-list-item-action">
+                    <p>edit</p>
+                    <i className="material-icons">chevron_right</i>
+                  </div>
+                </div>
+              </Link>
             )) : (
               <h3 className="employee-list-empty">No employees on record.</h3>
             )}
