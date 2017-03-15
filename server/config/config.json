@@ -1,6 +1,6 @@
 {
   "port": 3001,
-  "databaseUri": "mongodb://user:pass@localhost:27017",
+  "databaseUri": "mongodb://localhost:27017",
   "swagger": {
     "apiVersion": "1.0",
     "swaggerVersion": "1.0",

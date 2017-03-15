@@ -2,7 +2,6 @@ const mongoose = require( 'mongoose' );
 const bcrypt = require( 'bcrypt' );
 const Schema = mongoose.Schema;
 
-
 const UsersSchema = new Schema({
   name: {
     first: {
@@ -23,25 +22,30 @@ const UsersSchema = new Schema({
   password: {
     type: String,
     required: true,
+  },
+  type: {
+    type: String,
+    required: true,
+    enum: ['business', 'customer', 'employee', 'admin']
   }
 }, {
   timestamps: true,
   strict: true,
 });
 
-UsersSchema.pre( 'save', next => {
+UsersSchema.pre( 'save', function ( next ) {
   /* Concatenate first and last name for convenience. */
   this.name.full = `${this.name.first} ${this.name.last}`;
 
   /* Store an encrypted copy of the user password. */
   if ( this.isModified( 'password' )) {
     /* Generate the salt to use in the password hash. */
-    bcrypt.genSalt( 5, ( err, salt ) => {
+    bcrypt.genSalt( 5, function ( err, salt ) {
       if ( err )
         return next( err );
 
       /* Hash the password using the salt and save it to the document. */
-      bcrypt.hash( this.password, salt, null, ( err, hash ) => {
+      bcrypt.hash( this.password, salt, null, function ( err, hash ) {
         if ( err )
           return next( err );
 
