@@ -9,6 +9,14 @@ class API {
     });
   }
 
+  authenticate(data) {
+    return this.request({
+      method: 'post',
+      url: '/authenticate',
+      data,
+    });
+  }
+
   version() {
     return this.request({
       method: 'get',

@@ -32,6 +32,8 @@ const UserSchema = new Schema({
 }, {
   timestamps: true,
   strict: true,
+  toObject: { virtuals: true },
+  toJSON: { virtuals: true }
 });
 
 /* Create a virtual field that concatenates the users first and last names for convenience */

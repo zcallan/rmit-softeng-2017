@@ -2,6 +2,7 @@ import './login.scss';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Container, Input, Button, ButtonGroup, Form } from 'views/generic';
+import API from 'utils/api/api.js';
 
 class Login extends Component {
   state = {
@@ -16,6 +17,11 @@ class Login extends Component {
   handleSubmit = ( event, data ) => {
     this.setState({ loggingIn: true });
     this.props.userAuthenticating();
+    API.authenticate( data ).then( success => {
+      console.log( success );
+    }).catch( error => {
+      console.log( 'An error has occured' );
+    });
   }
 
   render() {
@@ -38,7 +44,7 @@ class Login extends Component {
           </ButtonGroup>
           <Input
             type="text"
-            placeholder="Username"
+            placeholder="Email"
             name="username"
           />
           <Input

@@ -6,12 +6,16 @@ const swagger = require( 'swagger-express' );
 const cors = require( 'cors' );
 const db = require( './utils/db/db.js' );
 const users = require( './utils/users/index.js' );
+const bodyParser = require('body-parser');
 
 /* Create the HTTP server */
 const server = express();
 
 /* Enable CORS. */
 server.use( cors() );
+
+/* Tell the server to use JSON body parsing */
+server.use( bodyParser.json() );
 
 /* Create a redirect from /api-docs to swagger, loading the correct swagger API specification */
 server.get('/api-docs', ( req, res ) => {
