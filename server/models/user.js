@@ -46,12 +46,12 @@ UserSchema.pre( 'save', function( next ) {
   /* Store an encrypted copy of the user password. */
   if ( this.isModified( 'password' )) {
     /* Generate the salt to use in the password hash. */
-    bcrypt.genSalt( 5, function( err, salt ) {
+    bcrypt.genSalt( 5, ( err, salt ) => {
       if ( err )
         return next( err );
 
       /* Hash the password using the salt and save it to the document. */
-      bcrypt.hash( this.password, salt, function( err, hash ) {
+      bcrypt.hash( this.password, salt, ( err, hash ) => {
         if ( err )
           return next( err );
 
@@ -60,8 +60,6 @@ UserSchema.pre( 'save', function( next ) {
       });
     });
   }
-
-  next();
 });
 
 /* Provide a method to verify the users password */
