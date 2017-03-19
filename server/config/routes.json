@@ -6,5 +6,9 @@
   {
     "path": "/authenticate",
     "handler": "./routes/authenticate/index.js"
+  },
+  {
+    "path": "/register",
+    "handler": "./routes/register/index.js"
   }
 ]

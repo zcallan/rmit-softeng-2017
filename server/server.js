@@ -14,7 +14,8 @@ const server = express();
 /* Enable CORS. */
 server.use( cors() );
 
-/* Tell the server to use JSON body parsing */
+/* Tell the server to use both JSON body parsing and form data body parsing */
+server.use(bodyParser.urlencoded({ extended: false }));
 server.use( bodyParser.json() );
 
 /* Create a redirect from /api-docs to swagger, loading the correct swagger API specification */

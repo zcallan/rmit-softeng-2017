@@ -1,11 +1,5 @@
 /**
  * @swagger
- * resourcePath: /
- * description: Basic system information
- */
-
-/**
- * @swagger
  * path: /
  * operations:
  *  - httpMethod: GET
