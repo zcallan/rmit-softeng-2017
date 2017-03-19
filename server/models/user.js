@@ -29,7 +29,7 @@ const UserSchema = new Schema({
   type: {
     type: String,
     required: true,
-    enum: ['business', 'customer', 'employee', 'admin']
+    enum: ['customer', 'employee', 'admin']
   }
 }, {
   timestamps: true,
