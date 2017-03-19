@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { PrivateRoute } from 'views/generic';
 import {
@@ -11,7 +11,6 @@ import {
   EmployeeDetails,
   EmployeeRegister,
 } from 'views';
-
 
 class Routes extends Component {
 	render() {

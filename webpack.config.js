@@ -1,6 +1,4 @@
 const path = require( 'path' );
-const webpack = require( 'webpack' );
-
 
 module.exports = {
   context: path.resolve( __dirname, './client' ),
@@ -45,6 +43,7 @@ module.exports = {
   },
   resolve: {
     alias: {
+      utils: path.resolve( __dirname, './client/utils' ),
       views: path.resolve( __dirname, './client/views' ),
       config: path.resolve( __dirname, './client/config' ),
       styles: path.resolve( __dirname, './client/styles' ),

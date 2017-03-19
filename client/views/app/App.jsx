@@ -1,7 +1,7 @@
-import React, { Component, PropTypes } from 'react';
-import { Route } from 'react-router-dom';
+import React, { Component } from 'react';
 import Routes from './Routes.jsx';
 import { Sidebar, Navbar } from 'views';
+import API from 'utils/api/api.js';
 
 window.moment = require( 'moment' );
 
@@ -10,6 +10,11 @@ class App extends Component {
 
   componentDidMount() {
     document.getElementById( 'mounting-preview' ).remove();
+
+    /* Print the API information to the console */
+    API.version().then( response => {
+      console.log( 'API Information', response.data );
+    });
   }
 
   render() {
@@ -17,7 +22,6 @@ class App extends Component {
       <div className="app">
         <Sidebar>
           <Navbar />
-
           <main>
             <Routes />
           </main>

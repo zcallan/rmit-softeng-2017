@@ -1,5 +1,5 @@
 const initialState = {
-  authenticated: true,
+  authenticated: false,
   authenticating: false,
   registering: false,
   data: null,
@@ -27,7 +27,11 @@ export default ( state = initialState, { type, payload }) => {
       };
 
     case 'USER_UNAUTHENTICATED':
-      return initialState;
+      return {
+        ...state,
+        authenticated: false,
+        error: null,
+      };
 
     case 'USER_AUTHENTICATION_FAILED':
       return {

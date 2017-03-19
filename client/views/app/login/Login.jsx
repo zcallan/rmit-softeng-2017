@@ -3,7 +3,6 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Container, Input, Button, ButtonGroup, Form } from 'views/generic';
 
-
 class Login extends Component {
   state = {
     loggingIn: false,
@@ -15,14 +14,8 @@ class Login extends Component {
   }
 
   handleSubmit = ( event, data ) => {
-    // Do your login here
-    console.log( data );
-
-    this.setState({ loggingIn: true }, () => {
-      setTimeout(() => {
-        this.props.userLogin( data );
-      }, 500 );
-    });
+    this.setState({ loggingIn: true });
+    this.props.userAuthenticating();
   }
 
   render() {

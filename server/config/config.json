@@ -1,5 +1,6 @@
 {
   "port": 3001,
+  "version": "1.0.0",
   "databaseUri": "mongodb://localhost:27017",
   "swagger": {
     "apiVersion": "1.0",

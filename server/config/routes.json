@@ -1,5 +1,9 @@
 [
   {
+    "path": "/",
+    "handler": "./routes/index.js"
+  },
+  {
     "path": "/authenticate",
     "handler": "./routes/authenticate/index.js"
   }
