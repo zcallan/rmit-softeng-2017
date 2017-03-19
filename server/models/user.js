@@ -1,6 +1,8 @@
 const mongoose = require( 'mongoose' );
 const bcrypt = require( 'bcrypt' );
 const Schema = mongoose.Schema;
+const jwt = require( 'jsonwebtoken' );
+const config = require( '../config/config.json' );
 
 /* Define the schema for the user */
 const UserSchema = new Schema({
@@ -71,5 +73,20 @@ UserSchema.methods.verifyPassword = function( password, next ) {
     next( null, match );
   });
 };
+
+/* Provide a method to generate a JWT */
+UserSchema.methods.generateJWT = function( next ) {
+  jwt.sign( { email: this.email }, config.jwtSecret, {}, ( err, token ) => {
+    next( err, token );
+  });
+};
+
+/* Hide the password from displaying in any responses */
+UserSchema.set('toObject', {
+    transform: function(doc, ret) {
+        delete ret.password;
+        return ret;
+    }
+});
 
 module.exports = mongoose.model( 'User', UserSchema );

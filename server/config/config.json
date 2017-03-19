@@ -13,5 +13,6 @@
       "title": "Booka API",
       "description": "The REST API for Booka"
     }
-  }
+  },
+  "jwtSecret": "Ut4jD2sB5iwOXkruI6YHciQOvcoG5USS8MaI8mBoQpuElVHCtP"
 }
