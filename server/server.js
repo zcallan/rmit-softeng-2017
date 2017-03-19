@@ -4,14 +4,11 @@ const config = require( './config/config.json' );
 const routes = require( './config/routes.json' );
 const swagger = require( 'swagger-express' );
 const cors = require( 'cors' );
-const mongoose = require( 'mongoose' );
-
-/* Create the mongoose database connection */
-mongoose.connect( config.databaseUri );
+const db = require( './utils/db/db.js' );
+const users = require( './utils/users/index.js' );
 
 /* Create the HTTP server */
 const server = express();
-const db = mongoose.connection;
 
 /* Enable CORS. */
 server.use( cors() );
@@ -46,14 +43,19 @@ routes.forEach( route => {
   });
 });
 
-/* If the connection failed log an error */
-db.on( 'error', console.error.bind( console.log('MongoDB connection failed')));
+/* Create and retrieve the database connection */
+db.createConnection();
+const connection = db.getConnection();
 
 /* When the database connection is opened, start the server */
-db.once( 'open', () => {
+connection.once( 'open', () => {
   console.log( '=> Started MongoDB' );
 
   server.listen( config.port, () => {
     console.log( `Server listening on ${config.port}` );
   });
+
+  /* Create the default user accounts if they don't exist */
+  users.createDefaultUser();
+
 });

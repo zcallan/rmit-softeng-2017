@@ -1,0 +1,22 @@
+{
+  "defaultUsers": [
+    {
+      "name": {
+        "first": "Matt",
+        "last": "Hayward"
+      },
+      "email": "matt@matthayward.com.au",
+      "password": "password",
+      "type": "admin"
+    },
+    {
+      "name": {
+        "first": "Callan",
+        "last": "Delbridge"
+      },
+      "email": "callan.delbridge@outlook.com",
+      "password": "password",
+      "type": "admin"
+    }
+  ]
+}
