@@ -3,6 +3,11 @@
 
 .register {
 
+  .register-error {
+    text-align: center;
+    color: $error;
+  }
+
   h2 {
     text-align: center;
   }

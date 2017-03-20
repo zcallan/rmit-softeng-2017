@@ -2,30 +2,33 @@ import './register.scss';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Container, Input, InputGroup, Button, Form } from 'views/generic';
+import API from 'utils/api/api.js';
 
 
 class Register extends Component {
   state = {
     registering: false,
-    registered: false,
     error: null,
     authenticated: this.props.user.authenticated,
   }
 
   componentWillReceiveProps( nextProps ) {
-    this.setState({ authenticated: nextProps.user.authenticated });
+    if ( nextProps.user.authenticated !== this.state.authenticated ) {
+      this.setState({ authenticated: nextProps.user.authenticated });
+    }
   }
 
   handleSubmit = ( event, data ) => {
-    // Do your register here
-    console.log( data );
+    this.setState({ registering: true });
 
-    this.setState({ registering: true }, () => {
-      setTimeout(() => {
-        this.setState({ registered: true });
-        this.props.userLogin( data );
-      }, 500 );
-    });
+    API.register( data )
+      .then(success => {
+        this.setState({ registering: false });
+        this.props.userAuthenticated( success.data );
+      })
+      .catch(({ response })  => {
+        this.setState({ error: response.data.error, registering: false });
+      });
   }
 
   render() {
@@ -38,18 +41,19 @@ class Register extends Component {
     return (
       <Container className="register">
         <h2>Register</h2>
+        {( error ) && <h5 className="register-error">{error}</h5>}
         <Form onSubmit={this.handleSubmit}>
           <InputGroup>
             <Input
               type="text"
               placeholder="First name"
-              name="firstname"
+              name="firstName"
               required
             />
             <Input
               type="text"
               placeholder="Last name"
-              name="lastname"
+              name="lastName"
               required
             />
           </InputGroup>
