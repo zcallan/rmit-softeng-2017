@@ -48,6 +48,10 @@ describe('POST /authenticate', () => {
   it('should return an jwt token when the authentication is successful', done => {
     client.post('/authenticate', { username: users.defaultUsers[0].email , password: users.defaultUsers[0].password }, ( err, res, body ) => {
       chai.expect(body).to.have.property('token');
+      chai.expect(body).to.have.property('user');
+      chai.expect(body.user).to.have.property('name');
+      chai.expect(body.user).to.have.property('email');
+      chai.expect(body.user).to.have.property('type');
       chai.expect(res.statusCode).to.equal(200);
       done();
     });

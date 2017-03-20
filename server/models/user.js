@@ -83,9 +83,9 @@ UserSchema.methods.generateJWT = function( next ) {
 
 /* Hide the password from displaying in any responses */
 UserSchema.set('toObject', {
-    transform: function(doc, ret) {
-        delete ret.password;
-        return ret;
+    transform: function(doc, user) {
+        delete user.password;
+        return user;
     }
 });
 

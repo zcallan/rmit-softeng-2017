@@ -14,5 +14,13 @@
   {
     "path": "/user",
     "handler": "./routes/user/index.js"
+  },
+  {
+    "path": "/user/:id",
+    "handler": "./routes/user/id/index.js"
+  },
+  {
+    "path": "/employee",
+    "handler": "./routes/employee/index.js"
   }
 ]
