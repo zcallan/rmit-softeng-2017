@@ -6,7 +6,8 @@ const swagger = require( 'swagger-express' );
 const cors = require( 'cors' );
 const db = require( './utils/db/db.js' );
 const users = require( './utils/users/index.js' );
-const bodyParser = require('body-parser');
+const bodyParser = require( 'body-parser' );
+const morgan = require( 'morgan' );
 
 /* Create the HTTP server */
 const server = express();
@@ -14,8 +15,11 @@ const server = express();
 /* Enable CORS. */
 server.use( cors() );
 
+/* Use morgan logging */
+server.use( morgan(':remote-addr :method :url') );
+
 /* Tell the server to use both JSON body parsing and form data body parsing */
-server.use(bodyParser.urlencoded({ extended: false }));
+server.use( bodyParser.urlencoded({ extended: false }) );
 server.use( bodyParser.json() );
 
 /* Create a redirect from /api-docs to swagger, loading the correct swagger API specification */
