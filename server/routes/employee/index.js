@@ -4,6 +4,8 @@
  * description: Handles employees
  */
 
+ module.exports.get = require( './get.js' );
+
 /**
  * @swagger
  * path: /employee
@@ -32,4 +34,4 @@
  *      required: true
  *      dataType: string
  */
-module.exports.get = require( './get.js' );
+ module.exports.post = require( './post.js' );

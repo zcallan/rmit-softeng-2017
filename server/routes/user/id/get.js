@@ -11,6 +11,11 @@ module.exports = ( req, res ) => {
       return res.json({ error: err });
     }
 
+    if ( !user ) {
+      res.status( HttpStatus.NOT_FOUND );
+      return res.json({ error: 'The user could not be found' });
+    }
+
     return res.json(user.toObject());
   });
 };
