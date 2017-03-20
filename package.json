@@ -63,6 +63,7 @@
     "react-addons-test-utils": "^15.4.2",
     "react-test-renderer": "^15.4.2",
     "regenerator-runtime": "^0.10.3",
+    "request-json": "^0.6.1",
     "sass-loader": "^4.0.0",
     "style-loader": "^0.13.2",
     "swagger-express": "^1.0.5",
