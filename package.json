@@ -8,7 +8,7 @@
     "dev-client": "webpack-dev-server",
     "server": "docker-compose -f ./server/mongo/docker-compose.yml up -d; node ./server/server.js",
     "dev-server": "docker-compose -f ./server/mongo/docker-compose.yml up -d; nodemon ./server/server.js",
-    "test-client": "jest"
+    "test": "jest"
   },
   "repository": {
     "type": "git",
@@ -22,7 +22,7 @@
     "sept",
     "assignment"
   ],
-  "author": "Callan Delbridge & Matt Hawyward",
+  "author": "Callan Delbridge & Matt Hayward",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/zcallan/rmit-softeng-2017/issues"
