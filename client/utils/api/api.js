@@ -9,10 +9,18 @@ class API {
     });
   }
 
-  authenticate(data) {
+  authenticate( data ) {
     return this.request({
       method: 'post',
       url: '/authenticate',
+      data,
+    });
+  }
+
+  register( data ) {
+    return this.request({
+      method: 'post',
+      url: '/register',
       data,
     });
   }

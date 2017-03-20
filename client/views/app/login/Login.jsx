@@ -40,7 +40,6 @@ class Login extends Component {
       return <Redirect to={from} />;
     }
 
-    console.log( error );
     return (
       <Container className="login">
         <h2>Login</h2>
