@@ -10,5 +10,9 @@
   {
     "path": "/register",
     "handler": "./routes/register/index.js"
+  },
+  {
+    "path": "/user",
+    "handler": "./routes/user/index.js"
   }
 ]
