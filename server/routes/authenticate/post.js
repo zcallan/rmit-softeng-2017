@@ -27,7 +27,7 @@ module.exports = ( req, res ) => {
 
     /* User couldn't be found */
     if ( user == null ) {
-      res.status( HttpStatus.NOT_FOUND );
+      res.status( HttpStatus.BAD_REQUEST );
       return res.json({ error: 'The user could not be found' });
     }
 

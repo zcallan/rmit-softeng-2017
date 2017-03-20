@@ -6,8 +6,8 @@
   "scripts": {
     "client": "webpack",
     "dev-client": "webpack-dev-server",
-    "server": "node ./server/server.js",
-    "dev-server": "nodemon ./server/server.js",
+    "server": "docker-compose -f ./server/mongo/docker-compose.yml up -d; node ./server/server.js",
+    "dev-server": "docker-compose -f ./server/mongo/docker-compose.yml up -d; nodemon ./server/server.js",
     "test-client": "jest"
   },
   "repository": {
