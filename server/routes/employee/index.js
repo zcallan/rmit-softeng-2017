@@ -4,12 +4,12 @@
  * description: Handles employees
  */
 
- module.exports.get = require( './get.js' );
-
 /**
  * @swagger
  * path: /employee
  * operations:
+ *  - httpMethod: GET
+ *    summary: Returns a list of all the employees
  *  - httpMethod: POST
  *    summary: Creates a new employee with the provided information
  *    parameters:
@@ -34,4 +34,5 @@
  *      required: true
  *      dataType: string
  */
- module.exports.post = require( './post.js' );
+module.exports.get = require( './get.js' );
+module.exports.post = require( './post.js' );
