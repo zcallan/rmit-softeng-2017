@@ -8,11 +8,11 @@ const AvailabilitySchema = new Schema({
     required: true,
     enum: ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday']
   },
-  startTime: {
+  start: {
     type: Number,
     required: true,
   },
-  endTime: {
+  end: {
     type: Number,
     required: true,
   },
