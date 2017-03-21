@@ -26,5 +26,9 @@
   {
     "path": "/employee/:id",
     "handler": "./routes/employee/id/index.js"
+  },
+  {
+    "path": "/employee/:id/availabilities",
+    "handler": "./routes/employee/id/availabilities/index.js"
   }
 ]
