@@ -65,16 +65,7 @@ module.exports = ( req, res ) => {
         return res.json({ error: err });
       }
 
-      /* Generate an access token for the user so we can log them in straightaway */
-      user.generateJWT( ( err, token ) => {
-        /* If an error occurred, return the error */
-        if ( err ) {
-          res.status( HttpStatus.INTERNAL_SERVER_ERROR );
-          return res.json({ error: err });
-        }
-
-        return res.json({ token, user: user.toObject() });
-      });
+      return res.json(user.toObject());
     });
 
   });
