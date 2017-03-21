@@ -6,22 +6,22 @@ module.exports = ( req, res ) => {
   const { firstName, lastName, email, password } = req.body;
 
   /* Check that all form fields have been supplied */
-  if ( firstName == null || firstName.length == 0 ) {
+  if ( !firstName || firstName.length == 0 ) {
     res.status( HttpStatus.BAD_REQUEST );
     return res.json({ error: 'A first name must be supplied' });
   }
 
-  if ( lastName == null || lastName.length == 0 ) {
+  if ( !lastName || lastName.length == 0 ) {
     res.status( HttpStatus.BAD_REQUEST );
     return res.json({ error: 'A last name must be supplied' });
   }
 
-  if ( email == null || email.length == 0 ) {
+  if ( !email || email.length == 0 ) {
     res.status( HttpStatus.BAD_REQUEST );
     return res.json({ error: 'A email address must be supplied' });
   }
 
-  if ( password == null || password.length == 0 ) {
+  if ( !password || password.length == 0 ) {
     res.status( HttpStatus.BAD_REQUEST );
     return res.json({ error: 'A password must be supplied' });
   }

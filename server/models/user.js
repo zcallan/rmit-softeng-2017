@@ -40,7 +40,7 @@ const UserSchema = new Schema({
 
 /* Create a virtual field that concatenates the users first and last names for convenience */
 UserSchema.virtual('name.full').get( function() {
-    return this.name.first + ' ' + this.name.last;
+  return `${this.name.first} ${this.name.last}`;
 });
 
 /* The following function gets run before the User is saved */
@@ -50,12 +50,12 @@ UserSchema.pre( 'save', function( next ) {
     /* Generate the salt to use in the password hash. */
     bcrypt.genSalt( 5, ( err, salt ) => {
       if ( err )
-        return next( err );
+      return next( err );
 
       /* Hash the password using the salt and save it to the document. */
       bcrypt.hash( this.password, salt, ( err, hash ) => {
         if ( err )
-          return next( err );
+        return next( err );
 
         this.password = hash;
         next();
@@ -68,7 +68,7 @@ UserSchema.pre( 'save', function( next ) {
 UserSchema.methods.verifyPassword = function( password, next ) {
   bcrypt.compare( password, this.password, ( err, match ) => {
     if ( err )
-      return next( err );
+    return next( err );
 
     next( null, match );
   });
@@ -83,10 +83,10 @@ UserSchema.methods.generateJWT = function( next ) {
 
 /* Hide the password from displaying in any responses */
 UserSchema.set('toObject', {
-    transform: function(doc, user) {
-        delete user.password;
-        return user;
-    }
+  transform: function(doc, user) {
+    delete user.password;
+    return user;
+  }
 });
 
 module.exports = mongoose.model( 'User', UserSchema );

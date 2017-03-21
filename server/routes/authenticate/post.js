@@ -6,13 +6,13 @@ module.exports = ( req, res ) => {
   const { username, password } = req.body;
 
   /* Check that a username was supplied */
-  if ( username == null || username.length == 0 ) {
+  if ( !username || username.length == 0 ) {
     res.status( HttpStatus.BAD_REQUEST );
     return res.json({ error: 'A username must be supplied' });
   }
 
   /* Check that a password was supplied */
-  if ( password == null || password.length == 0 ) {
+  if ( !password || password.length == 0 ) {
     res.status( HttpStatus.BAD_REQUEST );
     return res.json({ error: 'A password must be supplied' });
   }
@@ -26,7 +26,7 @@ module.exports = ( req, res ) => {
     }
 
     /* User couldn't be found */
-    if ( user == null ) {
+    if ( !user ) {
       res.status( HttpStatus.BAD_REQUEST );
       return res.json({ error: 'The user could not be found' });
     }

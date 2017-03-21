@@ -21,5 +21,12 @@ module.exports = {
     "semi": ["error", "always"],
     "react/jsx-uses-react": "error",
     "react/jsx-uses-vars": "error",
+    "indent": ["error", 2]
   },
+  globals: {
+    "describe": true,
+    "it": true,
+    "before": true,
+    "after": true
+  }
 };
