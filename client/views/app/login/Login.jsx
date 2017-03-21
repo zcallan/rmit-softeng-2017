@@ -45,10 +45,6 @@ class Login extends Component {
         <h2>Login</h2>
         {( error ) && <h5 className="login-error">{error}</h5>}
         <Form onSubmit={this.handleSubmit}>
-          <ButtonGroup>
-            <Button type="default" icon="person" column>Customer</Button>
-            <Button type="default" icon="store_mall_directory" column>Owner</Button>
-          </ButtonGroup>
           <Input
             type="text"
             placeholder="Email"
