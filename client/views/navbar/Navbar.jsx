@@ -1,6 +1,7 @@
 import './navbar.scss';
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
+import branding from 'config/branding.json';
 
 
 class Navbar extends Component {
@@ -34,7 +35,7 @@ class Navbar extends Component {
         <div className="navbar-logo">
           <i className="material-icons" onClick={this.toggleSidebar}>menu</i>
           <Link to="/">
-            <h1>Company Name</h1>
+            <h1>{branding.companyName}</h1>
           </Link>
         </div>
 
