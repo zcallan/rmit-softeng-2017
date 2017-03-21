@@ -30,5 +30,9 @@
   {
     "path": "/employee/:id/availabilities",
     "handler": "./routes/employee/id/availabilities/index.js"
+  },
+  {
+    "path": "/availability",
+    "handler": "./routes/availability/index.js"
   }
 ]
