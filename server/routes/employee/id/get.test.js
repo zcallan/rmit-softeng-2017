@@ -28,4 +28,11 @@ describe('GET /employee/:id', () => {
       done();
     });
   });
+
+  it('should return a 404 error when the employee doesn\'t exist', done => {
+    client.get('/employee/thisemployeedoesnotexist@test.com', ( err, res ) => {
+      chai.expect(res.statusCode).to.equal(404);
+      done();
+    });
+  });
 });
