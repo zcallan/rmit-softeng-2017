@@ -5,7 +5,7 @@ const User = require( '../../models/user.js' );
 const Availability = require( '../../models/availability.js' );
 
 const options = {
-  allowMongoIDMutation: false // Disable mutation of mongo ID's
+  allowMongoIDMutation: false, // Disable mutation of mongo ID's
 };
 
 /* Create the graphQL schema */

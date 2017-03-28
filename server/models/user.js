@@ -50,12 +50,12 @@ UserSchema.pre( 'save', function( next ) {
     /* Generate the salt to use in the password hash. */
     bcrypt.genSalt( 5, ( err, salt ) => {
       if ( err )
-      return next( err );
+        return next( err );
 
       /* Hash the password using the salt and save it to the document. */
       bcrypt.hash( this.password, salt, ( err, hash ) => {
         if ( err )
-        return next( err );
+          return next( err );
 
         this.password = hash;
         next();
@@ -68,7 +68,7 @@ UserSchema.pre( 'save', function( next ) {
 UserSchema.methods.verifyPassword = function( password, next ) {
   bcrypt.compare( password, this.password, ( err, match ) => {
     if ( err )
-    return next( err );
+      return next( err );
 
     next( null, match );
   });
