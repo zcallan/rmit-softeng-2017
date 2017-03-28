@@ -2,17 +2,25 @@ import './employeeList.scss';
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Button } from 'views/generic';
+import API from 'utils/api/api.js';
 
 
 class EmployeeList extends Component {
   static propTypes = {
-    requestEmployees: PropTypes.func,
+    requestedEmployees: PropTypes.func,
     receivedEmployees: PropTypes.func,
+    fetchEmployeesFail: PropTypes.func,
     employees: PropTypes.object,
   }
 
   componentDidMount() {
-    // this.props.requestEmployees();
+    this.props.requestedEmployees();
+
+    API.getEmployees().then(({ data }) => {
+      this.props.receivedEmployees( data );
+    }).catch(() => {
+      this.props.fetchEmployeesFail();
+    });
   }
 
   render() {

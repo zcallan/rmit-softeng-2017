@@ -36,7 +36,7 @@ const fakeData = [
 ];
 
 const initialState = {
-  list: fakeData,
+  list: null,
   fetching: false,
   error: null,
 };
@@ -71,9 +71,16 @@ export default ( state = initialState, { type, payload }) => {
   case 'RECEIVED_EMPLOYEES':
     return {
       ...state,
-      fetching: true,
+      fetching: false,
       list: payload,
       error: null,
+    };
+
+  case 'FETCH_EMPLOYEES_FAILED':
+    return {
+      ...state,
+      fetching: false,
+      error: true,
     };
 
   case 'UPDATED_EMPLOYEE_SCHEDULE': {

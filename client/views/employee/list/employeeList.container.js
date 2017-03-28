@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import EmployeeList from './EmployeeList.jsx';
-import { requestEmployees, receivedEmployees } from '../employee.actions.js';
+import { requestedEmployees, receivedEmployees, fetchEmployeesFail } from '../employee.actions.js';
 
 
 const mapStateToProps = state => ({
@@ -9,7 +9,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ requestEmployees, receivedEmployees }, dispatch );
+  return bindActionCreators({ requestedEmployees, receivedEmployees, fetchEmployeesFail }, dispatch );
 };
 
 export default connect( mapStateToProps, mapDispatchToProps )( EmployeeList );

@@ -3,7 +3,7 @@ export const requestEmployee = employeeId => ({
   payload: employeeId,
 });
 
-export const requestEmployees = () => ({
+export const requestedEmployees = () => ({
   type: 'REQUESTED_EMPLOYEES',
 });
 
@@ -17,8 +17,9 @@ export const receivedEmployees = employees => ({
   payload: employees,
 });
 
-export const fetchEmployeesFail = () => ({
+export const fetchEmployeesFail = error => ({
   type: 'FETCH_EMPLOYEES_FAILED',
+  payload: error,
 });
 
 export const updateEmployeeSchedule = ( employeeId, schedule, day ) => ({

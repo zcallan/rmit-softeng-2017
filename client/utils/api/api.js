@@ -32,6 +32,12 @@ class API {
     });
   }
 
+  getEmployees() {
+    return this.request({
+      method: 'get',
+      url: '/employee',
+    });
+  }
 }
 
 export default ( new API() );
