@@ -4,13 +4,22 @@ const config = require( './config/config.json' );
 const routes = require( './config/routes.json' );
 const swagger = require( 'swagger-express' );
 const cors = require( 'cors' );
-const db = require( './utils/db/db.js' );
-const users = require( './utils/users/index.js' );
 const bodyParser = require( 'body-parser' );
 const morgan = require( 'morgan' );
+const graphqlHTTP = require('express-graphql');
+
+const db = require( './utils/db/db.js' );
+const users = require( './utils/users/index.js' );
+const schema = require( './utils/graphql/graphql.js' );
 
 /* Create the HTTP server */
 const server = express();
+
+/* Enable graphql support */
+server.use('/graphql', graphqlHTTP({
+  schema,
+  graphiql: true
+}));
 
 /* Enable CORS. */
 server.use( cors() );
@@ -32,7 +41,7 @@ server.use('/swagger', express.static(`${__dirname}/public/swagger-ui/dist`));
 
 /* Enable swagger */
 server.use(
-    swagger.init( server, Object.assign( {},
+  swagger.init( server, Object.assign( {},
     config.swagger,
     {
       apis: routes.map( route => `${__dirname}/${route.handler.replace( '.', '' )}` ),
