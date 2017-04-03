@@ -1,7 +1,8 @@
 import './employeeList.scss';
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Button } from 'views/generic';
+import { Button, IconCard } from 'views/generic';
+import { Row, Col } from 'flex-react';
 import API from 'utils/api/api.js';
 import config from 'config/branding.json';
 
@@ -46,7 +47,17 @@ class EmployeeList extends Component {
                 </div>
               </Link>
             )) : (
-              <h3 className="employee-list-empty">No employees on record.</h3>
+              <Row>
+                <Col sm={6} smOffset={3}>
+                  <IconCard icon="person_add">
+                    <h3>No employees</h3>
+                    <p>
+                      There is currently no employees on record,
+                      add one by clicking the link below
+                    </p>
+                  </IconCard>
+                </Col>
+              </Row>
             )}
           </div>
         ) : ( fetching ) ? (
@@ -62,7 +73,11 @@ class EmployeeList extends Component {
             <h3>Hmm, strange... something unusual happened here!</h3>
           </div>
         )}
-        <Button href="/employee/create">Create Employee</Button>
+        <Row>
+          <Col sm={6} smOffset={3}>
+            <Button href="/employee/create">Create Employee</Button>
+          </Col>
+        </Row>
       </div>
     );
   }

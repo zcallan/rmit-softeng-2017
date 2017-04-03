@@ -1,0 +1,14 @@
+@import '../../../styles/colors';
+
+.icon-card {
+  padding: 30px;
+  background: #FFF;
+  color: #222;
+  text-align: center;
+
+  .material-icons {
+    display: block;
+    font-size: 50px;
+    color: $primary-color;
+  }
+}
