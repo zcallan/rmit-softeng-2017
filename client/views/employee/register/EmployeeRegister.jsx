@@ -71,7 +71,7 @@ class EmployeeRegister extends Component {
             required
           />
           <Input
-            type="password"
+            type="text"
             placeholder="Password"
             name="password"
             required
