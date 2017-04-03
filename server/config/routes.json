@@ -42,5 +42,9 @@
   {
     "path": "/customer/:id",
     "handler": "./routes/customer/id/index.js"
+  },
+  {
+    "path": "/booking",
+    "handler": "./routes/booking/index.js"
   }
 ]
