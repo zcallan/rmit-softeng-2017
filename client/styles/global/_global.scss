@@ -30,6 +30,12 @@ main {
   height: 100%;
 }
 
+.grid {
+  max-width:950px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: $secondary-font, $secondary-font-backup, sans-serif;
 }

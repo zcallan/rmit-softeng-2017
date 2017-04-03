@@ -15,6 +15,7 @@ class EmployeeList extends Component {
 
   componentDidMount() {
     document.title = `Employees | ${config.companyName}`;
+    this.props.setPageTitle( 'Employees', 'A list of registered employees' );
     this.props.requestedEmployees();
 
     API.getEmployees().then(({ data }) => {
@@ -28,8 +29,7 @@ class EmployeeList extends Component {
     const { fetching, list, error } = this.props.employees;
 
     return (
-      <Container className="employee-list">
-        <h2>Employee List</h2>
+      <div className="employee-list">
         {( list ) ? (
           <div className="employee-list-group">
             {( list.length > 0 ) ? list.map( employee => (
@@ -63,7 +63,7 @@ class EmployeeList extends Component {
           </div>
         )}
         <Button href="/employee/create">Create Employee</Button>
-      </Container>
+      </div>
     );
   }
 }

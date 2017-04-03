@@ -13,6 +13,7 @@ class EmployeeRegister extends Component {
 
   componentDidMount() {
     document.title = `Create employee | ${config.companyName}`;
+    this.props.setPageTitle( 'Create an employee', 'You can create an employee on this page by entering their details below' );
   }
 
   handleSubmit = ( event, data ) => {
@@ -40,7 +41,6 @@ class EmployeeRegister extends Component {
 
     return (
       <Container className="employee-register">
-        <h2>Create Employee</h2>
         <Form onSubmit={this.handleSubmit}>
           <InputGroup>
             <Input

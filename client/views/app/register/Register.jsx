@@ -14,6 +14,7 @@ class Register extends Component {
 
   componentDidMount() {
     document.title = `Register | ${config.companyName}`;
+    this.props.setPageTitle( 'Register', 'On this page you can create a new customer account' );
   }
 
   componentWillReceiveProps( nextProps ) {

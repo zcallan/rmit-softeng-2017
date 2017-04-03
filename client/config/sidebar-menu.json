@@ -6,8 +6,8 @@
       "icon": "home"
     },
     {
-      "name": "Appointments",
-      "path": "/appointments",
+      "name": "Bookings",
+      "path": "/bookings",
       "icon": "event"
     },
     {

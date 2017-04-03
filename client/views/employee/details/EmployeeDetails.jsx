@@ -16,6 +16,7 @@ class EmployeeDetails extends Component {
 
   componentDidMount() {
     document.title = `Employee details | ${config.companyName}`;
+    this.props.setTitle( 'Employee details', 'Displays a particular employees personal details' );
 
     if ( !this.getEmployee() ) {
       this.props.requestEmployee( this._employeeId );

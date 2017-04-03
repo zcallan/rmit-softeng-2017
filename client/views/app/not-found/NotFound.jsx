@@ -6,6 +6,7 @@ import config from 'config/branding.json';
 class NotFound extends Component {
   componentDidMount() {
     document.title = `Page not found | ${config.companyName}`;
+    this.props.setPageTitle( 'Page not found', 'Unfortunately this page could not be found' );
   }
 
   render() {

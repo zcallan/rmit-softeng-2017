@@ -1,7 +1,7 @@
 import './login.scss';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { Container, Input, Button, ButtonGroup, Form } from 'views/generic';
+import { Container, Input, Button, Form } from 'views/generic';
 import API from 'utils/api/api.js';
 import config from 'config/branding.json';
 
@@ -14,6 +14,7 @@ class Login extends Component {
 
   componentDidMount() {
     document.title = `Login | ${config.companyName}`;
+    this.props.setPageTitle( 'Login', 'You can login on this page using your username and password' );
   }
 
   componentWillReceiveProps( nextProps ) {
