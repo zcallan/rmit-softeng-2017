@@ -34,5 +34,13 @@
   {
     "path": "/availability",
     "handler": "./routes/availability/index.js"
+  },
+  {
+    "path": "/customer",
+    "handler": "./routes/customer/index.js"
+  },
+  {
+    "path": "/customer/:id",
+    "handler": "./routes/customer/id/index.js"
   }
 ]
