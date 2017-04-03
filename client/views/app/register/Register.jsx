@@ -3,13 +3,17 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Container, Input, InputGroup, Button, Form } from 'views/generic';
 import API from 'utils/api/api.js';
-
+import config from 'config/branding.json';
 
 class Register extends Component {
   state = {
     registering: false,
     error: null,
     authenticated: this.props.user.authenticated,
+  }
+
+  componentDidMount() {
+    document.title = `Register | ${config.companyName}`;
   }
 
   componentWillReceiveProps( nextProps ) {
@@ -37,7 +41,7 @@ class Register extends Component {
     if ( authenticated ) {
       return <Redirect to="/" />;
     }
-    
+
     return (
       <Container className="register">
         <h2>Register</h2>

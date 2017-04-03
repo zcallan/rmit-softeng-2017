@@ -13,8 +13,8 @@ import {
 } from 'views';
 
 class Routes extends Component {
-	render() {
-		return (
+  render() {
+    return (
 			<Switch>
 				<Route path="/login" component={Login} />
 				<Route path="/register" component={Register} />
@@ -25,8 +25,8 @@ class Routes extends Component {
 				<PrivateRoute exact path="/" component={Home} />
 				<Route component={NotFound} />
 			</Switch>
-		);
-	}
+    );
+  }
 }
 
 export default Routes;

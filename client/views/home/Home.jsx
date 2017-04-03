@@ -1,15 +1,26 @@
 import './home.scss';
-import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router-dom';
-import { Container, Button } from 'views/generic';
+import React, { Component } from 'react';
+import { Container } from 'views/generic';
+import { Grid, Row, Col } from 'flex-react';
 
 
 class Home extends Component {
   render() {
     return (
       <Container className="home">
-        <h2>Appointment Bookings</h2>
-        <Link to="/employee/list">View employee list</Link>
+        <Grid>
+          <Row>
+            <Col sm={4}>
+              Bookings
+            </Col>
+            <Col sm={4}>
+              Employees
+            </Col>
+            <Col sm={4}>
+              Customers
+            </Col>
+          </Row>
+        </Grid>
       </Container>
     );
   }

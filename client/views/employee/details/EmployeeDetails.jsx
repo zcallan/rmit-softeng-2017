@@ -1,8 +1,8 @@
 import './employeeDetails.scss';
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, Button, TimeSchedule } from 'views/generic';
-
+import { Container, TimeSchedule } from 'views/generic';
+import config from 'config/branding.json';
 
 class EmployeeDetails extends Component {
   static propTypes = {
@@ -15,6 +15,8 @@ class EmployeeDetails extends Component {
   }
 
   componentDidMount() {
+    document.title = `Employee details | ${config.companyName}`;
+
     if ( !this.getEmployee() ) {
       this.props.requestEmployee( this._employeeId );
     }

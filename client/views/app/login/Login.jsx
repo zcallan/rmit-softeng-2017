@@ -3,13 +3,17 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Container, Input, Button, ButtonGroup, Form } from 'views/generic';
 import API from 'utils/api/api.js';
-
+import config from 'config/branding.json';
 
 class Login extends Component {
   state = {
     loggingIn: false,
     authenticated: this.props.user.authenticated,
     error: null,
+  }
+
+  componentDidMount() {
+    document.title = `Login | ${config.companyName}`;
   }
 
   componentWillReceiveProps( nextProps ) {

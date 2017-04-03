@@ -2,13 +2,17 @@ import './employeeRegister.scss';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Container, Input, InputGroup, Button, Form } from 'views/generic';
-
+import config from 'config/branding.json';
 
 class EmployeeRegister extends Component {
   state = {
     creating: false,
     created: false,
     error: null,
+  }
+
+  componentDidMount() {
+    document.title = `Create employee | ${config.companyName}`;
   }
 
   handleSubmit = ( event, data ) => {

@@ -3,7 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Button } from 'views/generic';
 import API from 'utils/api/api.js';
-
+import config from 'config/branding.json';
 
 class EmployeeList extends Component {
   static propTypes = {
@@ -14,6 +14,7 @@ class EmployeeList extends Component {
   }
 
   componentDidMount() {
+    document.title = `Employees | ${config.companyName}`;
     this.props.requestedEmployees();
 
     API.getEmployees().then(({ data }) => {
