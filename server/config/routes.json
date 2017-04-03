@@ -32,6 +32,10 @@
     "handler": "./routes/employee/id/availabilities/index.js"
   },
   {
+    "path": "/employee/:id/bookings",
+    "handler": "./routes/employee/id/bookings/index.js"
+  },
+  {
     "path": "/availability",
     "handler": "./routes/availability/index.js"
   },
