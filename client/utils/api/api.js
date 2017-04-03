@@ -53,6 +53,13 @@ class API {
       url: `/employee/${email}`,
     });
   }
+
+  deleteEmployee( email ) {
+    return this.request({
+      method: 'delete',
+      url: `/employee/${email}`,
+    });
+  }
 }
 
 export default ( new API() );

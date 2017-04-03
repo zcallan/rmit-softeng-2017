@@ -1,6 +1,6 @@
 import './employeeDetails.scss';
 import React, { Component, PropTypes } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { Container, TimeSchedule, UserCard, Button } from 'views/generic';
 import { Row, Col } from 'flex-react';
 import config from 'config/branding.json';
@@ -36,6 +36,13 @@ class EmployeeDetails extends Component {
     employees: PropTypes.object.isRequired,
   }
 
+  constructor() {
+    super();
+    this.state = {
+      deleted: false,
+    };
+  }
+
   componentWillMount() {
     this._employeeId = this.props.match.params.id;
   }
@@ -64,8 +71,20 @@ class EmployeeDetails extends Component {
     this.props.updateEmployeeSchedule( this._employeeId, schedule, day );
   }
 
+  onClickDelete = () => {
+    /* Delete the employee */
+    API.deleteEmployee( this._employeeId ).then(() => {
+      this.setState({ deleted: true });
+    });
+  }
+
   render() {
+    const { deleted } = this.state;
     const employee = this.getEmployee();
+
+    if ( deleted ) {
+      return <Redirect to="/employee/list" />;
+    }
 
     if ( !employee ) {
       return (
@@ -98,7 +117,7 @@ class EmployeeDetails extends Component {
         </Row>
         <Row>
           <Col sm={4} smOffset={4}>
-            <Button danger>Delete</Button>
+            <Button onClick={this.onClickDelete} danger>Delete</Button>
           </Col>
         </Row>
       </Container>
