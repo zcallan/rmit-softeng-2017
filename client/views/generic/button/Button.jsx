@@ -10,6 +10,7 @@ class Button extends Component {
     selected: false,
     disabled: false,
     loading: false,
+    danger: false,
   }
 
   static propTypes = {
@@ -19,17 +20,19 @@ class Button extends Component {
     selected: PropTypes.bool,
     disabled: PropTypes.bool,
     loading: PropTypes.bool,
+    danger: PropTypes.bool,
   }
 
   render() {
-    const { className, icon, children, href, text, submit, column, selected, disabled, loading, ...restProps} = this.props;
+    const { className, icon, children, href, text, submit, column, selected, disabled, loading, danger, ...restProps} = this.props;
     const selectedCls = ( selected ) ? 'selected' : '';
     const columnCls = ( column ) ? 'button-column' : '';
     const disabledCls = ( disabled ) ? 'disabled' : '';
     const loadingCls = ( loading ) ? 'loading' : '';
+    const dangerCls = ( danger ) ? 'danger' : '';
 
     const btn = (
-      <div {...restProps} className={`button ${columnCls} ${selectedCls} ${disabledCls} ${loadingCls} ${className}`}>
+      <div {...restProps} className={`button ${columnCls} ${selectedCls} ${disabledCls} ${loadingCls} ${dangerCls} ${className}`}>
         <button type={submit ? 'submit' : 'button'} disabled={disabled || loading}>
           {icon && <i className="material-icons">{icon}</i>}
           {text || children}

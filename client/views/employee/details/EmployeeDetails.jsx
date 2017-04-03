@@ -1,9 +1,34 @@
 import './employeeDetails.scss';
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
-import { Container, TimeSchedule } from 'views/generic';
+import { Container, TimeSchedule, UserCard, Button } from 'views/generic';
+import { Row, Col } from 'flex-react';
 import config from 'config/branding.json';
 import API from 'utils/api/api.js';
+import moment from 'moment';
+
+const mockSchedule = {
+  monday: {
+    start: moment(),
+    end: moment(),
+  },
+  tuesday: {
+    start: moment(),
+    end: moment(),
+  },
+  wednesday: {
+    start: moment(),
+    end: moment(),
+  },
+  thursday: {
+    start: moment(),
+    end: moment(),
+  },
+  friday: {
+    start: moment(),
+    end: moment(),
+  },
+};
 
 class EmployeeDetails extends Component {
   static propTypes = {
@@ -53,17 +78,29 @@ class EmployeeDetails extends Component {
 
     return (
       <Container className="employee-details">
-        <h2>Employee Details</h2>
-        <h3>{employee.name.full}</h3>
-        <h4>{employee.email}</h4>
-
-        <div className="employee-details-schedule">
-          {/* <TimeSchedule monday schedule={employee.schedule} onSave={this.handleSave} />
-          <TimeSchedule tuesday schedule={employee.schedule} onSave={this.handleSave} />
-          <TimeSchedule wednesday schedule={employee.schedule} onSave={this.handleSave} />
-          <TimeSchedule thursday schedule={employee.schedule} onSave={this.handleSave} />
-          <TimeSchedule friday schedule={employee.schedule} onSave={this.handleSave} /> */}
-        </div>
+        <Row>
+          <Col sm={4} smOffset={4}>
+            <Link to={`/employee/${employee.email}/details`} key={employee._id}>
+              <UserCard user={employee} />
+            </Link>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={12}>
+            <div className="employee-details-schedule">
+              <TimeSchedule monday schedule={mockSchedule} onSave={this.handleSave} />
+              <TimeSchedule tuesday schedule={mockSchedule} onSave={this.handleSave} />
+              <TimeSchedule wednesday schedule={mockSchedule} onSave={this.handleSave} />
+              <TimeSchedule thursday schedule={mockSchedule} onSave={this.handleSave} />
+              <TimeSchedule friday schedule={mockSchedule} onSave={this.handleSave} />
+            </div>
+          </Col>
+        </Row>
+        <Row>
+          <Col sm={4} smOffset={4}>
+            <Button danger>Delete</Button>
+          </Col>
+        </Row>
       </Container>
     );
   }

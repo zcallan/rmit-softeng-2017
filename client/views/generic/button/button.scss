@@ -13,6 +13,18 @@ $button-padding-horizontal: 10px;
     }
   }
 
+  &.danger {
+    button {
+      background: $error;
+      border-color: $error;
+
+      &:hover {
+        background: $error-light;
+        border-color: $error-light;
+      }
+    }
+  }
+
   &.selected {
 
     button {
