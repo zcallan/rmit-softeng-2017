@@ -61,23 +61,40 @@ class EmployeeList extends Component {
             )}
           </div>
         ) : ( fetching ) ? (
-          <div className="employee-list-fetching">
-            <h3>Loading...</h3>
-          </div>
+          <Row>
+            <Col sm={6} smOffset={3}>
+              <IconCard icon="cached">
+                <h3>Loading employees</h3>
+                <p>Please wait whilst employees load</p>
+              </IconCard>
+            </Col>
+          </Row>
         ) : ( error ) ? (
-          <div className="employee-list-error">
-            <h3>Uh oh! An error has occurred.</h3>
-          </div>
+          <Row>
+            <Col sm={6} smOffset={3}>
+              <IconCard icon="error_outline" error>
+                <h3>Uh oh! An error has occurred.</h3>
+                <p>Please refresh the page or try again later</p>
+              </IconCard>
+            </Col>
+          </Row>
         ) : (
           <div className="employee-list-else">
-            <h3>Hmm, strange... something unusual happened here!</h3>
+            <IconCard icon="error_outline" error>
+              <h3>Uh oh! An error has occurred.</h3>
+              <p>Please refresh the page or try again later</p>
+            </IconCard>
           </div>
         )}
-        <Row>
-          <Col sm={6} smOffset={3}>
-            <Button href="/employee/create">Create Employee</Button>
-          </Col>
-        </Row>
+        {
+          list && (
+            <Row>
+              <Col sm={6} smOffset={3}>
+                <Button href="/employee/create">Create Employee</Button>
+              </Col>
+            </Row>
+          )
+        }
       </div>
     );
   }
