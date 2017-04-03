@@ -1,7 +1,7 @@
 import './employeeList.scss';
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, IconCard } from 'views/generic';
+import { Button, IconCard, UserCard } from 'views/generic';
 import { Row, Col } from 'flex-react';
 import API from 'utils/api/api.js';
 import config from 'config/branding.json';
@@ -33,19 +33,13 @@ class EmployeeList extends Component {
       <div className="employee-list">
         {( list ) ? (
           <div className="employee-list-group">
+            <Row>
             {( list.length > 0 ) ? list.map( employee => (
-              <Link to={`/employee/${employee.email}/details`} key={employee._id}>
-                <div className="employee-list-item">
-                  <div className="employee-list-item-details">
-                    <h3>{employee.name.full}</h3>
-                    <h4>{employee.email}</h4>
-                  </div>
-                  <div className="employee-list-item-action">
-                    <p>edit</p>
-                    <i className="material-icons">chevron_right</i>
-                  </div>
-                </div>
-              </Link>
+              <Col sm={4}>
+                <Link to={`/employee/${employee.email}/details`} key={employee._id}>
+                  <UserCard user={employee} />
+                </Link>
+              </Col>
             )) : (
               <Row>
                 <Col sm={6} smOffset={3}>
@@ -59,6 +53,7 @@ class EmployeeList extends Component {
                 </Col>
               </Row>
             )}
+            </Row>
           </div>
         ) : ( fetching ) ? (
           <Row>

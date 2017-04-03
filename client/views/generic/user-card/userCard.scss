@@ -1,0 +1,25 @@
+@import '../../../styles/colors';
+
+.user-card {
+  padding: 30px;
+  background: #FFF;
+  color: #222;
+  text-align: center;
+  transition: 300ms ease border-color, 300ms ease color;
+  border: 2px solid #FFF;
+
+  .material-icons {
+    display: block;
+    font-size: 50px;
+    color: $primary-color;
+  }
+
+  &:hover {
+    border-color: $primary-color;
+    color: $primary-color;
+
+    .material-icons {
+      color: $primary-color;
+    }
+  }
+}
