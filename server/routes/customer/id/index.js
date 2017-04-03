@@ -1,27 +1,27 @@
 /**
  * @swagger
- * resourcePath: /employee/:id
- * description: Handles retrieving individual employees
+ * resourcePath: /customer/:id
+ * description: Handles retrieving individual customers
  */
 
 /**
  * @swagger
- * path: /employee/{id}
+ * path: /customer/{id}
  * operations:
  *  - httpMethod: GET
- *    summary: Returns the employee with the specified email address
+ *    summary: Returns the customer with the specified email address
  *    parameters:
  *    - name: id
- *      description: Employee email address
+ *      description: Customer email address
  *      in: path
  *      paramType: path
  *      required: true
  *      dataType: string
  *  - httpMethod: DELETE
- *    summary: Deletes the employee with the specified email address
+ *    summary: Deletes the customer with the specified email address
  *    parameters:
  *    - name: id
- *      description: Employee email address
+ *      description: Customer email address
  *      in: path
  *      paramType: path
  *      required: true
