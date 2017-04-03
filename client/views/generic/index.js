@@ -8,3 +8,4 @@ export { default as PrivateRoute } from './private-route';
 export { default as TimeSchedule } from './time-schedule';
 export { default as PageTitle } from './page-title';
 export { default as Error } from './error';
+export { default as DashboardItem } from './dashboard-item';

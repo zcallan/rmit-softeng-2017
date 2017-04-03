@@ -1,0 +1,26 @@
+@import '../../../styles/colors';
+
+.dashboard-item {
+  background: #FFF;
+  padding: 30px;
+  border: 2px solid #FFF;
+  color:$dark-text-color;
+  transition: 300ms ease border-color, 300ms ease color;
+
+  .material-icons {
+    display: block;
+    margin-bottom: 20px;
+    font-size: 30px;
+    color:$grey-text-color;
+    transition: 300ms ease color;
+  }
+
+  &:hover {
+    border-color: $primary-color;
+    color: $primary-color;
+
+    .material-icons {
+      color: $primary-color;
+    }
+  }
+}

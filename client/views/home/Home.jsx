@@ -1,6 +1,6 @@
 import './home.scss';
 import React, { Component } from 'react';
-import { Container } from 'views/generic';
+import { Container, DashboardItem } from 'views/generic';
 import { Grid, Row, Col } from 'flex-react';
 import config from 'config/branding.json';
 
@@ -13,19 +13,17 @@ class Home extends Component {
   render() {
     return (
       <Container className="home">
-        <Grid>
-          <Row>
-            <Col sm={4}>
-              Bookings
-            </Col>
-            <Col sm={4}>
-              Employees
-            </Col>
-            <Col sm={4}>
-              Customers
-            </Col>
-          </Row>
-        </Grid>
+        <Row>
+          <Col sm={4}>
+            <DashboardItem title="Bookings" icon="event" link="/bookings" />
+          </Col>
+          <Col sm={4}>
+            <DashboardItem title="Employees" icon="group" link="/employee/list" />
+          </Col>
+          <Col sm={4}>
+            <DashboardItem title="Customers" icon="group" link="/customers" />
+          </Col>
+        </Row>
       </Container>
     );
   }
