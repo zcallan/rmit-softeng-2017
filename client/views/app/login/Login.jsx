@@ -24,6 +24,8 @@ class Login extends Component {
     API.authenticate( data )
       .then(({ data }) => {
         this.setState({ loggingIn: false });
+        /* Store the user information and token in local storage */
+        localStorage.setItem( 'auth', JSON.stringify( data ));
         this.props.userAuthenticated( data );
       })
       .catch(({ response })  => {

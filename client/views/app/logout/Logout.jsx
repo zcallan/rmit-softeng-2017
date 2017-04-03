@@ -10,6 +10,9 @@ class Logout extends Component {
   }
 
   componentDidMount() {
+    /* Remove the auth information from localStorage */
+    localStorage.removeItem( 'auth' );
+
     this.props.userLogout();
   }
 
