@@ -10,6 +10,7 @@ import {
 	EmployeeList,
   EmployeeDetails,
   EmployeeRegister,
+	Bookings,
 } from 'views';
 
 class Routes extends Component {
@@ -22,6 +23,7 @@ class Routes extends Component {
 				<PrivateRoute path="/employee/list" component={EmployeeList} />
 				<PrivateRoute path="/employee/:id/details" component={EmployeeDetails} />
 				<PrivateRoute path="/employee/create" component={EmployeeRegister} />
+				<PrivateRoute path="/bookings" component={Bookings} />
 				<PrivateRoute exact path="/" component={Home} />
 				<Route component={NotFound} />
 			</Switch>
