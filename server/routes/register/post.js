@@ -73,7 +73,7 @@ module.exports = ( req, res ) => {
           return res.json({ error: err });
         }
 
-        return res.json({ token, user: user.toObject() });
+        return res.json({ token, user: user.toJSON() });
       });
     });
 

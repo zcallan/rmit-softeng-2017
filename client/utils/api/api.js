@@ -38,6 +38,21 @@ class API {
       url: '/employee',
     });
   }
+
+  createEmployee( data ) {
+    return this.request({
+      method: 'post',
+      url: '/employee',
+      data,
+    });
+  }
+
+  getEmployee( email ) {
+    return this.request({
+      method: 'get',
+      url: `/employee/${email}`,
+    });
+  }
 }
 
 export default ( new API() );

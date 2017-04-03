@@ -10,7 +10,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => {
-  return bindActionCreators({ requestEmployees, receivedEmployees, updateEmployeeSchedule, setTitle }, dispatch );
+  return bindActionCreators({ requestEmployees, receivedEmployees, updateEmployeeSchedule, setPageTitle }, dispatch );
 };
 
 export default connect( mapStateToProps, mapDispatchToProps )( EmployeeDetails );

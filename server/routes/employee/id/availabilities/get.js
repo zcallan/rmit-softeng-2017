@@ -10,6 +10,6 @@ module.exports = ( req, res ) => {
       return res.json({ error: err });
     }
 
-    return res.json(availabilities);
+    return res.json(availabilities.map( a => a.toJSON() ));
   });
 };

@@ -1,8 +1,9 @@
 import './employeeRegister.scss';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { Container, Input, InputGroup, Button, Form } from 'views/generic';
+import { Container, Input, InputGroup, Button, Form, Error } from 'views/generic';
 import config from 'config/branding.json';
+import API from 'utils/api/api.js';
 
 class EmployeeRegister extends Component {
   state = {
@@ -19,21 +20,27 @@ class EmployeeRegister extends Component {
   handleSubmit = ( event, data ) => {
     // Do your register here
     console.log( data );
-
-    this.setState({ creating: true }, () => {
-      setTimeout(() => {
-        const createdData = {
-          fullName: `${data.firstname} ${data.lastname}`,
-          email: data.email,
-        };
-        this.props.receivedEmployee( createdData );
-        this.setState({ created: true });
-      }, 500 );
+    this.setState({ creating: true });
+    API.createEmployee( data).then(() => {
+      this.setState({ created: true });
+    }).catch(({ response })  => {
+      this.setState({ error: response.data.error, creating: false });
     });
+
+    // this.setState({ creating: true }, () => {
+    //   setTimeout(() => {
+    //     const createdData = {
+    //       fullName: `${data.firstname} ${data.lastname}`,
+    //       email: data.email,
+    //     };
+    //     this.props.receivedEmployee( createdData );
+    //     this.setState({ created: true });
+    //   }, 500 );
+    // });
   }
 
   render() {
-    const { created, creating } = this.state;
+    const { created, creating, error } = this.state;
 
     if ( created ) {
       return <Redirect to="/employee/list" />;
@@ -41,18 +48,19 @@ class EmployeeRegister extends Component {
 
     return (
       <Container className="employee-register">
+        {( error ) && <Error>{error}</Error>}
         <Form onSubmit={this.handleSubmit}>
           <InputGroup>
             <Input
               type="text"
               placeholder="First name"
-              name="firstname"
+              name="firstName"
               required
             />
             <Input
               type="text"
               placeholder="Last name"
-              name="lastname"
+              name="lastName"
               required
             />
           </InputGroup>

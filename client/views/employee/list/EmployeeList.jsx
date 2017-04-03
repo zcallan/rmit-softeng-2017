@@ -34,10 +34,10 @@ class EmployeeList extends Component {
         {( list ) ? (
           <div className="employee-list-group">
             {( list.length > 0 ) ? list.map( employee => (
-              <Link to={`/employee/${employee.id}/details`} key={employee.id}>
+              <Link to={`/employee/${employee.email}/details`} key={employee._id}>
                 <div className="employee-list-item">
                   <div className="employee-list-item-details">
-                    <h3>{employee.fullName}</h3>
+                    <h3>{employee.name.full}</h3>
                     <h4>{employee.email}</h4>
                   </div>
                   <div className="employee-list-item-action">

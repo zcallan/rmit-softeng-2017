@@ -9,6 +9,6 @@ module.exports = ( req, res ) => {
       return res.json({ error: err });
     }
 
-    return res.json( employees.map( employee => employee.toObject()) );
+    return res.json( employees.map( employee => employee.toJSON()) );
   });
 };

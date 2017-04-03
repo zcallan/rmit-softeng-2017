@@ -3,6 +3,7 @@ import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, TimeSchedule } from 'views/generic';
 import config from 'config/branding.json';
+import API from 'utils/api/api.js';
 
 class EmployeeDetails extends Component {
   static propTypes = {
@@ -11,22 +12,27 @@ class EmployeeDetails extends Component {
   }
 
   componentWillMount() {
-    this._employeeId = parseInt( this.props.match.params.id, 10 );
+    this._employeeId = this.props.match.params.id;
   }
 
   componentDidMount() {
     document.title = `Employee details | ${config.companyName}`;
-    this.props.setTitle( 'Employee details', 'Displays a particular employees personal details' );
+    this.props.setPageTitle( 'Employee details', 'Displays a particular employees personal details' );
 
     if ( !this.getEmployee() ) {
-      this.props.requestEmployee( this._employeeId );
+      /* Can't find the employee, let's fetch the employee */
+      API.getEmployee(this._employeeId).then(({ data }) => {
+        this.props.receivedEmployees([ data ]);
+      }).catch(() => {
+        this.props.fetchEmployeesFail();
+      });
     }
   }
 
   getEmployee() {
     const { employees } = this.props;
-
-    return employees.list.find( employee => employee.id === this._employeeId );
+    if ( !employees.list ) { return null; }
+    return employees.list.find( employee => employee.email === this._employeeId );
   }
 
   handleSave = ( schedule, day ) => {
@@ -48,15 +54,15 @@ class EmployeeDetails extends Component {
     return (
       <Container className="employee-details">
         <h2>Employee Details</h2>
-        <h3>{employee.fullName}</h3>
+        <h3>{employee.name.full}</h3>
         <h4>{employee.email}</h4>
 
         <div className="employee-details-schedule">
-          <TimeSchedule monday schedule={employee.schedule} onSave={this.handleSave} />
+          {/* <TimeSchedule monday schedule={employee.schedule} onSave={this.handleSave} />
           <TimeSchedule tuesday schedule={employee.schedule} onSave={this.handleSave} />
           <TimeSchedule wednesday schedule={employee.schedule} onSave={this.handleSave} />
           <TimeSchedule thursday schedule={employee.schedule} onSave={this.handleSave} />
-          <TimeSchedule friday schedule={employee.schedule} onSave={this.handleSave} />
+          <TimeSchedule friday schedule={employee.schedule} onSave={this.handleSave} /> */}
         </div>
       </Container>
     );

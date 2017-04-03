@@ -15,6 +15,6 @@ module.exports = ( req, res ) => {
       return res.json({ error: 'The user could not be found' });
     }
 
-    return res.json(user.toObject());
+    return res.json(user.toJSON());
   });
 };
