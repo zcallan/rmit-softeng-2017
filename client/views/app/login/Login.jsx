@@ -1,7 +1,7 @@
 import './login.scss';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { Container, Input, Button, Form } from 'views/generic';
+import { Container, Input, Button, Form, Error } from 'views/generic';
 import API from 'utils/api/api.js';
 import config from 'config/branding.json';
 
@@ -49,18 +49,19 @@ class Login extends Component {
 
     return (
       <Container className="login">
-        <h2>Login</h2>
-        {( error ) && <h5 className="login-error">{error}</h5>}
+        {( error ) && <Error>{error}</Error>}
         <Form onSubmit={this.handleSubmit}>
           <Input
             type="text"
             placeholder="Email"
             name="username"
+            required
           />
           <Input
             type="password"
             placeholder="Password"
             name="password"
+            required
           />
           <Button type="default" submit disabled={loggingIn} loading={loggingIn}>
             {( loggingIn ) ? 'Logging in...' : 'Login'}

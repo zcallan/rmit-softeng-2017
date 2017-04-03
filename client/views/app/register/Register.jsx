@@ -1,7 +1,7 @@
 import './register.scss';
 import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
-import { Container, Input, InputGroup, Button, Form } from 'views/generic';
+import { Container, Input, InputGroup, Button, Form, Error } from 'views/generic';
 import API from 'utils/api/api.js';
 import config from 'config/branding.json';
 
@@ -45,8 +45,7 @@ class Register extends Component {
 
     return (
       <Container className="register">
-        <h2>Register</h2>
-        {( error ) && <h5 className="register-error">{error}</h5>}
+        {( error ) && <Error>{error}</Error>}
         <Form onSubmit={this.handleSubmit}>
           <InputGroup>
             <Input

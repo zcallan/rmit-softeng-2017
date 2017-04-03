@@ -1,0 +1,10 @@
+@import '../../../styles/colors';
+
+.error {
+  text-align: center;
+  color: $white;
+  padding: 20px;
+  background: $error;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
