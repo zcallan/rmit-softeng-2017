@@ -2,6 +2,7 @@ export { default as App } from './app';
 export { default as Navbar } from './navbar';
 export { default as Sidebar } from './sidebar';
 export { default as Home } from './home';
+export { default as Test } from './test';
 export { default as Bookings } from './bookings';
 export { Login } from './app';
 export { Register } from './app';

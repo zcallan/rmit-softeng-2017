@@ -10,6 +10,7 @@ import {
 	EmployeeList,
   EmployeeDetails,
   EmployeeRegister,
+	Test,
 	Bookings,
 } from 'views';
 
@@ -20,6 +21,7 @@ class Routes extends Component {
 				<Route path="/login" component={Login} />
 				<Route path="/register" component={Register} />
 				<Route path="/logout" component={Logout} />
+				<Route path="/test" component={Test} />
 				<PrivateRoute path="/employee/list" component={EmployeeList} />
 				<PrivateRoute path="/employee/:id/details" component={EmployeeDetails} />
 				<PrivateRoute path="/employee/create" component={EmployeeRegister} />
