@@ -13,42 +13,57 @@
   },
   {
     "path": "/user",
-    "handler": "./routes/user/index.js"
+    "handler": "./routes/user/index.js",
+    "permissions": ["admin"]
   },
   {
     "path": "/user/:id",
-    "handler": "./routes/user/id/index.js"
+    "handler": "./routes/user/id/index.js",
+    "permissions": ["admin"]
   },
   {
     "path": "/employee",
-    "handler": "./routes/employee/index.js"
+    "handler": "./routes/employee/index.js",
+    "permissions": ["admin"]
   },
   {
     "path": "/employee/:id",
-    "handler": "./routes/employee/id/index.js"
+    "handler": "./routes/employee/id/index.js",
+    "permissions": ["admin"]
   },
   {
     "path": "/employee/:id/availabilities",
-    "handler": "./routes/employee/id/availabilities/index.js"
+    "handler": "./routes/employee/id/availabilities/index.js",
+    "permissions": ["admin"]
   },
   {
     "path": "/employee/:id/bookings",
-    "handler": "./routes/employee/id/bookings/index.js"
+    "handler": "./routes/employee/id/bookings/index.js",
+    "permissions": ["admin"]
   },
   {
     "path": "/availability",
-    "handler": "./routes/availability/index.js"
+    "handler": "./routes/availability/index.js",
+    "permissions": ["admin"]
   },
   {
     "path": "/customer",
-    "handler": "./routes/customer/index.js"
+    "handler": "./routes/customer/index.js",
+    "permissions": ["admin"]
   },
   {
     "path": "/customer/:id",
-    "handler": "./routes/customer/id/index.js"
+    "handler": "./routes/customer/id/index.js",
+    "permissions": ["admin"]
+  },
+  {
+    "path": "/customer/:id/bookings",
+    "handler": "./routes/customer/id/bookings/index.js",
+    "permissions": ["admin"]
   },
   {
     "path": "/booking",
-    "handler": "./routes/booking/index.js"
+    "handler": "./routes/booking/index.js",
+    "permissions": ["admin"]
   }
 ]
