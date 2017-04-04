@@ -11,6 +11,7 @@ const graphqlHTTP = require('express-graphql');
 const db = require( './utils/db/db.js' );
 const users = require( './utils/users/index.js' );
 const schema = require( './utils/graphql/graphql.js' );
+const auth = require( './utils/auth/auth.js' );
 
 /* Create the HTTP server */
 const server = express();
@@ -23,6 +24,9 @@ server.use('/graphql', graphqlHTTP({
 
 /* Enable CORS. */
 server.use( cors() );
+
+/* Add authentication middleware */
+server.use( auth );
 
 /* Use morgan logging */
 server.use( morgan(':remote-addr :method :url') );
