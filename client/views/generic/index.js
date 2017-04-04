@@ -11,3 +11,4 @@ export { default as Error } from './error';
 export { default as DashboardItem } from './dashboard-item';
 export { default as IconCard } from './icon-card';
 export { default as UserCard } from './user-card';
+export { default as TimePair } from './time-pair';
