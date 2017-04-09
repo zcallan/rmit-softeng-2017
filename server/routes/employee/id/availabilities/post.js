@@ -46,21 +46,36 @@ module.exports = ( req, res ) => {
     return res.json({ error: 'End value must be greater than start value' });
   }
 
-  /* Data is all valid, create availability entry */
-  const availability = new Availability({
+  const data = {
     dayOfWeek,
     start,
     end,
     user: email,
-  });
+  };
 
-  availability.save( err => {
+  Availability.findOne( data, ( error, exists ) => {
     /* If an error occurred, return the error */
-    if ( err ) {
+    if ( error ) {
       res.status( HttpStatus.INTERNAL_SERVER_ERROR );
-      return res.json({ error: err });
+      return res.json({ error });
     }
 
-    return res.json(availability.toJSON());
+    if ( exists ) {
+      res.status( HttpStatus.CONFLICT );
+      return res.json({ error: 'That availability already exists in the system for this user' });
+    }
+
+    /* Data is all valid, create availability entry */
+    const availability = new Availability( data );
+
+    availability.save( err => {
+      /* If an error occurred, return the error */
+      if ( err ) {
+        res.status( HttpStatus.INTERNAL_SERVER_ERROR );
+        return res.json({ error: err });
+      }
+
+      return res.json(availability.toJSON());
+    });
   });
 };
