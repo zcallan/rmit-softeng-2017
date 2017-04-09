@@ -1,1 +1,29 @@
 @import '../../styles/colors';
+
+
+.bookings-list {
+
+  .bookings-tile {
+    background: $white;
+    padding: 20px;
+
+    h3 {
+      text-align: center;
+      margin: 10px 0 20px;
+      color: $primary-color-darker;
+    }
+
+    h4 {
+      margin: 0;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      color: $primary-color;
+    }
+
+    p {
+      margin: 0;
+      margin-bottom: 20px;
+      font-size: 1rem;
+    }
+  }
+}

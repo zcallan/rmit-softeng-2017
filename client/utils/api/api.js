@@ -108,6 +108,13 @@ class API {
       data,
     });
   }
+
+  requestBookings() {
+    return this.request({
+      method: 'get',
+      url: '/booking',
+    });
+  }
 }
 
 export default ( new API() );
