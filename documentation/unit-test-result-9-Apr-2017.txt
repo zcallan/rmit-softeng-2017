@@ -1,0 +1,52 @@
+POST /authenticate
+  ✓ should return an error when provided with no username (50ms)
+  ✓ should return an error when provided with no password
+  ✓ should return an error when the username provided does not match a user
+  ✓ should return an error when the authentication fails
+  ✓ should return the users information when the authentication is successful
+  ✓ should return an jwt token when the authentication is successful
+
+GET /availability
+  ✓ should return a list of availabilities
+
+GET /booking
+  ✓ should return a list of bookings
+
+GET /customer
+  ✓ should return a list of customers
+
+DELETE /customer
+  ✓ should delete the customer
+
+GET /customer/:id
+  ✓ should return the customers information
+  ✓ should return a 404 error when the customer doesn't exist
+
+GET /employee
+  ✓ should return a list of employees
+
+DELETE /employee
+  ✓ should delete the employee
+
+GET /employee/:id
+  ✓ should return the employee information
+  ✓ should return a 404 error when the employee doesn't exist
+
+POST /employee
+  ✓ should create a new employee
+
+GET /
+  ✓ should return the API name
+  ✓ should return the API version
+
+POST /register
+  ✓ should create a new user
+
+GET /user
+  ✓ should return a list of users
+
+GET /user/:id
+  ✓ should return the users information
+
+
+22 passing (300ms)
