@@ -59,7 +59,6 @@ class EmployeeDetails extends Component {
       this.setState({ success: 'Availability added' });
       this.fetchAvailabilities();
     }).catch( error  => {
-      console.log( error );
       this.setState({ error: error.response.data.error });
     });
   }
@@ -68,6 +67,13 @@ class EmployeeDetails extends Component {
     /* Delete the employee */
     API.deleteEmployee( this._employeeId ).then(() => {
       this.setState({ deleted: true });
+    });
+  }
+
+  onClickDeleteAvailability = id => {
+    /* Delete the availability */
+    API.deleteEmployeeAvailability( this._employeeId, id ).then(() => {
+      this.fetchAvailabilities();
     });
   }
 
