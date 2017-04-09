@@ -26,6 +26,11 @@ module.exports = ( req, res ) => {
     return res.json({ error: 'A password must be supplied' });
   }
 
+  if ( password.length < 6 ) {
+    res.status( HttpStatus.BAD_REQUEST );
+    return res.json({ error: 'Your password must be at least 6 characters long.' });
+  }
+
   /* Validate that the email address is correct */
   if ( !emailValidator.validate( email ) ) {
     res.status( HttpStatus.BAD_REQUEST );
