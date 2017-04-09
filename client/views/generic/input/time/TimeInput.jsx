@@ -16,6 +16,7 @@ class TimeInput extends Component {
     end: 1440,
     step: 60,
     format: 'hh:mm a',
+    browserDefault: false,
   }
 
   static propTypes = {
@@ -27,6 +28,7 @@ class TimeInput extends Component {
     end: PropTypes.number,
     step: PropTypes.number,
     onChange: PropTypes.func,
+    browserDefault: PropTypes.bool,
   }
 
   state = {
@@ -116,15 +118,35 @@ class TimeInput extends Component {
   }
 
   selectTime( time ) {
-    console.log( time, moment( time ).format( 'hh:mm a DD/MM/YYYY') );
     if ( this.props.onChange )
       this.props.onChange( time );
   }
 
+  handleSelect = event => {
+    const { value } = event.target;
+    this.selectTime( parseInt( value, 10 ));
+  }
+
+  renderBrowserDefault() {
+    const { format } = this.props;
+    const { selected } = this.state;
+    const times = this.getTimes();
+
+    return (
+      <select onChange={this.handleSelect} value={selected}>
+        {times.map( time => (
+          <option value={time}>{moment( time ).format( format )}</option>
+        ))}
+      </select>
+    );
+  }
+
   render() {
-    const { className, format, defaultValue, ...restProps } = this.props;
+    const { className, format, browserDefault, ...restProps } = this.props;
     const { showDropdown, selected } = this.state;
     const times = this.getTimes();
+
+    if ( browserDefault ) return this.renderBrowserDefault();
 
     const formattedValue = ( moment( selected ).isValid())
       ? moment( selected ).format( format )

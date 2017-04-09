@@ -25,6 +25,18 @@ $button-padding-horizontal: 10px;
     }
   }
 
+  &.success-button {
+    button {
+      background: $success;
+      border-color: $success;
+
+      &:hover {
+        background: $success-light;
+        border-color: $success-light;
+      }
+    }
+  }
+
   &.selected {
 
     button {

@@ -1,9 +1,12 @@
 import './bookingsAdd.scss';
 import React, { Component } from 'react';
+import serialize from 'form-serialize';
+import moment from 'moment';
 import config from 'config/branding.json';
 import { Row, Col } from 'flex-react';
-import {  } from 'views/generic';
+import { Button, TimePair, Input } from 'views/generic';
 import API from 'utils/api/api';
+
 
 class BookingsAdd extends Component {
   componentDidMount() {
@@ -23,37 +26,89 @@ class BookingsAdd extends Component {
     });
   }
 
+  state = {
+
+    time: {
+      start: moment().startOf( 'day' ).valueOf(),
+      end: moment().startOf( 'day' ).valueOf(),
+    }
+  }
+
+  handleSubmit = event => {
+    event.preventDefault();
+
+    const data = serialize( this.form, { hash: true });
+    console.log( data );
+  }
+
   render() {
     const { customers, employees } = this.props;
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 
     return (
       <Row center>
         <Col sm={6}>
-          <div className="booking-add">
+          <div className="bookings-add">
             <i className="material-icons">playlist_add</i>
             <h3>Add Booking</h3>
 
-            <label>Customer</label>
-            <select>
-              {( customers.list && customers.list.length > 0 ) ? customers.list.map( customer => (
-                <option>{customer.name.full}</option>
-              )) : ( customers.fetching ) ? (
-                <option>Loading...</option>
-              ) : (
-                <option>No customers found</option>
-              )}
-            </select>
+            <form onSubmit={this.handleSubmit} ref={form => this.form = form}>
+              <label htmlFor="customer">Customer</label>
+              <select name="customer">
+                {( customers.list && customers.list.length > 0 ) ? customers.list.map( customer => (
+                    <option>{customer.name.full}</option>
+                  )) : ( customers.fetching ) ? (
+                      <option>Loading...</option>
+                    ) : (
+                      <option>No customers found</option>
+                    )}
+              </select>
 
-            <label>Employee</label>
-            <select>
-              {( employees.list && employees.list.length > 0 ) ? employees.list.map( customer => (
-                  <option>{customer.name.full}</option>
-                )) : ( employees.fetching ) ? (
-                    <option>Loading...</option>
-                  ) : (
-                    <option>No customers found</option>
-                  )}
-            </select>
+              <label htmlFor="employee">Employee</label>
+              <select name="employee">
+                {( employees.list && employees.list.length > 0 ) ? employees.list.map( customer => (
+                    <option>{customer.name.full}</option>
+                  )) : ( employees.fetching ) ? (
+                      <option>Loading...</option>
+                    ) : (
+                      <option>No employees found</option>
+                    )}
+              </select>
+
+              <label htmlFor="dayOfWeek">Day</label>
+              <select name="dayOfWeek">
+                {days.map( d => <option key={d} value={d.toLowerCase()}>{d}</option>)}
+              </select>
+
+              <TimePair time={this.state.time}>
+                {( start, end, onChange ) => (
+                  <div>
+                    <label htmlFor="start">Start Time</label>
+                    <Input
+                      type="time"
+                      name="start"
+                      required
+                      onChange={value => onChange( 'start', value, updatedTime => this.setState({ time: updatedTime }))}
+                      value={start}
+                      step={30}
+                      browserDefault
+                    />
+
+                    <label htmlFor="end">End Time</label>
+                    <Input
+                      type="time"
+                      name="end"
+                      required
+                      onChange={value => onChange( 'end', value, updatedTime => this.setState({ time: updatedTime }))}
+                      value={end}
+                      step={30}
+                      browserDefault
+                    />
+                  </div>
+                )}
+              </TimePair>
+              <Button type="default" success text="Create Booking" icon="add" submit />
+            </form>
           </div>
         </Col>
       </Row>
