@@ -15,10 +15,8 @@ module.exports = ( req, res, next ) => {
     }
   });
 
-
-
   /* Check whether a token is specified in the header */
-  if ( req.headers.authorization ) {
+  if ( req.headers.authorization && req.headers.authorization !== '' ) {
     const token = req.headers.authorization.replace('Bearer', '').trim();
 
     /* If the token is empty return an error */
