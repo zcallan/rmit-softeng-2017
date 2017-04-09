@@ -30,3 +30,11 @@ export const updateEmployeeSchedule = ( employeeId, schedule, day ) => ({
     day,
   },
 });
+
+export const deletedAvailability = ( employeeId, timeId ) => ({
+  type: 'EMPLOYEE_AVAILABILITY_DELETED',
+  payload: {
+    employeeId,
+    timeId,
+  },
+});

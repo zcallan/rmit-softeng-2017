@@ -78,6 +78,12 @@ class EmployeeDetails extends Component {
     });
   }
 
+  handleDeleteTime = timeId => {
+    this.setState( state => ({
+      availabilities:  state.availabilities.filter( time => time._id !== timeId ),
+    }));
+  }
+
   render() {
     const { deleted, error, success, availabilities } = this.state;
     const employee = this.getEmployee();
@@ -118,7 +124,7 @@ class EmployeeDetails extends Component {
           <Col sm={12}>
             <div className="employee-details-schedule">
               <h3>Current availabilites</h3>
-              <EmployeeAvailability times={availabilities} />
+              <EmployeeAvailability times={availabilities} deleteTime={this.handleDeleteTime} />
             </div>
           </Col>
         </Row>
