@@ -93,6 +93,13 @@ class API {
       url: `/employee/${email}/availabilities/${id}`,
     });
   }
+
+  getCustomers() {
+    return this.request({
+      method: 'get',
+      url: '/customer',
+    });
+  }
 }
 
 export default ( new API() );

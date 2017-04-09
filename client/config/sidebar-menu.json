@@ -16,6 +16,11 @@
       "icon": "group"
     },
     {
+      "name": "Customers",
+      "path": "/customer/list",
+      "icon": "group"
+    },
+    {
       "name": "Logout",
       "path": "/logout",
       "icon": "power_settings_new"

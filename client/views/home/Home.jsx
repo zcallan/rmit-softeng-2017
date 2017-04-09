@@ -24,7 +24,7 @@ class Home extends Component {
           <DashboardItem title="Employees" icon="group" link="/employee/list" />
         </Col>
         <Col sm={4}>
-          <DashboardItem title="Customers" icon="group" link="/customers" />
+          <DashboardItem title="Customers" icon="group" link="/customer/list" />
         </Col>
       </Row>
     );

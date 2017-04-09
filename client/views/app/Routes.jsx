@@ -13,6 +13,7 @@ import {
 	Test,
 	Bookings,
 	Contact,
+	Customer,
 } from 'views';
 
 class Routes extends Component {
@@ -25,6 +26,7 @@ class Routes extends Component {
 				<Route path="/contact" component={Contact} />
 				<Route path="/test" component={Test} />
 				<PrivateRoute path="/employee/list" component={EmployeeList} />
+				<PrivateRoute path="/customer/list" component={Customer} />
 				<PrivateRoute path="/employee/:id/details" component={EmployeeDetails} />
 				<PrivateRoute path="/employee/create" component={EmployeeRegister} />
 				<PrivateRoute path="/bookings" component={Bookings} />

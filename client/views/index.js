@@ -5,6 +5,7 @@ export { default as Home } from './home';
 export { default as Test } from './test';
 export { default as Bookings } from './bookings';
 export { default as Contact } from './contact';
+export { default as Customer } from './customer';
 export { Login } from './app';
 export { Register } from './app';
 export { Logout } from './app';
