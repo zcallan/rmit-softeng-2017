@@ -2,10 +2,21 @@ import axios from 'axios';
 import config from 'config/api.json';
 
 class API {
+  constructor() {
+    this.token = '';
+  }
+
+  setToken( token ) {
+    this.token = token;
+  }
+
   request( opts ) {
     return axios({
       ...opts,
       baseURL: config.host,
+      headers: {
+        'authorization': this.token,
+      }
     });
   }
 

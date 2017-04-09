@@ -1,7 +1,7 @@
 import './home.scss';
 import React, { Component } from 'react';
 import { Container, DashboardItem } from 'views/generic';
-import { Grid, Row, Col } from 'flex-react';
+import { Row, Col } from 'flex-react';
 import config from 'config/branding.json';
 
 class Home extends Component {
@@ -10,9 +10,16 @@ class Home extends Component {
     this.props.setPageTitle( 'Dashboard', 'Welcome to the dashboard, on this page you can see a list of sections to access' );
   }
 
+  getUser() {
+    return this.props.user.data;
+  }
+
   render() {
     return (
       <Container className="home">
+        <Row>
+          
+        </Row>
         <Row>
           <Col sm={4}>
             <DashboardItem title="Bookings" icon="event" link="/bookings" />
