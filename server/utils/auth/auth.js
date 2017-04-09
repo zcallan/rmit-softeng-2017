@@ -15,6 +15,8 @@ module.exports = ( req, res, next ) => {
     }
   });
 
+
+
   /* Check whether a token is specified in the header */
   if ( req.headers.authorization ) {
     const token = req.headers.authorization.replace('Bearer', '').trim();
@@ -50,7 +52,7 @@ module.exports = ( req, res, next ) => {
       }
     });
   } else {
-    if ( permissions.length > 0 ) {
+    if ( routePermissions.length > 0 ) {
       res.status( 403 );
       res.json({
         error: 'You are forbidden to access this resource',
