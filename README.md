@@ -37,3 +37,22 @@ Swagger will then be available to access at `http://localhost:3001/api-docs`
 
 ## Accessing Swagger UI docs
 Once the Swagger UI has been installed, you can access the API documentation at `http://localhost:3001/api-docs`
+
+## Technologies
+The following open source technologies are used:
+
+- Docker
+- Node JS
+- Swagger
+- React
+- Redux
+- React Router
+- MongoDB
+- Mongoose
+- Webpack
+- Express
+- Babel
+- JSON Web Token
+- EsLint
+
+Full list of dependencies is available in `package.json` file.
