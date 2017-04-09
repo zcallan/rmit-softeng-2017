@@ -36,6 +36,11 @@
       "name": "Register",
       "path": "/register",
       "icon": "person_add"
+    },
+    {
+      "name": "Contact",
+      "path": "/contact",
+      "icon": "contact_mail"
     }
   ]
 }
