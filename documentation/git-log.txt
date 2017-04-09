@@ -1,0 +1,806 @@
+commit 3f2a97ea465f51dd6c65d3cd503200a398106593
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Apr 10 00:07:20 2017 +1000
+
+    Updated readme
+
+commit 7005a8495e2aee703ca6086cd840861c8958fb8e
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Apr 10 00:00:35 2017 +1000
+
+    Updated readme
+
+commit 1be6a39e2c678fe4bc0487c8da759684c6edfdf5
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 23:55:17 2017 +1000
+
+    Added unit test documentation
+
+commit a5377ecd2871cabda321732d611861ebf43fe768
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 23:50:20 2017 +1000
+
+    Added class diagram
+
+commit a4190a6b2f0202dbff194ec0035425a5859e8abb
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 23:38:46 2017 +1000
+
+    Added user stories
+
+commit 0e266757535a864644b2efe32e0fa024686f0ae7
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 23:33:41 2017 +1000
+
+    Fixed logic for bookings
+
+commit f22c415fc4901521ee00aa2904f5f6672b111acd
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 23:20:17 2017 +1000
+
+    Updated customer page to show available times
+
+commit b8913b965bf590e6e4ef56d14f31dfb09b617199
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 23:14:31 2017 +1000
+
+    Employee availabilities are now ordered
+
+commit 8e791249028bf82cd50a6e425a07a00a520acdfc
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 23:08:48 2017 +1000
+
+    Added make booking endpoint and updated create availability endpoint
+
+commit f10104405d707772a62a9f10e0091c608451ae65
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 22:18:06 2017 +1000
+
+    Added dockerfiles
+
+commit 6ed8aa63e6fbf53815a0f2800a7c3ef70ac60b4e
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Sun Apr 9 20:37:45 2017 +1000
+
+    added check for adding multiple availabilities of the same time
+
+commit 42927b6856afec5103f40ccd653a33fad432bbd8
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Sun Apr 9 20:25:42 2017 +1000
+
+    updated server to require passwords >= 6 chars long
+
+commit 9c7fdd7d2de07f68da939cacedbd566241e9db01
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Sun Apr 9 20:13:50 2017 +1000
+
+    added page to view all availabilities
+
+commit fd703c113a8dc65e7b7559b6478216d1c3374bba
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Sun Apr 9 19:38:55 2017 +1000
+
+    fixed time input to have restProps on broswerDefault
+
+commit eec16c443e423d22c0ecc4d660b05bd6b3f08f02
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Sun Apr 9 19:24:21 2017 +1000
+
+    add booking page front end done
+
+commit 750d5ef81502061c70adefb85cf599155cc0668f
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Sun Apr 9 18:52:12 2017 +1000
+
+    added delete to availabilities
+
+commit 68061f4e1563c17812d543571bb1ff0d57908530
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Sun Apr 9 18:35:18 2017 +1000
+
+    started making booking add page, updated button icon
+
+commit d2f3a8e05737719aac5b7d591faf86cfa95d1bdf
+Merge: 0b8fa95 46552d6
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 18:31:56 2017 +1000
+
+    Merge branch 'master' of https://github.com/zcallan/rmit-softeng-2017
+
+commit 0b8fa9583071f0eb72980db2203a414c07a3617e
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 18:31:44 2017 +1000
+
+    Updated readme to include contributions
+
+commit 46552d62d8819df5325c572092983741839a7d21
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Sun Apr 9 18:10:48 2017 +1000
+
+    added availabilities to employee details
+
+commit 1aeb2799abc4047f603043ddc0cb75520d86d9d0
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 18:01:52 2017 +1000
+
+    Added support for address and phone number on customers as per assignment spec
+
+commit d00dded24baefbd141579687c1b499b59dd19ba5
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 17:53:40 2017 +1000
+
+    Added frontend for view a list of customers
+
+commit 8188af1b650bf08c35bfde2e65b598cda8e619c5
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 17:27:20 2017 +1000
+
+    Added function to delete an availability
+
+commit 67e6a6047cdcd27c32870ad4ebec73e52af909e5
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 17:24:42 2017 +1000
+
+    Added endpoint to delete route
+
+commit d57e265aa499d7e6ca3a63cc0060de99e61eb835
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 17:05:54 2017 +1000
+
+    Employee availabilities frontend is linked to backend
+
+commit a8dc3ece07c7f3ffcf9a18b669d55d742dc0826f
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 16:44:34 2017 +1000
+
+    Working on updating employee availabilities
+
+commit e5f7b8979d5133646da9e67e67777a5fc366157e
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 16:17:13 2017 +1000
+
+    Fixed another token / auth bug, working on time picker
+
+commit bff736d08c6256b3acac1bbe225b7476591a6910
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 16:06:49 2017 +1000
+
+    Fixed up page title on contact page
+
+commit 577bbf92521373332794b2bfef68d7eb88241a09
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 16:04:18 2017 +1000
+
+    Added contact to sidebar
+
+commit f9ffafd20ca3972d0bbfe91473c019affe9d3714
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 16:02:08 2017 +1000
+
+    Added contact page
+
+commit 92c9f35672e9a292d0ef03433801a155a3f17fcc
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 15:42:54 2017 +1000
+
+    Frontend now reflects user state
+
+commit 2a37a1bb53c0abd39c9225feb56da0dd3a0b6d18
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 15:38:42 2017 +1000
+
+    Updated token expiry
+
+commit e6ccd6095c291a35f639eeca2e4b291d38dd5cdd
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 15:25:08 2017 +1000
+
+    Client now send access token for endpoint authorization
+
+commit 0f0fe6e022a7e1867681b1c86c37c3347d270501
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 15:24:14 2017 +1000
+
+    Fixed another server autnitication bug
+
+commit 82bb1b91b2b1d84c10a95eebaa1facc6cfe5de87
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 15:13:18 2017 +1000
+
+    Fixed bug in authentication service
+
+commit 0bc7f6a707ec61be6eb76d959eb98554b0839485
+Merge: 299e349 e17ee7f
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 15:02:46 2017 +1000
+
+    Merge branch 'master' of https://github.com/zcallan/rmit-softeng-2017
+
+commit 299e349c4a52e7e51d2840bb5bd5c6774ce4b4cf
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Apr 9 15:02:26 2017 +1000
+
+    Added tutor to readme as per assignment spec
+
+commit e17ee7f37c49f45c90ab53bbaad1e1d7bf82ab84
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Tue Apr 4 11:34:04 2017 +1000
+
+    added time input, time pair component, dropdown and work on time schedule
+
+commit 0facdac13d85defcf81e78123d847cce74ceb454
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 11:00:29 2017 +1000
+
+    Added access control to routes
+
+commit 671c843bd6d622ea70efc02f39930cefe0aa8b54
+Merge: 47662ca c64a232
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 10:00:38 2017 +1000
+
+    Merge branch 'master' of https://github.com/zcallan/rmit-softeng-2017
+
+commit 47662ca2ca462b711ca6bc59082934bdfad69445
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 10:00:16 2017 +1000
+
+    Working on implementing access control, added list customer bookings endpoint closes #19
+
+commit c64a23217568ab92a7bea9cd20ac05d21914f07e
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Tue Apr 4 09:34:35 2017 +1000
+
+    misc work IGNORE
+
+commit 8504af20b0e00606cfdf7761e3d041e77ff83594
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Tue Apr 4 09:34:04 2017 +1000
+
+    changed employee register password field to text
+
+commit 25cda7413e405328cf8447d08157cbacc8929adf
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 08:59:40 2017 +1000
+
+    Updated bookings page
+
+commit a8dd637dd9dd8211b85ae34fd87a7f44663c1af7
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 08:56:20 2017 +1000
+
+    Created endpoint to list bookings for an employee. Closes #20
+
+commit 63858d6b847922867f06dd7e77010fe8a469ec02
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 08:51:19 2017 +1000
+
+    Added an endpoint for listing all bookings, closes #21
+
+commit d4547a8862c685f8dec6b53d8049e5b720da1714
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 08:44:31 2017 +1000
+
+    Added booking schema
+
+commit 6e8eb546171c3c18c87bd423deffe4bcbbc7d5a0
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 01:59:35 2017 +1000
+
+    Added customers endpoint and associated unit tests
+
+commit 53eeb5dedfeaa01060605a31af0b1b0eded88824
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 01:49:44 2017 +1000
+
+    Added the ability to delete a customer from the frontend
+
+commit 1be0aee4bc915367be62f72ed39f676a7dbdda2d
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 01:42:24 2017 +1000
+
+    Added delete employee button
+
+commit a69b7555a5bed69f533aaa52571c2f2fe2f7ce2e
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 01:28:37 2017 +1000
+
+    Added bookings page
+
+commit 52db47ba2e759e3707353c943b3595f958c14f94
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 01:23:19 2017 +1000
+
+    Updated employee list page, made user card element
+
+commit 2d6277507799e9b20cca87e97aa46e6217fc3b52
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 01:09:59 2017 +1000
+
+    Updated server, create employee now works
+
+commit 77820866e0a24b7f8210774dbf318a0f1f4fc596
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 00:43:44 2017 +1000
+
+    Working on employees page
+
+commit f87048fc4543d8f223f5e4a1a5804cef8f5d1af1
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 00:32:33 2017 +1000
+
+    Make no employees page look nicer
+
+commit 2c6321c3806b493455eba71295a58fa518ef6635
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Apr 4 00:17:32 2017 +1000
+
+    Improved styling of dashboard
+
+commit 7fb16ce38e37eeebdb5320717b23fc9db8958168
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Apr 3 23:59:31 2017 +1000
+
+    Cleaning up pages
+
+commit e1ef091c49d84a3debd0c9a91604f7423e367a73
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Apr 3 23:47:11 2017 +1000
+
+    Improved UI, added page titles
+
+commit 8f335d627a034e3f5138d7380ff28df606f43c79
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Apr 3 23:08:44 2017 +1000
+
+    Page titles now updated with pages
+
+commit 4efa15900a39b35c2d37558074beb1f71507461e
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Apr 3 17:19:50 2017 +1000
+
+    Authentication now is stored between page refreshes
+
+commit c07b77983244a59f9c93f9b5c9a86b6c56854d2e
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 28 14:52:35 2017 +1100
+
+    Fixed indentation
+
+commit c5dd298a20dcc04f16a587e963d82345bbcfabec
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 28 13:09:52 2017 +1100
+
+    Added graph ql support
+
+commit c7011503cfd6c54566c22c1c0d7c5de1e6a1aa59
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 28 11:24:50 2017 +1100
+
+    Employees are now pulled from the database
+
+commit 5170c770fd6b1d1bbd1cf5542b8065df606b4e93
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 28 11:02:22 2017 +1100
+
+    Updated indentation on some files
+
+commit f88245797a24c98561489746bb530f54b0ae8773
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 28 10:59:29 2017 +1100
+
+    Updated gitignore to hide npm log debug files
+
+commit 4d327ea191bfbd079d5cba93a8e683b22ddfdb86
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 28 10:58:46 2017 +1100
+
+    Updated unit tests
+
+commit 840d0d4ea38b0c6a0fbd182fc51f4553fc1fb15c
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 13:35:41 2017 +1100
+
+    Added endpoint for listing all the availabilities on a system
+
+commit 9e87dd1f6e099c6ed6121bac4210adddaf596941
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 13:22:35 2017 +1100
+
+    Added endpoints to set and retrieve employee availabilities
+
+commit d1add964ee1278bc4895fecaabdc799c0c8cfd44
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 12:56:55 2017 +1100
+
+    Added availabilities schema / model, added endpoint for retrieving
+
+commit 916f8480f6680305aa4cb91159c661790430ba3c
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 12:37:55 2017 +1100
+
+    Added individual employee endpoints and tests
+
+commit 48f2641a5fc570014e17589cfb265853f236f8c7
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 12:26:57 2017 +1100
+
+    Added employee test
+
+commit 4dc84cd8d6f1f837b7b3e506fec50be04b8825ab
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 12:19:19 2017 +1100
+
+    Added create employee route
+
+commit bf8ec81a3b7cc2e6267f4f94120c1b211301ecb9
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 12:05:06 2017 +1100
+
+    Added support for changing branding
+
+commit f184c093cd0f296e16f5600cdd9c0bf989c9acea
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 11:59:26 2017 +1100
+
+    Removed user type selector from login
+
+commit 77ee09b732d1c2e24f74ed75925dd8af6dc5bfa6
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 11:56:20 2017 +1100
+
+    Cleaned up some code
+
+commit 15afdf6ea7da9a24dbf292af9df74cb837e865d5
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 10:59:25 2017 +1100
+
+    Updated tests and swagger documentation
+
+commit f75aec372b21b4c4abdd4b62ec04103973363ea3
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 10:43:21 2017 +1100
+
+    Added endpoint for retrieving user information and listing employees, added unit tests
+
+commit f4de22eab9623cd3b4ec2c5dca31387733fb4ff0
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 09:19:00 2017 +1100
+
+    Added unit test for listing employees and added updated unit test for user listing
+
+commit eb5d09ad91ebda9bb5705620acafe777887d3631
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 01:08:11 2017 +1100
+
+    Added route to list all users
+
+commit 65491041d23b429f677644028681ffd28538ec89
+Merge: a8418aa cccc996
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 00:58:15 2017 +1100
+
+    Merge branch 'master' of https://github.com/zcallan/rmit-softeng-2017
+
+commit a8418aab68635abb633d4acf3e4b75a00f5c73e1
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 00:57:57 2017 +1100
+
+    Added tests
+
+commit cccc99606c5e258e084a29ce9fa1a7cdfcde521f
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Tue Mar 21 00:54:31 2017 +1100
+
+    added register functionality
+
+commit 98f8c9228896b46873b41d5cc1634c82bafec1a5
+Merge: 10ffd2d 4a21e87
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 00:41:23 2017 +1100
+
+    Merge branch 'master' of https://github.com/zcallan/rmit-softeng-2017
+
+commit 10ffd2da6c4e75e92987f9a2a8f8bacea09ccfa8
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 21 00:40:52 2017 +1100
+
+    Added testing
+
+commit 4a21e878aa95e9d2b4af35f79ae28348f0b1fe4d
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 20 23:33:43 2017 +1100
+
+    login works with simple error handling
+
+commit d61c0b100229a382cac92a55637da22daf877d17
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Mar 20 23:31:02 2017 +1100
+
+    Fixed up typo in package.json
+
+commit 38c40a05220ac06e49e755aad86d795786798084
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Mar 20 23:26:07 2017 +1100
+
+    Updated incorrect http status code for user not found, made running the server easier
+
+commit 5e378ec451cbccf0fcbe6ca158a9f11ec9d296b8
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Mar 19 22:28:33 2017 +1100
+
+    Added register endpoint
+
+commit d1de1674a9d68f9734b816fe6da3b9bccb1c179c
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Mar 19 22:10:30 2017 +1100
+
+    Updated swagger spec, added files to register route, added support for form encoded request bodies
+
+commit 73de9ecf54b911a44a0f259f491830297726434d
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Mar 19 21:51:05 2017 +1100
+
+    Authentication now works, json web tokens are now generated on a successful authentication
+
+commit 2f3c4acf681a7a6eb29cc21c82a94f26adb57e33
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Mar 19 21:37:21 2017 +1100
+
+    Fixed a bug with hashing passwords before saving
+
+commit 1ac9acbda80ec556490eff016aa304094e0cb9e7
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Mar 19 21:14:12 2017 +1100
+
+    Added support for JSON bodies, fixed up issue with mongoose virtuals not showing in responses
+
+commit 492cf375599fc8b15994977bfb876177015de70f
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Mar 19 20:50:13 2017 +1100
+
+    Cleaned up server connection, switched to using native promises and set server up to auto create default accounts if they don't already exist
+
+commit 0e1116fbfa5a0d9a57bde2a901523b27cd6d9044
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Sun Mar 19 20:07:02 2017 +1100
+
+    Connected API to front end
+
+commit 94ab61bb9e8df474c1f6d0d705aa48895419e520
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Wed Mar 15 21:23:17 2017 +1100
+
+    Working on models
+
+commit 0de20d528dd586d700dc0a7f03b7eac4d036642e
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Wed Mar 15 15:23:01 2017 +1100
+
+    Updated button tests
+
+commit 584f707ac56dbb84213d4cb15cdb71a8f0ce639c
+Merge: 4295809 025077c
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Wed Mar 15 15:16:54 2017 +1100
+
+    Merge branch 'master' of https://github.com/zcallan/rmit-softeng-2017
+
+commit 025077cffc72af373aab6ff5d9d20b734daf883f
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Tue Mar 14 16:25:39 2017 +1100
+
+    employee times can now be saved
+
+commit 904f786c53ee8e41a193c6848be0193fec3597ac
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Tue Mar 14 16:01:37 2017 +1100
+
+    started creating a time schedule component
+
+commit 55d75f3c0165e87c993701f9fdf944e0144f304c
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Tue Mar 14 13:33:45 2017 +1100
+
+    register now logs you in
+
+commit 96360da91e1823d6719176ec4c353aeb702224ef
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Tue Mar 14 13:01:38 2017 +1100
+
+    buttons can be disabled
+
+commit 4295809239ae06ebd7e849ab95f48ca70e2bafe0
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 14 10:08:08 2017 +1100
+
+    Updated unit tests for button
+
+commit 8e2afd5f493b89874781446e3a49c24cb0eb4eaa
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 14 10:04:19 2017 +1100
+
+    Added mongo dockerfiles
+
+commit 2e2fea8d4466d9aa6cf0d829ca7bffdd19d40b26
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Tue Mar 14 09:09:44 2017 +1100
+
+    [untested] user password are now encrypted before being saved
+
+commit eea265470ce3b95d409e2907b07642df80373210
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Tue Mar 14 08:57:41 2017 +1100
+
+    added user model to server
+
+commit 1479cec5b00cab75b990ee1575ab80d3b43e4f89
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Tue Mar 14 08:53:52 2017 +1100
+
+    improved UX on forms, added mongoose connectivity to server
+
+commit 37d85340daf35b4b1153d4272f55ba27db075597
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Tue Mar 14 08:39:16 2017 +1100
+
+    Updated testing
+
+commit 9ce70f157f86bc9a10bbe546036f631efcc42986
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Tue Mar 14 08:18:56 2017 +1100
+
+    added employee creation, moved app views (login,logout,register) to app/, created initial employee pages
+
+commit 1eda87c476b2e527324f859848944415ec80953b
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Tue Mar 14 06:38:52 2017 +1100
+
+    added hide styles for screen sizes
+
+commit 13f8516f873ac0b99cf499c3db29d959aa597c15
+Merge: eb1146f 5acf5e5
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Mar 13 23:39:06 2017 +1100
+
+    Merge branch 'master' of https://github.com/zcallan/rmit-softeng-2017
+
+commit eb1146f82c70e5df7aef98556bdd4700beffda92
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Mar 13 23:38:46 2017 +1100
+
+    Working on testing
+
+commit 5acf5e57cfefa9d047cacb3ecbf490272b545b5f
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 13 23:26:54 2017 +1100
+
+    updated sidebar to reflect login status
+
+commit 879c3c9cb31d273e4a8fc63305344c58147061ac
+Merge: 989ffd2 5991d46
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Mar 13 23:16:33 2017 +1100
+
+    Merge branch 'master' of https://github.com/zcallan/rmit-softeng-2017
+
+commit 989ffd242e81fee64828b546b18134470e9e6a7a
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Mar 13 23:16:06 2017 +1100
+
+    Made a nicer way of loading routes
+
+commit 5991d4612ce98801adb0efc8392fd37b09a1f588
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 13 22:53:27 2017 +1100
+
+    added logout
+
+commit a2ab9aa214d77bd698225d15bc450a43bed41c12
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 13 22:35:28 2017 +1100
+
+    added private routes, redirection from login/register if authenticated
+
+commit 3eb3476afcf57985385034f97f84bfd4825db27f
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Mar 13 22:04:50 2017 +1100
+
+    Added support for jest component testing
+
+commit 927a7a33c73abfdad32c08428d11b091110a4e84
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Mar 13 21:51:48 2017 +1100
+
+    Updated readme
+
+commit 149d14855e604cd98cb11012f7c8ec0f826076a4
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Mar 13 21:46:01 2017 +1100
+
+    Added swagger UI
+
+commit 922d4445e5070ee58c3dfca05372e09b5fd5c137
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Mar 13 21:38:58 2017 +1100
+
+    Fixed package.json
+
+commit 134b07d1e7a65c2054691023b81e598408fdd4ad
+Merge: 0fbd4cd 10d1da1
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Mar 13 21:38:17 2017 +1100
+
+    Merge branch 'master' of https://github.com/zcallan/rmit-softeng-2017
+
+commit 0fbd4cd692e3ff34564d985fdce80fa9301a90d8
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Mar 13 21:38:06 2017 +1100
+
+    Adding swagger
+
+commit 10d1da1853440123880033adb12d08f4463292c2
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 13 20:51:57 2017 +1100
+
+    added authentication checks to routes
+
+commit c8903e6dfe14fd78f95eefc4dd6516fc43845bc7
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 13 20:29:12 2017 +1100
+
+    added user actions and reducer for login/register process
+
+commit 4f2dc7cc573fa21d524bc21c2d20f604c8017d0c
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 13 20:17:15 2017 +1100
+
+    documented button and button group
+
+commit 738ebfa7bd15718d316835a34399c224bb9418b8
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 13 20:09:34 2017 +1100
+
+    added button groups, 'customer/owner' login
+
+commit b09c6912171850dacca1d408283f5e20423cd976
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 13 19:33:46 2017 +1100
+
+    add restprops to input group
+
+commit 1d96c468e13a03d7259faf64dbd8befac98ac013
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 13 19:31:55 2017 +1100
+
+    modified colours, added register link to sidebar
+
+commit 1b69d6688b228a8f79fa29552dcbb2bcb6ac204f
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 13 19:05:45 2017 +1100
+
+    added register routes and form, RMIT logo and input groups
+
+commit 3f02a467bfec8b44c5dfef2e7231e6f5c5f383ac
+Author: matthaywardwebdesign <matt@matthayward.com.au>
+Date:   Mon Mar 13 17:29:59 2017 +1100
+
+    Fixed bug with navbar colours
+
+commit b31f227880a00fba08f9b03e899e981de0cb713a
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 13 17:24:19 2017 +1100
+
+    added register link to navbar
+
+commit 0bc91353bd11f70712bbefcd2f446fedfd6164ea
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 13 17:22:01 2017 +1100
+
+    fixed eslint unused jsx error
+
+commit 896b41f68f7398cdf4f94d0b8835153a1130e97d
+Author: zcallan <kaln.delbridge@hotmail.com>
+Date:   Mon Mar 13 16:59:06 2017 +1100
+
+    init
