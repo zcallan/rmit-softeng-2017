@@ -10,6 +10,10 @@ class UserCard extends Component {
         <i className="material-icons">person</i>
         <h3>{user.name.full}</h3>
         <small>{user.email}</small>
+        <br /><br />
+        <small>{user.address}</small>
+        <br />
+        <small>{user.phone}</small>
       </div>
     );
   }

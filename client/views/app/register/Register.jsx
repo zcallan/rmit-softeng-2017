@@ -61,6 +61,18 @@ class Register extends Component {
               required
             />
           </InputGroup>
+          <InputGroup>
+            <Input
+              type="text"
+              placeholder="Address"
+              name="address"
+            />
+            <Input
+              type="text"
+              placeholder="Phone Number"
+              name="phone"
+            />
+          </InputGroup>
           <Input
             type="text"
             placeholder="Email"

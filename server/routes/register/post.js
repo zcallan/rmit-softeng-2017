@@ -3,7 +3,7 @@ const emailValidator = require('email-validator');
 const User = require('../../models/user.js');
 
 module.exports = ( req, res ) => {
-  const { firstName, lastName, email, password } = req.body;
+  const { firstName, lastName, email, password, address, phone } = req.body;
 
   /* Check that all form fields have been supplied */
   if ( !firstName || firstName.length == 0 ) {
@@ -53,6 +53,8 @@ module.exports = ( req, res ) => {
       },
       email,
       password,
+      address,
+      phone,
       type: 'customer',
     };
 
