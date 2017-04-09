@@ -107,11 +107,7 @@ class EmployeeDetails extends Component {
         <Row>
           <Col sm={12}>
             <div className="employee-details-schedule">
-              <TimeSchedule monday schedule={mockSchedule} onSave={this.handleSave} />
-              <TimeSchedule tuesday schedule={mockSchedule} onSave={this.handleSave} />
-              <TimeSchedule wednesday schedule={mockSchedule} onSave={this.handleSave} />
-              <TimeSchedule thursday schedule={mockSchedule} onSave={this.handleSave} />
-              <TimeSchedule friday schedule={mockSchedule} onSave={this.handleSave} />
+              <TimeSchedule onSave={this.handleSave} />
             </div>
           </Col>
         </Row>
