@@ -2,10 +2,5 @@
 
 
 .home {
-  text-align: center;
-
-  h2 {
-    color: $primary-color-dark;
-    font-size: 3rem;
-  }
+  h1, h2, h3, h4, h5, h6 { color: $primary-color-dark; }
 }
