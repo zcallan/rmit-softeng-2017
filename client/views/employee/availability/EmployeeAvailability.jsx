@@ -49,10 +49,12 @@ class EmployeeDetails extends Component {
   }
 
   render() {
+    const days = [ 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday' ];
     const { times } = this.props;
     const { deleting, deleted, error } = this.state;
-
-    if ( !times.length ) return <h4>No times saved.</h4>;
+    let sortedTimes = times.slice();
+    sortedTimes.sort(( a, b ) => ((days.indexOf( a.dayOfWeek ) * 1440) + a.start) - ((days.indexOf( b.dayOfWeek ) * 1440) + b.start) );
+    if ( !sortedTimes.length ) return <h4>No times saved.</h4>;
 
     return (
       <Row center className="employee-availability">
@@ -71,7 +73,7 @@ class EmployeeDetails extends Component {
             <p>Failed to delete time.</p>
           </Error>
         )}
-        {times.map( time => (
+        {sortedTimes.map( time => (
           <Col key={time._id}>
             <div className="employee-availability-time">
               <h4>{time.dayOfWeek}</h4>
