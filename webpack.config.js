@@ -11,6 +11,7 @@ module.exports = {
     contentBase: path.resolve( __dirname, './build' ),
     inline: true,
     port: 3000,
+    host: "0.0.0.0",
     historyApiFallback: true,
   },
   devtool: 'eval',

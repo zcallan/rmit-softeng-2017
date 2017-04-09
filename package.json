@@ -6,7 +6,8 @@
   "scripts": {
     "client": "webpack",
     "dev-client": "webpack-dev-server",
-    "server": "docker-compose -f ./server/mongo/docker-compose.yml up -d; node ./server/server.js",
+    "start": "webpack-dev-server",
+    "server": "sleep 10; node ./server/server.js",
     "dev-server": "docker-compose -f ./server/mongo/docker-compose.yml up -d; nodemon ./server/server.js",
     "test": "mocha $(find ./server -name '*.test.js')"
   },

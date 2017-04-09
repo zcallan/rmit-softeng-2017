@@ -1,0 +1,22 @@
+frontend:
+  build: ./
+  ports:
+    - "3000:3000"
+
+backend:
+  build: ./
+  command: npm run server
+  ports:
+    - "3001:3001"
+  links:
+    - mongo:mongo
+
+mongo:
+  image: mongo
+  ports:
+    - "27017:27017"
+  volumes_from:
+    - mongo-data
+
+mongo-data:
+  image: busybox
