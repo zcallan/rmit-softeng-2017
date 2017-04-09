@@ -21,6 +21,10 @@ RMIT Software Engineering Process and Tools in Semester 1, 2017 Assignment repo.
 
 Lawrence Cavedon (Tuesday 9:30)
 
+## GitHub Repository
+
+[https://github.com/zcallan/rmit-softeng-2017](https://github.com/zcallan/rmit-softeng-2017)
+
 ## Running the application
 
 Running the application is easy using the provided Docker Compose file. Simple run `docker-compose up` in the root directory of the project.
