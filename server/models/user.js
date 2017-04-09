@@ -76,7 +76,7 @@ UserSchema.methods.verifyPassword = function( password, next ) {
 
 /* Provide a method to generate a JWT */
 UserSchema.methods.generateJWT = function( next ) {
-  jwt.sign( { email: this.email, type: this.type }, config.jwtSecret, {}, ( err, token ) => {
+  jwt.sign( { email: this.email, type: this.type }, config.jwtSecret, { expiresIn: '6h' }, ( err, token ) => {
     next( err, token );
   });
 };
