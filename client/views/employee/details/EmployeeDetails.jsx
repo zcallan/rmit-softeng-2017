@@ -5,6 +5,7 @@ import { Container, TimeSchedule, UserCard, Button, Error, Success } from 'views
 import { Row, Col } from 'flex-react';
 import config from 'config/branding.json';
 import API from 'utils/api/api.js';
+import EmployeeAvailability from '../availability';
 
 class EmployeeDetails extends Component {
   static propTypes = {
@@ -78,7 +79,7 @@ class EmployeeDetails extends Component {
   }
 
   render() {
-    const { deleted, error, success } = this.state;
+    const { deleted, error, success, availabilities } = this.state;
     const employee = this.getEmployee();
 
     if ( deleted ) {
@@ -117,6 +118,7 @@ class EmployeeDetails extends Component {
           <Col sm={12}>
             <div className="employee-details-schedule">
               <h3>Current availabilites</h3>
+              <EmployeeAvailability times={availabilities} />
             </div>
           </Col>
         </Row>
