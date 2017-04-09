@@ -23,8 +23,7 @@
   },
   {
     "path": "/employee",
-    "handler": "./routes/employee/index.js",
-    "permissions": ["admin"]
+    "handler": "./routes/employee/index.js"
   },
   {
     "path": "/employee/:id",
@@ -33,8 +32,7 @@
   },
   {
     "path": "/employee/:id/availabilities",
-    "handler": "./routes/employee/id/availabilities/index.js",
-    "permissions": ["admin"]
+    "handler": "./routes/employee/id/availabilities/index.js"
   },
   {
     "path": "/employee/:id/availabilities/:availability",

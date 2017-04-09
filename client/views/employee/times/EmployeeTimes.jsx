@@ -67,9 +67,7 @@ class EmployeeList extends Component {
               <Col sm={4} key={employee.email}>
                 <Row>
                   <Col>
-                    <Link to={`/employee/${employee.email}/details`} key={employee._id}>
-                      <UserCard user={employee} />
-                    </Link>
+                    <UserCard user={employee} />
                   </Col>
                 </Row>
 
@@ -77,7 +75,7 @@ class EmployeeList extends Component {
                   <Col>
                     <div className="employee-times-listing">
                       {( times[employee.email] && times[employee.email].length > 0 ) ? (
-                        <EmployeeAvailability times={times[employee.email]} deleteTime={time => this.handleDeleteTime( time, employee.email )} />
+                        <EmployeeAvailability times={times[employee.email]} allowDelete={false} deleteTime={time => this.handleDeleteTime( time, employee.email )} />
                       ) : ( !!times[employee.email] ) ? (
                         <h3>No times to show.</h3>
                       ) : (

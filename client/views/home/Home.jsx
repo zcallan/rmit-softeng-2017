@@ -44,7 +44,7 @@ class Home extends Component {
     return (
       <Row>
         <Col sm={4}>
-          <DashboardItem title="View available dates & time" icon="event" link="/availabilities" />
+          <DashboardItem title="View available dates & time" icon="event" link="/employee/availabilities" />
         </Col>
       </Row>
     );

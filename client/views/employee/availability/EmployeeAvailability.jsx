@@ -78,7 +78,7 @@ class EmployeeDetails extends Component {
             <div className="employee-availability-time">
               <h4>{time.dayOfWeek}</h4>
               <p>{this.calculateTime(time.start)} - {this.calculateTime(time.end)}</p>
-              <Button type="default" danger text="Delete Time" onClick={() => this.deleteTime( time._id )} />
+              {this.props.allowDelete && <Button type="default" danger text="Delete Time" onClick={() => this.deleteTime( time._id )} />}
             </div>
           </Col>
         ))}
@@ -86,5 +86,9 @@ class EmployeeDetails extends Component {
     );
   }
 }
+
+EmployeeDetails.defaultProps = {
+  allowDelete: true,
+};
 
 export default EmployeeDetails;
