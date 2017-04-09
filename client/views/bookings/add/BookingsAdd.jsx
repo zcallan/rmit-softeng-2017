@@ -4,7 +4,7 @@ import serialize from 'form-serialize';
 import moment from 'moment';
 import config from 'config/branding.json';
 import { Row, Col } from 'flex-react';
-import { Button, TimePair, Input } from 'views/generic';
+import { Button, TimePair, Input, Error, Success } from 'views/generic';
 import API from 'utils/api/api';
 
 
@@ -27,7 +27,8 @@ class BookingsAdd extends Component {
   }
 
   state = {
-
+    error: null,
+    success: null,
     time: {
       start: moment().startOf( 'day' ).valueOf(),
       end: moment().startOf( 'day' ).valueOf(),
@@ -38,8 +39,11 @@ class BookingsAdd extends Component {
     event.preventDefault();
 
     const data = serialize( this.form, { hash: true });
-    API.createBooking( data ).then( success => {
-      console.log( success );
+    this.setState({ success: null, error: null });
+    API.createBooking( data ).then(() => {
+      this.setState({ success: 'Booking successfully created' });
+    }).catch( error => {
+      this.setState({ error: error.response.data.error });
     });
   }
 
@@ -50,6 +54,8 @@ class BookingsAdd extends Component {
     return (
       <Row center>
         <Col sm={6}>
+          { this.state.error && <Error>{this.state.error}</Error> }
+          { this.state.success && <Success>{this.state.success}</Success> }
           <div className="bookings-add">
             <i className="material-icons">playlist_add</i>
             <h3>Add Booking</h3>

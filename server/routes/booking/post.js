@@ -39,8 +39,8 @@ module.exports = ( req, res ) => {
   }
 
   /* Convert start and end to numbers */
-  start = parseInt(start);
-  end = parseInt(end);
+  start = parseInt(start) + ( validDaysOfWeek.indexOf(dayOfWeek ) * 1440 * 60000 );
+  end = parseInt(end) + ( validDaysOfWeek.indexOf(dayOfWeek ) * 1440 * 60000 );
 
   /* Make sure end is greater than start */
   if ( end <= start ) {
