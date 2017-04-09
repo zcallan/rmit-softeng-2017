@@ -35,7 +35,7 @@ class EmployeeDetails extends Component {
 
     API.deleteEmployeeAvailability( this.props.employeeId, timeId )
       .then(() => {
-      this.props.deleteTime( timeId );
+        this.props.deleteTime( timeId );
         this.setState({
           deleting: false,
           deleted: true,
@@ -72,7 +72,7 @@ class EmployeeDetails extends Component {
           </Error>
         )}
         {times.map( time => (
-          <Col sm={6} lg={4} key={time._id}>
+          <Col key={time._id}>
             <div className="employee-availability-time">
               <h4>{time.dayOfWeek}</h4>
               <p>{this.calculateTime(time.start)} - {this.calculateTime(time.end)}</p>

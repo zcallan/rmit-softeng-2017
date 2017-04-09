@@ -10,6 +10,7 @@ import {
 	EmployeeList,
   EmployeeDetails,
   EmployeeRegister,
+  EmployeeTimes,
 	Test,
 	Bookings,
 	BookingsAdd,
@@ -30,6 +31,7 @@ class Routes extends Component {
 				<PrivateRoute path="/customer/list" component={Customer} />
 				<PrivateRoute path="/employee/:id/details" component={EmployeeDetails} />
 				<PrivateRoute path="/employee/create" component={EmployeeRegister} />
+				<PrivateRoute path="/employee/availabilities" component={EmployeeTimes} />
 				<PrivateRoute path="/bookings/add" component={BookingsAdd} />
 				<PrivateRoute path="/bookings" component={Bookings} />
 				<PrivateRoute exact path="/" component={Home} />
