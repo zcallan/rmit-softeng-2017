@@ -47,6 +47,10 @@ Swagger will then be available to access at `http://localhost:3001/api-docs`
 
 Once the Swagger UI has been installed, you can access the API documentation at `http://localhost:3001/api-docs`
 
+## Running Tests
+
+Tests can be run with `npm run test`.
+
 ## Technologies
 
 The following open source technologies are used:
