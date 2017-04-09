@@ -1,7 +1,7 @@
 import './employeeDetails.scss';
 import React, { Component, PropTypes } from 'react';
 import { Link, Redirect } from 'react-router-dom';
-import { Container, TimeSchedule, UserCard, Button } from 'views/generic';
+import { Container, TimeSchedule, UserCard, Button, Error, Success } from 'views/generic';
 import { Row, Col } from 'flex-react';
 import config from 'config/branding.json';
 import API from 'utils/api/api.js';
@@ -16,11 +16,15 @@ class EmployeeDetails extends Component {
     super();
     this.state = {
       deleted: false,
+      error: false,
+      success: false,
+      availabilities: [],
     };
   }
 
   componentWillMount() {
     this._employeeId = this.props.match.params.id;
+    this.fetchAvailabilities();
   }
 
   componentDidMount() {
@@ -43,8 +47,19 @@ class EmployeeDetails extends Component {
     return employees.list.find( employee => employee.email === this._employeeId );
   }
 
-  handleSave = ( schedule, day ) => {
-    this.props.updateEmployeeSchedule( this._employeeId, schedule, day );
+  fetchAvailabilities() {
+    console.log('Fetching availabilities');
+  }
+
+  handleSave = data => {
+    this.setState({ error: null, success: false });
+    API.addEmployeeAvailability( this._employeeId, data ).then(() => {
+      this.setState({ success: 'Availability added' });
+      this.fetchAvailabilities();
+    }).catch( error  => {
+      console.log( error );
+      this.setState({ error: error.response.data.error });
+    });
   }
 
   onClickDelete = () => {
@@ -55,7 +70,7 @@ class EmployeeDetails extends Component {
   }
 
   render() {
-    const { deleted } = this.state;
+    const { deleted, error, success } = this.state;
     const employee = this.getEmployee();
 
     if ( deleted ) {
@@ -82,6 +97,8 @@ class EmployeeDetails extends Component {
         </Row>
         <Row>
           <Col sm={12}>
+            {( success ) && <Success>{success}</Success>}
+            {( error ) && <Error>{error}</Error>}
             <div className="employee-details-schedule">
               <h3>Add item to schedule</h3>
               <TimeSchedule onSave={this.handleSave} />

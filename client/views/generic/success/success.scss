@@ -1,0 +1,10 @@
+@import '../../../styles/colors';
+
+.success {
+  text-align: center;
+  color: $white;
+  padding: 20px;
+  background: $success;
+  margin-bottom: 10px;
+  font-size: 14px;
+}

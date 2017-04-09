@@ -71,6 +71,14 @@ class API {
       url: `/employee/${email}`,
     });
   }
+
+  addEmployeeAvailability( email, data ) {
+    return this.request({
+      method: 'post',
+      url: `/employee/${email}/availabilities`,
+      data
+    });
+  }
 }
 
 export default ( new API() );

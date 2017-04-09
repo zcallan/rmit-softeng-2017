@@ -12,12 +12,12 @@ module.exports = ( req, res ) => {
     return res.json({ error: 'Day of week must be provided'});
   }
 
-  if ( !start || start === '' ) {
+  if ( start == null || start === '' ) {
     res.status(HttpStatus.BAD_REQUEST);
     return res.json({ error: 'Start time must be provided'});
   }
 
-  if ( !end || end === '' ) {
+  if ( end == null || end === '' ) {
     res.status(HttpStatus.BAD_REQUEST);
     return res.json({ error: 'End time must be provided'});
   }
@@ -31,17 +31,17 @@ module.exports = ( req, res ) => {
   start = parseInt(start);
   end = parseInt(end);
 
-  if ( start < 0 || start > 86400000) {
+  if ( start < 0 || start > 1440) {
     res.status(HttpStatus.BAD_REQUEST);
     return res.json({ error: 'Start value must be between 0 and 86400000 (inclusive)' });
   }
 
-  if ( end < 0 || end > 86400000) {
+  if ( end < 0 || end > 1440) {
     res.status(HttpStatus.BAD_REQUEST);
     return res.json({ error: 'End value must be between 0 and 86400000 (inclusive)' });
   }
 
-  if ( end < start ) {
+  if ( end <= start ) {
     res.status(HttpStatus.BAD_REQUEST);
     return res.json({ error: 'End value must be greater than start value' });
   }

@@ -66,7 +66,7 @@ class TimeSchedule extends Component {
       <div className={`time-schedule ${className}`}>
         <form onSubmit={this.handleSave} ref={form => this.form = form}>
           <p><b>Day</b></p>
-          <select name="day">
+          <select name="dayOfWeek">
             {days.map( d => <option key={d} value={d.toLowerCase()}>{d}</option>)}
           </select>
           <TimePair time={this.state.time}>
