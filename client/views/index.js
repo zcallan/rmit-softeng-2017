@@ -13,3 +13,4 @@ export { NotFound } from './app';
 export { EmployeeList } from './employee';
 export { EmployeeDetails } from './employee';
 export { EmployeeRegister } from './employee';
+export { BookingsAdd } from './bookings';

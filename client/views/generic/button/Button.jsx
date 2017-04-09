@@ -6,6 +6,8 @@ import { Link } from 'react-router-dom';
 class Button extends Component {
   static defaultProps = {
     className: '',
+    icon: '',
+    text: '',
     column: false,
     selected: false,
     disabled: false,
@@ -14,7 +16,9 @@ class Button extends Component {
   }
 
   static propTypes = {
-    children: PropTypes.string.isRequired,
+    children: PropTypes.string,
+    text: PropTypes.string,
+    icon: PropTypes.string,
     className: PropTypes.string,
     column: PropTypes.bool,
     selected: PropTypes.bool,
