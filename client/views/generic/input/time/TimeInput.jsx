@@ -128,12 +128,12 @@ class TimeInput extends Component {
   }
 
   renderBrowserDefault() {
-    const { format } = this.props;
+    const { format, ...restProps } = this.props;
     const { selected } = this.state;
     const times = this.getTimes();
 
     return (
-      <select onChange={this.handleSelect} value={selected}>
+      <select {...restProps} onChange={this.handleSelect} value={selected}>
         {times.map( time => (
           <option value={time}>{moment( time ).format( format )}</option>
         ))}
