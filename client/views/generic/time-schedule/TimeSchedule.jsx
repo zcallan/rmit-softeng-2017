@@ -24,24 +24,55 @@ class TimeSchedule extends Component {
 
   handleSave = event => {
     event.preventDefault();
-    const data = serialize( this.form, { hash: true });
+    let data = serialize( this.form, { hash: true });
+    data.start = this.convertTimeToMinutes( data.start );
+    data.end = this.convertTimeToMinutes( data.end );
+    this.props.onSave && this.props.onSave( data );
+  }
+
+  convertTimeToMinutes( time ) {
+    const ampm = time.split(' ')[1];
+    const hhmm = time.split(' ')[0];
+    const hh = parseInt(hhmm.split(':')[0]);
+    const mm = parseInt(hhmm.split(':')[1]);
+    let hours = 0;
+    let minutes = 0;
+    if ( ampm === 'am' && hh == 12 ) {
+      hours = 0;
+    }
+
+    if ( ampm === 'am' && hh != 12 ) {
+      hours = hh;
+    }
+
+    if ( ampm === 'pm' && hh == 12 ) {
+      hours = 12;
+    }
+
+    if ( ampm === 'pm' && hh != 12 ) {
+      hours = hh + 12;
+    }
+
+    minutes = mm;
+
+    return ( hours * 60 ) + minutes;
   }
 
   render() {
-    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
     const { className } = this.props;
 
     return (
       <div className={`time-schedule ${className}`}>
         <form onSubmit={this.handleSave} ref={form => this.form = form}>
-          <label>Day</label>
-          <select>
-            {days.map( d => <option>{d}</option>)}
+          <p><b>Day</b></p>
+          <select name="day">
+            {days.map( d => <option key={d} value={d.toLowerCase()}>{d}</option>)}
           </select>
           <TimePair time={this.state.time}>
             {( start, end, onChange ) => (
               <div>
-                <label>Start</label>
+                <p><b>Start</b></p>
                 <Input
                   type="time"
                   name="start"
@@ -50,7 +81,7 @@ class TimeSchedule extends Component {
                   value={start}
                   step={30}
                 />
-                <label>End</label>
+                <p><b>End</b></p>
                 <Input
                   type="time"
                   name="end"

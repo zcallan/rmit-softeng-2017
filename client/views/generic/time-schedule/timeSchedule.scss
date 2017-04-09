@@ -4,17 +4,20 @@
 .time-schedule {
   text-transform: uppercase;
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-flow: column;
-  background: $border-color;
   border-radius: 5px;
   padding: 5px 0 10px;
   flex-grow: 1;
   margin: 5px;
+  background: #FFF;
+  padding: 20px;
 
   h3 {
     color: $primary-color !important;
+  }
+
+  p, select {
+    margin-left: 10px;
   }
 
   .time-schedule-start,
@@ -25,7 +28,7 @@
 
     label {
       font-size: 0.8rem;
-      margin: 5px 0;
+      margin: 2px 0;
     }
 
     .rc-time-picker {

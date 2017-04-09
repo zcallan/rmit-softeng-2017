@@ -5,30 +5,6 @@ import { Container, TimeSchedule, UserCard, Button } from 'views/generic';
 import { Row, Col } from 'flex-react';
 import config from 'config/branding.json';
 import API from 'utils/api/api.js';
-import moment from 'moment';
-
-const mockSchedule = {
-  monday: {
-    start: moment(),
-    end: moment(),
-  },
-  tuesday: {
-    start: moment(),
-    end: moment(),
-  },
-  wednesday: {
-    start: moment(),
-    end: moment(),
-  },
-  thursday: {
-    start: moment(),
-    end: moment(),
-  },
-  friday: {
-    start: moment(),
-    end: moment(),
-  },
-};
 
 class EmployeeDetails extends Component {
   static propTypes = {
@@ -107,13 +83,21 @@ class EmployeeDetails extends Component {
         <Row>
           <Col sm={12}>
             <div className="employee-details-schedule">
+              <h3>Add item to schedule</h3>
               <TimeSchedule onSave={this.handleSave} />
             </div>
           </Col>
         </Row>
         <Row>
+          <Col sm={12}>
+            <div className="employee-details-schedule">
+              <h3>Current availabilites</h3>
+            </div>
+          </Col>
+        </Row>
+        <Row>
           <Col sm={4} smOffset={4}>
-            <Button onClick={this.onClickDelete} danger>Delete</Button>
+            <Button onClick={this.onClickDelete} danger>Delete Employee</Button>
           </Col>
         </Row>
       </Container>
