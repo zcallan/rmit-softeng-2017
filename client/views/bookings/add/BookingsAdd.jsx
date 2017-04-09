@@ -38,7 +38,9 @@ class BookingsAdd extends Component {
     event.preventDefault();
 
     const data = serialize( this.form, { hash: true });
-    console.log( data );
+    API.createBooking( data ).then( success => {
+      console.log( success );
+    });
   }
 
   render() {
@@ -56,7 +58,7 @@ class BookingsAdd extends Component {
               <label htmlFor="customer">Customer</label>
               <select name="customer">
                 {( customers.list && customers.list.length > 0 ) ? customers.list.map( customer => (
-                    <option>{customer.name.full}</option>
+                    <option value={customer.email}>{customer.name.full}</option>
                   )) : ( customers.fetching ) ? (
                       <option>Loading...</option>
                     ) : (
@@ -67,7 +69,7 @@ class BookingsAdd extends Component {
               <label htmlFor="employee">Employee</label>
               <select name="employee">
                 {( employees.list && employees.list.length > 0 ) ? employees.list.map( customer => (
-                    <option>{customer.name.full}</option>
+                    <option value={customer.email}>{customer.name.full}</option>
                   )) : ( employees.fetching ) ? (
                       <option>Loading...</option>
                     ) : (

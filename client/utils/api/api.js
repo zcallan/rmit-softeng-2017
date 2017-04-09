@@ -100,6 +100,14 @@ class API {
       url: '/customer',
     });
   }
+
+  createBooking( data ) {
+    return this.request({
+      method: 'post',
+      url: '/booking',
+      data,
+    });
+  }
 }
 
 export default ( new API() );

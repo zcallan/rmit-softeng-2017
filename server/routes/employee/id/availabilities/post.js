@@ -53,29 +53,37 @@ module.exports = ( req, res ) => {
     user: email,
   };
 
-  Availability.findOne( data, ( error, exists ) => {
-    /* If an error occurred, return the error */
-    if ( error ) {
-      res.status( HttpStatus.INTERNAL_SERVER_ERROR );
-      return res.json({ error });
+
+  Availability.find({ user: email, dayOfWeek }).where('start').lte(end).where('end').gt(start).exec(( err, availabilities ) => {
+    if ( err || availabilities == null || availabilities.length > 0 ) {
+      res.status(HttpStatus.BAD_REQUEST);
+      return res.json({ error: 'The employee already has an availability at this time'});
     }
 
-    if ( exists ) {
-      res.status( HttpStatus.CONFLICT );
-      return res.json({ error: 'That availability already exists in the system for this user' });
-    }
-
-    /* Data is all valid, create availability entry */
-    const availability = new Availability( data );
-
-    availability.save( err => {
+    Availability.findOne( data, ( error, exists ) => {
       /* If an error occurred, return the error */
-      if ( err ) {
+      if ( error ) {
         res.status( HttpStatus.INTERNAL_SERVER_ERROR );
-        return res.json({ error: err });
+        return res.json({ error });
       }
 
-      return res.json(availability.toJSON());
+      if ( exists ) {
+        res.status( HttpStatus.CONFLICT );
+        return res.json({ error: 'That availability already exists in the system for this user' });
+      }
+
+      /* Data is all valid, create availability entry */
+      const availability = new Availability( data );
+
+      availability.save( err => {
+        /* If an error occurred, return the error */
+        if ( err ) {
+          res.status( HttpStatus.INTERNAL_SERVER_ERROR );
+          return res.json({ error: err });
+        }
+
+        return res.json(availability.toJSON());
+      });
     });
   });
 };
