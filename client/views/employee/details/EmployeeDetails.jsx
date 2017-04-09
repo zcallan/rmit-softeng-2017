@@ -48,7 +48,9 @@ class EmployeeDetails extends Component {
   }
 
   fetchAvailabilities() {
-    console.log('Fetching availabilities');
+    API.getEmployeeAvailabilities( this._employeeId ).then(({ data }) => {
+      this.setState({ availabilities: data });
+    });
   }
 
   handleSave = data => {

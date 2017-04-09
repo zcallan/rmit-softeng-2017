@@ -37,6 +37,11 @@
     "permissions": ["admin"]
   },
   {
+    "path": "/employee/:id/availabilities/:availability",
+    "handler": "./routes/employee/id/availabilities/id/index.js",
+    "permissions": ["admin"]
+  },
+  {
     "path": "/employee/:id/bookings",
     "handler": "./routes/employee/id/bookings/index.js",
     "permissions": ["admin"]

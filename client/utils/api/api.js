@@ -72,11 +72,25 @@ class API {
     });
   }
 
+  getEmployeeAvailabilities( email ) {
+    return this.request({
+      method: 'get',
+      url: `/employee/${email}/availabilities`,
+    });
+  }
+
   addEmployeeAvailability( email, data ) {
     return this.request({
       method: 'post',
       url: `/employee/${email}/availabilities`,
       data
+    });
+  }
+
+  deleteEmployeeAvailability( email, id ) {
+    return this.request({
+      method: 'delete',
+      url: `/employee/${email}/availabilities/${id}`,
     });
   }
 }

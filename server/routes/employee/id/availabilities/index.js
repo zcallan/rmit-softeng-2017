@@ -32,12 +32,12 @@
  *      required: true
  *      dataType: string
  *    - name: start
- *      description: The start time of the availability entry, measured in milliseconds past midnight
+ *      description: The start time of the availability entry, measured in seconds past midnight
  *      paramType: form
  *      required: true
  *      dataType: number
  *    - name: end
- *      description: The end time of the availability entry, measured in milliseconds past midnight
+ *      description: The end time of the availability entry, measured in seconds past midnight
  *      paramType: form
  *      required: true
  *      dataType: number
