@@ -35,7 +35,7 @@ class EmployeeList extends Component {
           <div className="employee-list-group">
             <Row>
             {( list.length > 0 ) ? list.map( employee => (
-              <Col sm={4}>
+              <Col sm={4} key={employee.email}>
                 <Link to={`/employee/${employee.email}/details`} key={employee._id}>
                   <UserCard user={employee} />
                 </Link>

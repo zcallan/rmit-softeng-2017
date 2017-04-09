@@ -6,6 +6,7 @@ import { Input, Button, TimePair } from 'views/generic';
 
 
 class TimeSchedule extends Component {
+
   static defaultProps = {
     className: '',
   }
@@ -23,32 +24,20 @@ class TimeSchedule extends Component {
 
   handleSave = event => {
     event.preventDefault();
-
     const data = serialize( this.form, { hash: true });
-    console.log( data );
-
   }
 
   render() {
+    const days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
     const { className } = this.props;
 
     return (
       <div className={`time-schedule ${className}`}>
         <form onSubmit={this.handleSave} ref={form => this.form = form}>
           <label>Day</label>
-          <Input
-            type="dropdown"
-            name="day"
-            onSelect={this.handleSelect}
-          >
-            <Input type="dropdown-item">Monday</Input>
-            <Input type="dropdown-item">Tuesday</Input>
-            <Input type="dropdown-item">Wednesday</Input>
-            <Input type="dropdown-item">Thursday</Input>
-            <Input type="dropdown-item">Friday</Input>
-            <Input type="dropdown-item">Saturday</Input>
-            <Input type="dropdown-item">Sunday</Input>
-          </Input>
+          <select>
+            {days.map( d => <option>{d}</option>)}
+          </select>
           <TimePair time={this.state.time}>
             {( start, end, onChange ) => (
               <div>
