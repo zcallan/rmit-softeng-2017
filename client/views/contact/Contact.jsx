@@ -4,6 +4,11 @@ import { Row, Col } from 'flex-react';
 import config from 'config/branding.json';
 
 class Contact extends Component {
+  componentDidMount() {
+    document.title = `Contact | ${config.companyName}`;
+    this.props.setPageTitle( 'Contact', 'Our company contact information can be viewed here' );
+  }
+
   render() {
     return (
       <Row className="contact-page">
