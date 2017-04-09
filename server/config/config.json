@@ -1,7 +1,7 @@
 {
   "port": 3001,
   "version": "1.0.0",
-  "databaseUri": "mongodb://localhost:27017/booka",
+  "databaseUri": "mongodb://mongo:27017/booka",
   "swagger": {
     "apiVersion": "1.0",
     "swaggerVersion": "1.0",
