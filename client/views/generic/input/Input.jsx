@@ -3,13 +3,18 @@ import React, { PropTypes } from 'react';
 import TextInput from './text';
 import PasswordInput from './password';
 import TimeInput from './time';
+import MobileInput from './mobile';
 import DropdownInput, { DropdownInputItem } from './dropdown';
 
 
 const Input = ({ type, ...restProps }) => {
   switch ( type ) {
     case 'text':
-      return <TextInput {...restProps} />;
+    case 'number':
+      return <TextInput type={type} {...restProps} />;
+
+    case 'mobile':
+      return <MobileInput {...restProps} />;
 
     case 'password':
       return <PasswordInput {...restProps} />;

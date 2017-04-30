@@ -1,8 +1,9 @@
-import './text-input.scss';
+import './mobile-input.scss';
 import React, { Component, PropTypes } from 'react';
+import MaskedInput from 'react-text-mask';
 
 
-class TextInput extends Component {
+class MobileInput extends Component {
   static defaultProps = {
     className: '',
     defaultValue: '',
@@ -18,13 +19,17 @@ class TextInput extends Component {
 
   render() {
     const { className, ...restProps } = this.props;
+    const regex = [/0/, /[1-4]/, /[0-9]/, /\d/, ' ', /\d/, /\d/, /\d/, ' ', /\d/, /\d/, /\d/];
 
     return (
-      <div className={`input text-input ${className}`}>
-        <input {...restProps} />
+      <div className={`input mobile-input ${className}`}>
+        <MaskedInput
+          {...restProps}
+          mask={regex}
+        />
       </div>
     );
   }
 }
 
-export default TextInput;
+export default MobileInput;
