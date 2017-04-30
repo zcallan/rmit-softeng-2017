@@ -35,11 +35,11 @@ class CustomerBooking extends Component {
     activities: {
       list: [
         {
-          type: 'Haircut',
+          name: 'Haircut',
           duration: 30,
         },
         {
-          type: 'Handjob',
+          name: 'Handjob',
           duration: 2,
         }
       ],
@@ -190,7 +190,7 @@ class CustomerBooking extends Component {
               <select name="activity" onChange={this.handleSelectActivity}>
                 {( activities.list && activities.list.length > 0 ) ? [
                   <option disabled selected>Choose an activity</option>,
-                  activities.list.map( activity => <option value={JSON.stringify(activity)}>{activity.type}</option> )
+                  activities.list.map( activity => <option value={JSON.stringify(activity)}>{activity.name}</option> )
                 ] : ( activities.loading ) ? (
                   <option disabled selected>Loading...</option>
                 ) : (

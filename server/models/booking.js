@@ -21,6 +21,14 @@ const BookingSchema = new Schema({
   },
   notes: {
     type: String,
+  },
+  activity: {
+    name: {
+      type: String,
+    },
+    duration: {
+      type: Number,
+    }
   }
 }, {
   timestamps: true,

@@ -59,6 +59,9 @@ class Bookings extends Component {
                   <h4>Employee</h4>
                   <p>{booking.employee}</p>
 
+                  <h4>Activity</h4>
+                  <p>{( booking.activity && booking.activity.name ) ? booking.activity.name : 'No activity'}</p>
+
                   <h4>Start Time</h4>
                   <p>{moment( booking.startDate ).format( 'hh:mm a, dddd DD MMMM YY' )}</p>
 

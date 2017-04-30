@@ -5,7 +5,7 @@ const validDaysOfWeek = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday',
 const moment = require('moment');
 
 module.exports = ( req, res ) => {
-  let { dayOfWeek, start, end, employee, customer } = req.body;
+  let { dayOfWeek, start, end, employee, customer, activity } = req.body;
 
   /* Validate the input */
   if ( !dayOfWeek || dayOfWeek === '' ) {
@@ -81,6 +81,7 @@ module.exports = ( req, res ) => {
         endDate: end,
         madeBy: customer,
         employee,
+        activity,
       };
 
       const booking = new Booking( bookingData );
