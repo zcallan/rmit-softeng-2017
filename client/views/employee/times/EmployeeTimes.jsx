@@ -29,8 +29,8 @@ class EmployeeList extends Component {
   fetchEmployees() {
     this.props.requestedEmployees();
 
-    API.getEmployees().then(({ data }) => {
-      this.props.receivedEmployees( data );
+    API.getEmployees().then( success => {
+      this.props.receivedEmployees( success );
     }).catch(() => {
       this.props.fetchEmployeesFail();
     });
