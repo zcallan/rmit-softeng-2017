@@ -118,7 +118,7 @@ class CustomerBooking extends Component {
   }
 
   renderHours() {
-    const { time, selectedDay } = this.state;
+    const { time, selectedDay, selectedActivity } = this.state;
     const { data } = this.state.availabilities;
 
     /* Get an array of the available times the employee has on the selected day. */
@@ -130,8 +130,11 @@ class CustomerBooking extends Component {
       }))
     )];
 
+    const activityDuration = selectedActivity ? parseInt( selectedActivity.duration, 10 ) : 30;
+    console.log( activityDuration );
+
     return (
-      <TimePair time={time}>
+      <TimePair time={time} minDuration={activityDuration}>
         {( start, end, onChange ) => (
           <div>
             <label htmlFor="start">Start Time</label>
@@ -141,7 +144,7 @@ class CustomerBooking extends Component {
               required
               onChange={value => onChange( 'start', value, this.handleTimeUpdate )}
               value={start}
-              step={30}
+              step={activityDuration}
               browserDefault
               allowedTimes={allowedTimes}
             />
@@ -153,7 +156,7 @@ class CustomerBooking extends Component {
               required
               onChange={value => onChange( 'end', value, this.handleTimeUpdate )}
               value={end}
-              step={30}
+              step={activityDuration}
               browserDefault
               allowedTimes={allowedTimes}
             />
@@ -196,7 +199,9 @@ class CustomerBooking extends Component {
               <select name="activity" onChange={this.handleSelectActivity}>
                 {( activities.list && activities.list.length > 0 ) ? [
                   <option disabled selected>Choose an activity</option>,
-                  activities.list.map( activity => <option value={JSON.stringify(activity)}>{activity.name}</option> )
+                  activities.list.map( activity => <option value={JSON.stringify(activity)}>
+                    {activity.name} ({activity.duration} minutes)
+                  </option> )
                 ] : ( activities.loading ) ? (
                   <option disabled selected>Loading...</option>
                 ) : (
