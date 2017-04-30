@@ -148,7 +148,7 @@ class API {
   }
 
   /* Retrieves a list of all the different activity types in the system */
-  requestActivityTypes() {
+  getActivities() {
     return this.request({
       method: 'get',
       url: '/activities',

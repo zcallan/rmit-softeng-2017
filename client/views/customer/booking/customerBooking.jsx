@@ -12,10 +12,16 @@ class CustomerBooking extends Component {
   componentDidMount() {
     document.title = `Add Booking | ${config.companyName}`;
     this.props.setPageTitle( 'Add Booking', 'You can add a customer booking on this page' );
+    this.props.requestedEmployees();
+    this.props.requestActivities();
 
     API.getEmployees()
       .then( this.props.receivedEmployees )
       .catch( this.props.fetchEmployeesFail );
+
+    API.getActivities()
+      .then( this.props.receiveActivities )
+      .catch( this.props.fetchActivitiesFail );
   }
 
   state = {
@@ -173,8 +179,8 @@ class CustomerBooking extends Component {
   }
 
   render() {
-    const { employees } = this.props;
-    const { availabilities, selectedActivity, activities } = this.state;
+    const { employees, activities } = this.props;
+    const { availabilities, selectedActivity } = this.state;
 
     return (
       <Row center>
