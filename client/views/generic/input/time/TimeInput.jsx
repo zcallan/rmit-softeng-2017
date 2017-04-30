@@ -99,12 +99,9 @@ class TimeInput extends Component {
 
     const times = [];
 
-    const test = ms => {
+    const ms2m = ms => {
       const msSinceMidnight = ms - startTime;
-      const sSinceMidnight = msSinceMidnight / 1000;
-      const mSinceMidnight = sSinceMidnight / 60;
-
-      return mSinceMidnight;
+      return msSinceMidnight / 1000 / 60;
     };
 
     /* Build an array of the times by incrementing minutes (step) from the start to end EPOCH. */
@@ -112,8 +109,7 @@ class TimeInput extends Component {
       let allowed = false;
 
       allowedTimes.forEach( time => {
-        console.log( i, time );
-        if ( test( i ) > time.start && test( i ) < time.end ) {
+        if ( ms2m( i ) > time.start && ms2m( i ) < time.end ) {
           allowed = true;
         }
       });

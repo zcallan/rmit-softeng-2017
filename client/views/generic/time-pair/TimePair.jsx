@@ -3,21 +3,20 @@ import React, { Component, PropTypes } from 'react';
 
 class TimePair extends Component {
   static defaultProps = {
-    times: [
-      {
-        start: 0,
-        end: 0,
-      },
-    ],
+    time: {
+      start: 0,
+      end: 0,
+    },
   }
 
   static propTypes = {
     children: PropTypes.func.isRequired,
-    times: PropTypes.array,
+    time: PropTypes.object,
   }
 
   state = {
-    times: this.props.times,
+    start: this.props.time.start,
+    end: this.props.time.end,
   }
 
   onChange = ( field, value, callback ) => {

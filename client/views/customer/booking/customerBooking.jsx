@@ -151,13 +151,12 @@ class CustomerBooking extends Component {
   }
 
   render() {
-    const { customers, employees } = this.props;
+    const { employees } = this.props;
     const { availabilities } = this.state;
 
     return (
       <Row center>
         <Col sm={6}>
-          <pre>{JSON.stringify(this.state, null, 2)}</pre>
           {this.state.error && <Error>{this.state.error}</Error>}
           {this.state.success && <Success>{this.state.success}</Success>}
           <div className="bookings-add">
