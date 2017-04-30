@@ -9,6 +9,7 @@ import { setPageTitle } from 'views/generic/page-title/pageTitle.actions.js';
 const mapStateToProps = state => ({
   customers: state.customers,
   employees: state.employees,
+  user: state.user,
 });
 
 const mapDispatchToProps = dispatch => {

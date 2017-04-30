@@ -52,6 +52,8 @@ class CustomerBooking extends Component {
     event.preventDefault();
 
     const data = serialize( this.form, { hash: true });
+    data.customer = this.props.user.data.email;
+    data.activity = this.state.selectedActivity;
     this.setState({ success: null, error: null });
     API.createBooking( data ).then(() => {
       this.setState({ success: 'Booking successfully created' });
@@ -106,9 +108,7 @@ class CustomerBooking extends Component {
 
   handleSelectActivity = event => {
     const { value } = event.target;
-
-    console.log( value );
-    this.setState({ selectedActivity: value });
+    this.setState({ selectedActivity: JSON.parse(value) });
   }
 
   renderHours() {
@@ -190,7 +190,7 @@ class CustomerBooking extends Component {
               <select name="activity" onChange={this.handleSelectActivity}>
                 {( activities.list && activities.list.length > 0 ) ? [
                   <option disabled selected>Choose an activity</option>,
-                  activities.list.map( activity => <option value={activity}>{activity.type}</option> )
+                  activities.list.map( activity => <option value={JSON.stringify(activity)}>{activity.type}</option> )
                 ] : ( activities.loading ) ? (
                   <option disabled selected>Loading...</option>
                 ) : (
