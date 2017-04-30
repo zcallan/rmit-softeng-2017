@@ -71,7 +71,6 @@ class Register extends Component {
               type="mobile"
               placeholder="Mobile Number"
               name="phone"
-              required
             />
           </InputGroup>
           <Input
