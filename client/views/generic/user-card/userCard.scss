@@ -15,6 +15,11 @@
     color: $primary-color;
   }
 
+  small {
+    max-width: 100%;
+    word-break: break-all;
+  }
+
   &:hover {
     border-color: $primary-color;
     color: $primary-color;

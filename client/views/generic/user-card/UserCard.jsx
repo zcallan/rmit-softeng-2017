@@ -11,9 +11,9 @@ class UserCard extends Component {
         <h3>{user.name.full}</h3>
         <small>{user.email}</small>
         <br /><br />
-        <small>{user.address}</small>
+        <small>{user.address || 'No address given'}</small>
         <br />
-        <small>{user.phone}</small>
+        <small>{user.phone || 'No phone given'}</small>
       </div>
     );
   }
