@@ -66,7 +66,10 @@
   },
   {
     "path": "/booking",
-    "handler": "./routes/booking/index.js",
-    "permissions": ["admin"]
+    "handler": "./routes/booking/index.js"
+  },
+  {
+    "path": "/activities",
+    "handler": "./routes/activities/index.js"
   }
 ]
