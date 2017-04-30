@@ -38,20 +38,6 @@ class CustomerBooking extends Component {
       start: moment().startOf( 'day' ).valueOf(),
       end: moment().startOf( 'day' ).valueOf(),
     },
-    activities: {
-      list: [
-        {
-          name: 'Haircut',
-          duration: 30,
-        },
-        {
-          name: 'Handjob',
-          duration: 2,
-        }
-      ],
-      loading: false,
-      error: null,
-    },
   }
 
   handleSubmit = event => {
