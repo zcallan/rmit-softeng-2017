@@ -85,6 +85,12 @@ class Register extends Component {
             name="password"
             required
           />
+          <Input
+            type="password"
+            placeholder="Repeat Password"
+            name="repeatpassword"
+            required
+          />
           <Button type="default" submit disabled={registering} loading={registering}>
             {( registering ) ? 'Registering...' : 'Register'}
           </Button>

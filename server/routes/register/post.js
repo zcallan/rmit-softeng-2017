@@ -3,7 +3,7 @@ const emailValidator = require('email-validator');
 const User = require('../../models/user.js');
 
 module.exports = ( req, res ) => {
-  const { firstName, lastName, email, password, address, phone } = req.body;
+  const { firstName, lastName, email, password, address, phone, repeatpassword } = req.body;
 
   /* Check that all form fields have been supplied */
   if ( !firstName || firstName.length == 0 ) {
@@ -29,6 +29,11 @@ module.exports = ( req, res ) => {
   if ( password.length < 6 ) {
     res.status( HttpStatus.BAD_REQUEST );
     return res.json({ error: 'Your password must be at least 6 characters long.' });
+  }
+
+  if ( password != repeatpassword ) {
+    res.status( HttpStatus.BAD_REQUEST );
+    return res.json({ error: 'Passwords do not match.' });
   }
 
   /* Validate that the email address is correct */

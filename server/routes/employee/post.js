@@ -1,5 +1,6 @@
 const HttpStatus = require('http-status-codes');
 const emailValidator = require('email-validator');
+const winston = require('winston');
 const User = require('../../models/user.js');
 
 module.exports = ( req, res ) => {
@@ -61,9 +62,12 @@ module.exports = ( req, res ) => {
     user.save( err => {
       /* If an error occurred, return the error */
       if ( err ) {
+        winston.error('An error occured attempting to create a new employee');
         res.status( HttpStatus.INTERNAL_SERVER_ERROR );
         return res.json({ error: err });
       }
+
+      winston.info(`Successfully created a new user with email address ${email}`);
 
       return res.json(user.toJSON());
     });
