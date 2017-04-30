@@ -3,6 +3,7 @@ const bcrypt = require( 'bcrypt' );
 const Schema = mongoose.Schema;
 const jwt = require( 'jsonwebtoken' );
 const config = require( '../config/config.json' );
+const winston = require('winston');
 
 /* Define the schema for the user */
 const UserSchema = new Schema({
@@ -57,15 +58,21 @@ UserSchema.pre( 'save', function( next ) {
   /* Store an encrypted copy of the user password. */
   if ( this.isModified( 'password' )) {
     /* Generate the salt to use in the password hash. */
+    winston.info(`Salting password for user ${this.email}`);
     bcrypt.genSalt( 5, ( err, salt ) => {
-      if ( err )
+      if ( err ) {
+        winston.error( err );
         return next( err );
+      }
 
       /* Hash the password using the salt and save it to the document. */
       bcrypt.hash( this.password, salt, ( err, hash ) => {
-        if ( err )
+        if ( err ) {
+          winston.error( err );
           return next( err );
+        }
 
+        winston.info(`Password salted for user ${this.email}`);
         this.password = hash;
         next();
       });
@@ -75,10 +82,18 @@ UserSchema.pre( 'save', function( next ) {
 
 /* Provide a method to verify the users password */
 UserSchema.methods.verifyPassword = function( password, next ) {
+  winston.info(`Attempting to verify password for user ${this.email}`);
   bcrypt.compare( password, this.password, ( err, match ) => {
-    if ( err )
+    if ( err ) {
+      winston.error( err );
       return next( err );
+    }
 
+    if ( match ) {
+      winston.info(`Successfully verified password for user ${this.email}`);
+    } else {
+      winston.info(`Failed to verify password for user ${this.email}`);
+    }
     next( null, match );
   });
 };
@@ -86,6 +101,7 @@ UserSchema.methods.verifyPassword = function( password, next ) {
 /* Provide a method to generate a JWT */
 UserSchema.methods.generateJWT = function( next ) {
   jwt.sign( { email: this.email, type: this.type }, config.jwtSecret, { expiresIn: '6h' }, ( err, token ) => {
+    winston.info(`Generated JWT for user ${this.email}`);
     next( err, token );
   });
 };

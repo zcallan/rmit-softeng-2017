@@ -3,6 +3,7 @@ const Booking = require('../../models/booking.js');
 const Availability = require('../../models/availability.js');
 const validDaysOfWeek = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
 const moment = require('moment');
+const winston = require('winston');
 
 module.exports = ( req, res ) => {
   let { dayOfWeek, start, end, employee, customer, activity } = req.body;
@@ -84,14 +85,17 @@ module.exports = ( req, res ) => {
         activity,
       };
 
+      winston.info('Attempting to create new booking');
       const booking = new Booking( bookingData );
       booking.save( err => {
         /* If an error occurred, return the error */
         if ( err ) {
+          winston.error(`Failed to create new booking - ${err}`);
           res.status( HttpStatus.INTERNAL_SERVER_ERROR );
           return res.json({ error: err });
         }
 
+        winston.info('Created a new booking');
         return res.json(booking.toJSON());
       });
     });

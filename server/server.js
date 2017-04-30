@@ -5,8 +5,8 @@ const routes = require( './config/routes.json' );
 const swagger = require( 'swagger-express' );
 const cors = require( 'cors' );
 const bodyParser = require( 'body-parser' );
-const morgan = require( 'morgan' );
 const graphqlHTTP = require('express-graphql');
+const winston = require('winston');
 
 const db = require( './utils/db/db.js' );
 const users = require( './utils/users/index.js' );
@@ -28,12 +28,20 @@ server.use( cors() );
 /* Add authentication middleware */
 server.use( auth );
 
-/* Use morgan logging */
-server.use( morgan(':remote-addr :method :url') );
-
 /* Tell the server to use both JSON body parsing and form data body parsing */
 server.use( bodyParser.urlencoded({ extended: false }) );
 server.use( bodyParser.json() );
+
+/* Setup the logging framework */
+winston.remove(winston.transports.Console);
+winston.add(winston.transports.Console, { timestamp:true });
+winston.add(winston.transports.File, { filename: 'server.log', timestamp: true });
+
+/* Log all requests */
+server.use(( req, res, next ) => {
+  winston.info(`${req.method} request to - ${req.url}`);
+  next();
+});
 
 /* Create a redirect from /api-docs to swagger, loading the correct swagger API specification */
 server.get('/api-docs', ( req, res ) => {
@@ -62,6 +70,7 @@ routes.forEach( route => {
   /* Loop through the methods defined on the module and map it to a server handler */
   Object.keys( requiredRoute ).forEach( method => {
     server[method]( route.path, requiredRoute[method]);
+    winston.info( `Loaded ${method.toUpperCase()} route ${route.path}` );
   });
 });
 
@@ -71,13 +80,12 @@ const connection = db.getConnection();
 
 /* When the database connection is opened, start the server */
 connection.once( 'open', () => {
-  console.log( '=> Started MongoDB' );
+  winston.info( 'Opened database connected' );
 
   server.listen( config.port, () => {
-    console.log( `Server listening on ${config.port}` );
+    winston.info( `Server listening on ${config.port}` );
   });
 
   /* Create the default user accounts if they don't exist */
   users.createDefaultUser();
-
 });
