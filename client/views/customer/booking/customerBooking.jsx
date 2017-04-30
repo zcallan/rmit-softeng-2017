@@ -27,10 +27,25 @@ class CustomerBooking extends Component {
       error: null,
     },
     selectedDay: null,
+    selectedActivity: null,
     time: {
       start: moment().startOf( 'day' ).valueOf(),
       end: moment().startOf( 'day' ).valueOf(),
-    }
+    },
+    activities: {
+      list: [
+        {
+          type: 'Haircut',
+          duration: 30,
+        },
+        {
+          type: 'Handjob',
+          duration: 2,
+        }
+      ],
+      loading: false,
+      error: null,
+    },
   }
 
   handleSubmit = event => {
@@ -87,6 +102,13 @@ class CustomerBooking extends Component {
     const { value } = event.target;
 
     this.setState({ selectedDay: value });
+  }
+
+  handleSelectActivity = event => {
+    const { value } = event.target;
+
+    console.log( value );
+    this.setState({ selectedActivity: value });
   }
 
   renderHours() {
@@ -152,7 +174,7 @@ class CustomerBooking extends Component {
 
   render() {
     const { employees } = this.props;
-    const { availabilities } = this.state;
+    const { availabilities, selectedActivity, activities } = this.state;
 
     return (
       <Row center>
@@ -164,24 +186,40 @@ class CustomerBooking extends Component {
             <h3>Add Booking</h3>
 
             <form onSubmit={this.handleSubmit} ref={form => this.form = form}>
-              <label htmlFor="employee">Employee</label>
-              <select name="employee" onChange={this.handleSelectEmployee}>
-                {( employees.list && employees.list.length > 0 ) ? [
-                  <option disabled selected value={null}>Choose an employee</option>,
-                  employees.list.map( customer => <option value={customer.email}>{customer.name.full}</option>
-                )] : ( employees.fetching ) ? (
-                  <option disabled selected value={null}>Loading...</option>
+              <label htmlFor="activity">Booking for</label>
+              <select name="activity" onChange={this.handleSelectActivity}>
+                {( activities.list && activities.list.length > 0 ) ? [
+                  <option disabled selected>Choose an activity</option>,
+                  activities.list.map( activity => <option value={activity}>{activity.type}</option> )
+                ] : ( activities.loading ) ? (
+                  <option disabled selected>Loading...</option>
                 ) : (
-                  <option disabled selected value={null}>No employees found</option>
+                  <option disabled selected>No activities found</option>
                 )}
               </select>
 
-              {( availabilities.loading ) && <p>Loading...</p>}
+              {( selectedActivity ) && (
+                <div>
+                  <label htmlFor="employee">Employee</label>
+                  <select name="employee" onChange={this.handleSelectEmployee}>
+                    {( employees.list && employees.list.length > 0 ) ? [
+                      <option disabled selected>Choose an employee</option>,
+                      employees.list.map( customer => <option value={customer.email}>{customer.name.full}</option>
+                    )] : ( employees.fetching ) ? (
+                      <option disabled selected>Loading...</option>
+                    ) : (
+                      <option disabled selected>No employees found</option>
+                    )}
+                  </select>
 
-              {( availabilities.data.length > 0 ) && [
-                this.renderDays(),
-                this.renderHours(),
-              ]}
+                  {( availabilities.loading ) && <p>Loading...</p>}
+
+                  {( availabilities.data.length > 0 ) && [
+                    this.renderDays(),
+                    this.renderHours(),
+                  ]}
+                </div>
+              )}
               <Button type="default" success text="Create Booking" icon="add" submit />
             </form>
           </div>

@@ -159,6 +159,7 @@ class TimeInput extends Component {
 
     return (
       <select {...restProps} onChange={this.handleSelect} value={selected}>
+        <option disabled selected>Select a time</option>
         {times.map( time => (
           <option value={time}>{moment( time ).format( format )}</option>
         ))}
