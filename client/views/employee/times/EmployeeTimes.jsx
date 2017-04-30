@@ -62,7 +62,7 @@ class EmployeeList extends Component {
     return (
       <div className="employee-times">
         {( list ) ? (
-          <Row className="employee-times-group">
+          <Row className="employee-times-group" center>
             {( list.length > 0 ) ? list.map( employee => (
               <Col sm={4} key={employee.email}>
                 <Row>
@@ -86,8 +86,8 @@ class EmployeeList extends Component {
                 </Row>
               </Col>
             )) : (
-              <Row>
-                <Col sm={6} smOffset={3}>
+              <Row center>
+                <Col sm={6}>
                   <IconCard icon="person_add">
                     <h3>No employees</h3>
                     <p>
@@ -100,8 +100,8 @@ class EmployeeList extends Component {
             )}
           </Row>
         ) : ( fetching ) ? (
-          <Row>
-            <Col sm={6} smOffset={3}>
+          <Row center>
+            <Col sm={6}>
               <IconCard icon="cached">
                 <h3>Loading employees</h3>
                 <p>Please wait whilst employees load</p>
