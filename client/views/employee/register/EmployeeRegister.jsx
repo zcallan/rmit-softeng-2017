@@ -18,25 +18,13 @@ class EmployeeRegister extends Component {
   }
 
   handleSubmit = ( event, data ) => {
-    // Do your register here
-    console.log( data );
     this.setState({ creating: true });
-    API.createEmployee( data).then(() => {
-      this.setState({ created: true });
-    }).catch(({ response })  => {
-      this.setState({ error: response.data.error, creating: false });
-    });
 
-    // this.setState({ creating: true }, () => {
-    //   setTimeout(() => {
-    //     const createdData = {
-    //       fullName: `${data.firstname} ${data.lastname}`,
-    //       email: data.email,
-    //     };
-    //     this.props.receivedEmployee( createdData );
-    //     this.setState({ created: true });
-    //   }, 500 );
-    // });
+    API.createEmployee( data )
+      .then(() => this.setState({ created: true }))
+      .catch(({ response })  => {
+        this.setState({ error: response.data.error, creating: false });
+      });
   }
 
   render() {

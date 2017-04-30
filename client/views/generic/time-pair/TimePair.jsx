@@ -3,19 +3,21 @@ import React, { Component, PropTypes } from 'react';
 
 class TimePair extends Component {
   static defaultProps = {
-    start: 0,
-    end: 0,
+    times: [
+      {
+        start: 0,
+        end: 0,
+      },
+    ],
   }
 
   static propTypes = {
     children: PropTypes.func.isRequired,
-    start: PropTypes.number,
-    end: PropTypes.number,
+    times: PropTypes.array,
   }
 
   state = {
-    start: this.props.time.start,
-    end: this.props.time.start,
+    times: this.props.times,
   }
 
   onChange = ( field, value, callback ) => {
@@ -48,8 +50,6 @@ class TimePair extends Component {
   render() {
     const { children } = this.props;
     const { start, end } = this.state;
-
-    console.log( this.state );
 
     return children( start, end, this.onChange );
   }

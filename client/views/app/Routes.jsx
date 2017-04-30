@@ -16,7 +16,9 @@ import {
 	BookingsAdd,
 	Contact,
 	Customer,
+	CustomerBooking,
 } from 'views';
+
 
 class Routes extends Component {
   render() {
@@ -29,6 +31,7 @@ class Routes extends Component {
 				<Route path="/test" component={Test} />
 				<PrivateRoute path="/employee/list" component={EmployeeList} />
 				<PrivateRoute path="/customer/list" component={Customer} />
+				<PrivateRoute path="/customer/booking" component={CustomerBooking} />
 				<PrivateRoute path="/employee/:id/details" component={EmployeeDetails} />
 				<PrivateRoute path="/employee/create" component={EmployeeRegister} />
 				<PrivateRoute path="/employee/availabilities" component={EmployeeTimes} />

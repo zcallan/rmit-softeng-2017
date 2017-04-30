@@ -14,7 +14,7 @@ export const receivedEmployee = employee => ({
 
 export const receivedEmployees = employees => ({
   type: 'RECEIVED_EMPLOYEES',
-  payload: employees,
+  payload: employees.data,
 });
 
 export const fetchEmployeesFail = error => ({

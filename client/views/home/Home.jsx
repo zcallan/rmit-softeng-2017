@@ -42,9 +42,12 @@ class Home extends Component {
 
   renderCustomer() {
     return (
-      <Row>
+      <Row center>
         <Col sm={4}>
           <DashboardItem title="View available dates & time" icon="event" link="/employee/availabilities" />
+        </Col>
+        <Col sm={4}>
+          <DashboardItem title="Make a booking" icon="add" link="/customer/booking" />
         </Col>
       </Row>
     );

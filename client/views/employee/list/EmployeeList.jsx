@@ -19,11 +19,9 @@ class EmployeeList extends Component {
     this.props.setPageTitle( 'Employees', 'A list of registered employees' );
     this.props.requestedEmployees();
 
-    API.getEmployees().then(({ data }) => {
-      this.props.receivedEmployees( data );
-    }).catch(() => {
-      this.props.fetchEmployeesFail();
-    });
+    API.getEmployees()
+      .then( this.props.receivedEmployees )
+      .catch( this.props.fetchEmployeesFail );
   }
 
   render() {
@@ -33,15 +31,14 @@ class EmployeeList extends Component {
       <div className="employee-list">
         {( list ) ? (
           <div className="employee-list-group">
-            <Row>
-            {( list.length > 0 ) ? list.map( employee => (
-              <Col sm={4} key={employee.email}>
-                <Link to={`/employee/${employee.email}/details`} key={employee._id}>
-                  <UserCard user={employee} />
-                </Link>
-              </Col>
-            )) : (
-              <Row>
+            <Row center>
+              {( list.length > 0 ) ? list.map( employee => (
+                <Col sm={4} key={employee.email}>
+                  <Link to={`/employee/${employee.email}/details`} key={employee._id}>
+                    <UserCard user={employee} />
+                  </Link>
+                </Col>
+              )) : (
                 <Col sm={6} smOffset={3}>
                   <IconCard icon="person_add">
                     <h3>No employees</h3>
@@ -51,13 +48,12 @@ class EmployeeList extends Component {
                     </p>
                   </IconCard>
                 </Col>
-              </Row>
-            )}
+              )}
             </Row>
           </div>
         ) : ( fetching ) ? (
-          <Row>
-            <Col sm={6} smOffset={3}>
+          <Row center>
+            <Col sm={6}>
               <IconCard icon="cached">
                 <h3>Loading employees</h3>
                 <p>Please wait whilst employees load</p>
@@ -65,8 +61,8 @@ class EmployeeList extends Component {
             </Col>
           </Row>
         ) : ( error ) ? (
-          <Row>
-            <Col sm={6} smOffset={3}>
+          <Row center>
+            <Col sm={6}>
               <IconCard icon="error_outline" error>
                 <h3>Uh oh! An error has occurred.</h3>
                 <p>Please refresh the page or try again later</p>
@@ -83,8 +79,8 @@ class EmployeeList extends Component {
         )}
         {
           list && (
-            <Row>
-              <Col sm={6} smOffset={3}>
+            <Row center>
+              <Col sm={6}>
                 <Button href="/employee/create">Create Employee</Button>
                 <Button typ="default" text="All Availabilities" href="/employee/availabilities" />
               </Col>

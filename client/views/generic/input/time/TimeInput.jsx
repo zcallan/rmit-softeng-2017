@@ -6,6 +6,10 @@ import moment from 'moment';
 
 /* Convert minutes to milliseconds. */
 const m2ms = minutes => minutes * 60 * 1000;
+const epoch2m = milliseconds => {
+  console.log( 'ms:', milliseconds );
+
+};
 
 class TimeInput extends Component {
   static defaultProps = {
@@ -17,6 +21,12 @@ class TimeInput extends Component {
     step: 60,
     format: 'hh:mm a',
     browserDefault: false,
+    allowedTimes: [
+      {
+        start: 0,
+        end: 1440,
+      }
+    ],
   }
 
   static propTypes = {
@@ -29,6 +39,7 @@ class TimeInput extends Component {
     step: PropTypes.number,
     onChange: PropTypes.func,
     browserDefault: PropTypes.bool,
+    allowedTimes: PropTypes.array,
   }
 
   state = {
@@ -71,6 +82,7 @@ class TimeInput extends Component {
   }
 
   getTimes() {
+    const { allowedTimes } = this.props;
     /* Convert minutes to milliseconds. */
     const start = m2ms( this.getStartTime());
     const end = m2ms( this.getEndTime());
@@ -87,9 +99,26 @@ class TimeInput extends Component {
 
     const times = [];
 
+    const test = ms => {
+      const msSinceMidnight = ms - startTime;
+      const sSinceMidnight = msSinceMidnight / 1000;
+      const mSinceMidnight = sSinceMidnight / 60;
+
+      return mSinceMidnight;
+    };
+
     /* Build an array of the times by incrementing minutes (step) from the start to end EPOCH. */
     for ( let i = startTime.valueOf(); i < endTime; i += step ) {
-      times.push( i );
+      let allowed = false;
+
+      allowedTimes.forEach( time => {
+        console.log( i, time );
+        if ( test( i ) > time.start && test( i ) < time.end ) {
+          allowed = true;
+        }
+      });
+
+      allowed && times.push( i );
     }
 
     return times;

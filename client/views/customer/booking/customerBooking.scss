@@ -1,0 +1,46 @@
+@import '../../../styles/colors';
+
+
+.bookings-add {
+  background: $white;
+  padding: 20px;
+  display: flex;
+  flex-flow: column;
+
+  > i.material-icons {
+    font-size: 3rem;
+    color: $primary-color;
+    text-align: center;
+  }
+
+  h3 {
+    margin: 0;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+
+  > form {
+    display: flex;
+    flex-flow: column;
+
+    label {
+      margin: 5px 0;
+      color: $primary-color;
+      font-weight: 600;
+    }
+
+    select {
+      font-size: 1rem;
+      margin-bottom: 20px;
+
+      &[name = 'dayOfWeek'] {
+        text-transform: capitalize;
+      }
+    }
+
+    div {
+      display: flex;
+      flex-flow: column;
+    }
+  }
+}

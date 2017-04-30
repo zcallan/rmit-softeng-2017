@@ -15,3 +15,4 @@ export { EmployeeDetails } from './employee';
 export { EmployeeRegister } from './employee';
 export { EmployeeTimes } from './employee';
 export { BookingsAdd } from './bookings';
+export { CustomerBooking } from './customer';
