@@ -1,6 +1,7 @@
 # Use Ubuntu 'trusty' distribution
 sudo: required
 dist: trusty
+language: node_js
 
 install:
   # Update docker-engine using Ubuntu 'trusty' apt repo
