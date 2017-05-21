@@ -17,4 +17,5 @@ function mapDispatchToProps( dispatch ) {
   return bindActionCreators({ userAuthenticated, setPageTitle }, dispatch );
 }
 
+/* Connect the store and actions to the Login view */
 export default connect( mapStateToProps, mapDispatchToProps )( Login );
