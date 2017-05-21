@@ -1,1 +1,1 @@
-export { default } from './SidebarMenu.jsx';
+export { default } from './sidebarMenu.container';

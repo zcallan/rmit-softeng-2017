@@ -1,7 +1,6 @@
 import './navbar.scss';
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router-dom';
-import branding from 'config/branding.json';
 
 
 class Navbar extends Component {
@@ -32,13 +31,14 @@ class Navbar extends Component {
 
   render() {
     const { authenticated } = this.props.user;
+    const { active, list } = this.props.companies;
 
     return (
       <nav className="navbar">
         <div className="navbar-logo">
           <i className="material-icons" onClick={this.toggleSidebar}>menu</i>
           <Link to="/">
-            <h1>{branding.companyName}</h1>
+            <h1>{active ? list[active].name : 'Company'}</h1>
           </Link>
         </div>
 
