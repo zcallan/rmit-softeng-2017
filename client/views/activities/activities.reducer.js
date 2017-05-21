@@ -1,3 +1,6 @@
+/* This file defines the reducer for activities */
+
+/* Define the initial state of the activities section of the store */
 const initialState = {
   list: null,
   fetching: false,

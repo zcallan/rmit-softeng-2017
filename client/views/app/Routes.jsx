@@ -1,3 +1,9 @@
+/**
+ * This file defines the route view mapping for this application.
+ * It defines what view should be loaded for each route
+ */
+
+/* Import dependencies */
 import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 import { PrivateRoute } from 'views/generic';
@@ -19,7 +25,7 @@ import {
 	CustomerBooking,
 } from 'views';
 
-
+/* Define all of the routes */
 class Routes extends Component {
   render() {
     return (

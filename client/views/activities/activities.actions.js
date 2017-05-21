@@ -1,3 +1,5 @@
+/* This file defines all the Redux actions relating to actions */
+
 export const requestActivities = () => ({
   type: 'REQUESTED_ACTIVITIES',
 });
