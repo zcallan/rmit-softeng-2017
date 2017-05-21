@@ -1,3 +1,6 @@
+/* This file is the top level component for the application and all the pages are rendered inside it */
+
+/* Import dependencies */
 import React, { Component, PropTypes } from 'react';
 import Routes from './Routes.jsx';
 import { Sidebar, Navbar } from 'views';
@@ -8,14 +11,18 @@ import store from 'views/store';
 import { requestCompanies, receiveCompanies, failCompanies } from 'views/company/company.actions';
 
 
+/* Create the App component */
 class App extends Component {
+
   static propTypes = {
     receiveCompanies: PropTypes.func,
     requestCompanies: PropTypes.func,
     failCompanies: PropTypes.func,
   }
 
+  /* When the app mounts hide the preview and print the API information to the screen */
   componentDidMount() {
+    /* Hide the preview spinner */
     document.getElementById( 'mounting-preview' ).remove();
 
     /* Print the API information to the console */
@@ -30,6 +37,7 @@ class App extends Component {
       .catch( error => store.dispatch( failCompanies( error )));
   }
 
+  /* Render the application to the screen */
   render() {
     return (
       <div className="app">

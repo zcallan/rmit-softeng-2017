@@ -17,4 +17,5 @@ function mapDispatchToProps( dispatch ) {
   return bindActionCreators({ userAuthenticated, setPageTitle }, dispatch );
 }
 
+/* Connect the state and actions to the Register view */
 export default connect( mapStateToProps, mapDispatchToProps )( Register );

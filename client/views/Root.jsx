@@ -1,3 +1,10 @@
+/**
+ * This file is the entry point to the application, it imports all of the core
+ * dependencies required to load the application and renders the top level
+ * component on the users screen
+ */
+
+ /* Import all the dependencies */
 import 'styles/main.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -15,7 +22,7 @@ if ( localStorage.getItem( 'auth' )) {
   store.dispatch( userAuthenticated( auth ));
 }
 
-
+/* Render the application onto the screen */
 ReactDOM.render(
   <Provider store={store}>
     <Router>

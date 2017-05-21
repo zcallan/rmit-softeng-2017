@@ -1,3 +1,4 @@
+/* Import the dependencies */
 import './customerList.scss';
 import React, { Component, PropTypes } from 'react';
 import { IconCard, UserCard } from 'views/generic';
@@ -5,7 +6,9 @@ import { Row, Col } from 'flex-react';
 import API from 'utils/api/api.js';
 import config from 'config/branding.json';
 
+/* Create the customer list component */
 class CustomerList extends Component {
+  /* Defines the prop types for this component */
   static propTypes = {
     requestedCustomers: PropTypes.func,
     receivedCustomers: PropTypes.func,
@@ -13,6 +16,7 @@ class CustomerList extends Component {
     customers: PropTypes.object,
   }
 
+  /* When the component mounts set the page title and fetch a list of customers */
   componentDidMount() {
     document.title = `Customers | ${config.companyName}`;
     this.props.setPageTitle( 'Customers', 'A list of registered customers' );
@@ -25,6 +29,7 @@ class CustomerList extends Component {
     });
   }
 
+  /* Render the customer list */
   render() {
     const { fetching, list, error } = this.props.customers;
 

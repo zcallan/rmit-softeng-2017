@@ -1,5 +1,5 @@
+/* This file provides the classes required to allow content to hide dynamically based on screen width */
 @import '../screen-sizes';
-
 
 @media screen and (max-width: $xs-max) {
   .hide-xs-and-up,

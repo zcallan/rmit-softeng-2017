@@ -1,3 +1,4 @@
+/* Import the depenencies */
 import './customerBooking.scss';
 import React, { Component } from 'react';
 import serialize from 'form-serialize';
@@ -7,8 +8,9 @@ import { Row, Col } from 'flex-react';
 import { Button, TimePair, Input, Error, Success } from 'views/generic';
 import API from 'utils/api/api';
 
-
+/* Create the customer booking component */
 class CustomerBooking extends Component {
+  /* When the component loads set the page title and request employees and activities */
   componentDidMount() {
     document.title = `Add Booking | ${config.companyName}`;
     this.props.setPageTitle( 'Add Booking', 'You can add a customer booking on this page' );
@@ -19,6 +21,7 @@ class CustomerBooking extends Component {
       .catch( this.props.fetchEmployeesFail );
   }
 
+  /* Define the initial state */
   state = {
     error: null,
     success: null,
@@ -35,16 +38,23 @@ class CustomerBooking extends Component {
     },
   }
 
+  /* This function handles a form submit */
   handleSubmit = event => {
+    /* Prevent the browser from completing the standard form handling */
     event.preventDefault();
 
+    /* Serialize the form data */
     const data = serialize( this.form, { hash: true });
     data.customer = this.props.user.data.email;
     data.activity = this.state.selectedActivity;
     this.setState({ success: null, error: null });
+
+    /* Create a new booking with the data */
     API.createBooking( data ).then(() => {
+      /* The booking was created successfully, show a success message */
       this.setState({ success: 'Booking successfully created' });
     }).catch( error => {
+      /* This booking failed to create, show an error message */
       this.setState({ error: error.response.data.error });
     });
   }
@@ -53,6 +63,7 @@ class CustomerBooking extends Component {
     this.setState({ time });
   }
 
+  /* This function handles the selection of an employee */
   handleSelectEmployee = event => {
     const { value } = event.target;
 
@@ -87,17 +98,19 @@ class CustomerBooking extends Component {
       }));
   }
 
+  /* Handle a day being selected */
   handleSelectDay = event => {
     const { value } = event.target;
-
     this.setState({ selectedDay: value });
   }
 
+  /* Handle an activity being selected */
   handleSelectActivity = event => {
     const { value } = event.target;
     this.setState({ selectedActivity: JSON.parse(value) });
   }
 
+  /* Render the hour / time picker */
   renderHours() {
     const { time, selectedDay, selectedActivity } = this.state;
     const { data } = this.state.availabilities;
@@ -111,8 +124,8 @@ class CustomerBooking extends Component {
       }))
     )];
 
+    /* Get the duration of the selected activity */
     const activityDuration = selectedActivity ? parseInt( selectedActivity.duration, 10 ) : 30;
-    console.log( activityDuration );
 
     return (
       <TimePair time={time} minDuration={activityDuration}>
@@ -147,6 +160,7 @@ class CustomerBooking extends Component {
     );
   }
 
+  /* Render the day picker */
   renderDays() {
     const { data } = this.state.availabilities;
     const days = [...new Set( data.map( time => time.dayOfWeek ))];
@@ -162,6 +176,7 @@ class CustomerBooking extends Component {
     );
   }
 
+  /* Render the booking form */
   render() {
     const { employees, activities } = this.props;
     const { availabilities, selectedActivity } = this.state;

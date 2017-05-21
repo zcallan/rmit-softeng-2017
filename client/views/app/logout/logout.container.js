@@ -16,4 +16,5 @@ const mapDispatchToProps = dispatch => {
   return bindActionCreators({ userLogout }, dispatch );
 };
 
+/* Connect the state and actions to the Logout */
 export default connect( mapStateToProps, mapDispatchToProps )( Logout );

@@ -1,3 +1,4 @@
+/* Define the inital state of the customers section of the store */
 const initialState = {
   list: null,
   fetching: false,
