@@ -1,3 +1,6 @@
+/* This file defines the view for adding bookings */
+
+/* Import dependencies */
 import './bookingsAdd.scss';
 import React, { Component } from 'react';
 import serialize from 'form-serialize';
@@ -7,8 +10,10 @@ import { Row, Col } from 'flex-react';
 import { Button, TimePair, Input, Error, Success } from 'views/generic';
 import API from 'utils/api/api';
 
-
+/* Create the component */
 class BookingsAdd extends Component {
+
+  /* When the component loads, set the page title, fetch the employees, activities and customers */
   componentDidMount() {
     document.title = `Add Booking | ${config.companyName}`;
     this.props.setPageTitle( 'Add Booking', 'You can add a customer booking on this page' );
@@ -28,6 +33,7 @@ class BookingsAdd extends Component {
       .catch( this.props.fetchCustomersFail );
   }
 
+  /* Define the components initial state */
   state = {
     error: null,
     success: null,
@@ -45,16 +51,23 @@ class BookingsAdd extends Component {
     },
   }
 
+  /* This function handles form submission */
   handleSubmit = event => {
+    /* Prevent the form from submitting using the browser default action */
     event.preventDefault();
 
+    /* Serialize the form data */
     const data = serialize( this.form, { hash: true });
     data.customer = this.props.user.data.email;
     data.activity = this.state.selectedActivity;
     this.setState({ success: null, error: null });
+
+    /* Create a new booking using the API */
     API.createBooking( data ).then(() => {
+      /* The booking was created successfully show a success message */
       this.setState({ success: 'Booking successfully created' });
     }).catch( error => {
+      /* This booking failed to create, show an error message */
       this.setState({ error: error.response.data.error });
     });
   }
@@ -63,6 +76,7 @@ class BookingsAdd extends Component {
     this.setState({ time });
   }
 
+  /* This function handles employee selection */
   handleSelectEmployee = event => {
     const { value } = event.target;
 
@@ -79,8 +93,10 @@ class BookingsAdd extends Component {
       }
     }));
 
+    /* Fetch the employees availabilities and update the view */
     API.getEmployeeAvailabilities( value )
       .then( success => this.setState({
+        /* Update the available days based on the employee availabilities */
         selectedDay: success.data.length > 0 && success.data[0].dayOfWeek,
         availabilities: {
           loading: false,
@@ -97,22 +113,25 @@ class BookingsAdd extends Component {
       }));
   }
 
+  /* This function handles what happens when a day is selected */
   handleSelectDay = event => {
     const { value } = event.target;
-
     this.setState({ selectedDay: value });
   }
 
+  /* This function handles what happens when an activity is selected */
   handleSelectActivity = event => {
     const { value } = event.target;
     this.setState({ selectedActivity: JSON.parse(value) });
   }
 
+  /* This function handles what happens when a customer is selected */
   handleSelectCustomer = event => {
     const { value } = event.target;
     this.setState({ selectedCustomer: value });
   }
 
+  /* Render the hour picker */
   renderHours() {
     const { time, selectedDay, selectedActivity } = this.state;
     const { data } = this.state.availabilities;
@@ -126,8 +145,10 @@ class BookingsAdd extends Component {
       }))
     )];
 
+    /* Fetch the duration of this activity */
     const activityDuration = selectedActivity ? parseInt( selectedActivity.duration, 10 ) : 30;
 
+    /* Render the time picker */
     return (
       <TimePair time={time} minDuration={activityDuration}>
         {( start, end, onChange ) => (
@@ -161,7 +182,9 @@ class BookingsAdd extends Component {
     );
   }
 
+  /* Render the day picker */
   renderDays() {
+    /* Get a list of available days */
     const { data } = this.state.availabilities;
     const days = [...new Set( data.map( time => time.dayOfWeek ))];
 
@@ -176,6 +199,7 @@ class BookingsAdd extends Component {
     );
   }
 
+  /* Render the add bookings page */
   render() {
     const { employees, activities, customers } = this.props;
     const { availabilities, selectedActivity, selectedCustomer } = this.state;

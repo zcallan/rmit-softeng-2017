@@ -1,3 +1,4 @@
+/* Import the dependencies */
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import BookingsAdd from './BookingsAdd.jsx';
@@ -6,7 +7,7 @@ import { requestedEmployees, receivedEmployees, fetchEmployeesFail } from 'views
 import { requestActivities, receiveActivities, fetchActivitiesFail } from 'views/activities/activities.actions.js';
 import { setPageTitle } from 'views/generic/page-title/pageTitle.actions.js';
 
-
+/* Map the data we wish to access from the store to the components props */
 const mapStateToProps = state => ({
   customers: state.customers,
   employees: state.employees,
@@ -14,6 +15,7 @@ const mapStateToProps = state => ({
   activities: state.activities,
 });
 
+/* Map the actions the view may call to its props */
 const mapDispatchToProps = dispatch => {
   return bindActionCreators({
     requestedCustomers,
@@ -29,5 +31,5 @@ const mapDispatchToProps = dispatch => {
   }, dispatch );
 };
 
+/* Connect the actions and the state to the Add Bookings view */
 export default connect( mapStateToProps, mapDispatchToProps )( BookingsAdd );
-
