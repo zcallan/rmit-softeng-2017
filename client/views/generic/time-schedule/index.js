@@ -1,1 +1,1 @@
-export { default } from './TimeSchedule.jsx';
+export { default } from './timeSchedule.container';

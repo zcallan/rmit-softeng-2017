@@ -1,13 +1,12 @@
 import './sidebarMenu.scss';
 import React from 'react';
 import SidebarMenuItems from './items';
-import branding from 'config/branding.json';
 
 
-const SidebarMenu = () => {
+const SidebarMenu = ({ companies }) => {
   return (
     <div className="sidebar-menu">
-      <img src={branding.logo} />
+      <img src={companies.active && companies.list[companies.active].logo} />
       <SidebarMenuItems />
     </div>
   );

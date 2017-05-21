@@ -109,7 +109,7 @@ class TimeInput extends Component {
       let allowed = false;
 
       allowedTimes.forEach( time => {
-        if ( ms2m( i ) > time.start && ms2m( i ) < time.end ) {
+        if ( ms2m( i ) >= time.start && ms2m( i ) <= time.end ) {
           allowed = true;
         }
       });

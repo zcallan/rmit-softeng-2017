@@ -6,6 +6,7 @@ import { toggleSidebar } from '../sidebar/sidebar.actions';
 
 const mapStateToProps = state => ({
   user: state.user,
+  companies: state.companies,
 });
 
 function mapDispatchToProps( dispatch ) {

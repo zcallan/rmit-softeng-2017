@@ -9,7 +9,7 @@ class Contact extends Component {
   /* When the component mounts, set the document title */
   componentDidMount() {
     document.title = `Contact | ${config.companyName}`;
-    this.props.setPageTitle( 'Contact', 'Our company contact information can be viewed here' );
+    this.props.setPageTitle( 'Contact', 'Our companies contact information can be viewed here' );
   }
 
   render() {

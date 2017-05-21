@@ -69,7 +69,7 @@
     "handler": "./routes/booking/index.js"
   },
   {
-    "path": "/activities",
-    "handler": "./routes/activities/index.js"
+    "path": "/companies",
+    "handler": "./routes/companies/index.js"
   }
 ]

@@ -154,6 +154,14 @@ class API {
       url: '/activities',
     });
   }
+
+  /* Fetches the companies details. */
+  getCompanies() {
+    return this.request({
+      method: 'get',
+      url: '/companies',
+    });
+  }
 }
 
 /* Export this class as a Singleton */

@@ -1,0 +1,32 @@
+{
+  "id": "monash",
+  "name": "Monash University",
+  "details": "Details would go here.",
+  "logo": "http://studyinsa.com/wp-content/uploads/2016/01/monash.png",
+  "services": [
+    {
+      "name": "Haircut",
+      "duration": "30"
+    },
+    {
+      "name": "Blowdry",
+      "duration": "45"
+    },
+    {
+      "name": "Hairwash",
+      "duration": "60"
+    },
+    {
+      "name": "Shave",
+      "duration": "15"
+    },
+    {
+      "name": "Beardtrim",
+      "duration": "15"
+    }
+  ],
+  "hours": {
+    "start": 540,
+    "end": 1020
+  }
+}
