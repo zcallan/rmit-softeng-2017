@@ -60,7 +60,8 @@ class TimeSchedule extends Component {
 
   render() {
     const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
-    const { className } = this.props;
+    const { className, companies } = this.props;
+    const { active, list } = companies;
 
     return (
       <div className={`time-schedule ${className}`}>
@@ -80,6 +81,12 @@ class TimeSchedule extends Component {
                   onChange={value => onChange( 'start', value, updatedTime => this.setState({ time: updatedTime }))}
                   value={start}
                   step={30}
+                  allowedTimes={[
+                    {
+                      start: active ? list[active].hours.start : 0,
+                      end: active ? list[active].hours.end : 1440,
+                    }
+                  ]}
                 />
                 <p><b>End</b></p>
                 <Input
@@ -89,6 +96,12 @@ class TimeSchedule extends Component {
                   onChange={value => onChange( 'end', value, updatedTime => this.setState({ time: updatedTime }))}
                   value={end}
                   step={30}
+                  allowedTimes={[
+                    {
+                      start: active ? list[active].hours.start : 0,
+                      end: active ? list[active].hours.end : 1440,
+                    }
+                  ]}
                 />
               </div>
             )}
