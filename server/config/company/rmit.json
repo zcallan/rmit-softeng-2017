@@ -1,0 +1,63 @@
+{
+  "name": "RMIT University",
+  "details": "Details would go here.",
+  "services": [
+    {
+      "name": "Haircut",
+      "duration": "30"
+    },
+    {
+      "name": "Blowdry",
+      "duration": "45"
+    },
+    {
+      "name": "Hairwash",
+      "duration": "60"
+    },
+    {
+      "name": "Shave",
+      "duration": "15"
+    },
+    {
+      "name": "Beardtrim",
+      "duration": "15"
+    }
+  ],
+  "hours": [
+    {
+      "day": "monday",
+      "start": 9,
+      "end": 17
+    },
+    {
+      "day": "tuesday",
+      "start": 9,
+      "end": 17
+    },
+    {
+      "day": "wednesday",
+      "start": 9,
+      "end": 17
+    },
+    {
+      "day": "thursday",
+      "start": 9,
+      "end": 17
+    },
+    {
+      "day": "friday",
+      "start": 9,
+      "end": 17
+    },
+    {
+      "day": "saturday",
+      "start": 0,
+      "end": 0
+    },
+    {
+      "day": "sunday",
+      "start": 0,
+      "end": 0
+    }
+  ]
+}

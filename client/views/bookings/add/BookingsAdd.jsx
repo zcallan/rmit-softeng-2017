@@ -13,15 +13,10 @@ class BookingsAdd extends Component {
     document.title = `Add Booking | ${config.companyName}`;
     this.props.setPageTitle( 'Add Booking', 'You can add a customer booking on this page' );
     this.props.requestedEmployees();
-    this.props.requestActivities();
 
     API.getEmployees()
       .then( this.props.receivedEmployees )
       .catch( this.props.fetchEmployeesFail );
-
-    API.getActivities()
-      .then( this.props.receiveActivities )
-      .catch( this.props.fetchActivitiesFail );
 
     API.getCustomers()
       .then(({ data }) => this.props.receivedCustomers( data ))

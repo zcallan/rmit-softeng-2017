@@ -6,7 +6,7 @@ import config from 'config/branding.json';
 class Contact extends Component {
   componentDidMount() {
     document.title = `Contact | ${config.companyName}`;
-    this.props.setPageTitle( 'Contact', 'Our company contact information can be viewed here' );
+    this.props.setPageTitle( 'Contact', 'Our companies contact information can be viewed here' );
   }
 
   render() {

@@ -5,6 +5,7 @@ import employees from './employee/employee.reducer';
 import customers from './customer/customer.reducer';
 import pageTitle from 'views/generic/page-title/pageTitle.reducer';
 import activities from 'views/activities/activities.reducer';
+import companies from 'views/company/company.reducer';
 
 export default combineReducers({
   sidebar,
@@ -13,4 +14,5 @@ export default combineReducers({
   customers,
   pageTitle,
   activities,
+  companies,
 });
