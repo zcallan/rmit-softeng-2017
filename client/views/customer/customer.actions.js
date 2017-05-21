@@ -1,3 +1,5 @@
+/* This file defines the actions relating to customers */
+
 export const requestedCustomers = () => ({
   type: 'REQUESTED_CUSTOMERS',
 });
