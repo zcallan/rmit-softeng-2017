@@ -1,3 +1,4 @@
+/* Export all of the views from a single file so that they can be imported easily */
 export { default as App } from './app';
 export { default as Navbar } from './navbar';
 export { default as Sidebar } from './sidebar';
