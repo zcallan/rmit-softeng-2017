@@ -42,18 +42,31 @@ Default admin credentials are located in the `server/config/users.json` file.
 ## Application file structure
 `__mocks__/` - Stores any mock definitions for the Jest testing suite.
 `build/` - Stores the built front-end application and also is where static files like images and the index.html file are stored.
+
 `client/` - Stores all of the code for the client.
+
 `client/config/` - Stores all the client configuration.
+
 `client/styles/` - Stores all the styling for the client.
+
 `client/utils/` - Any common utility classes for the client are stored here.
+
 `client/views/` - All of the client views are stored here.
+
 `documentation/` - Any additional documentation for the application is stored here.
+
 `server/` - Stores all of the backend code for the application.
+
 `server/config/` - Stores all of the server configuration.
+
 `server/models/` - Stores all the models for the application.
+
 `server/mongo/` - Stores any scripts relating to the running of the database.
+
 `server/public/` - Stores any public static files that are served up by the server.
+
 `server/routes/` - Stores all the servers API handlers.
+
 `server/utils/` - Any common utility classes for the server are stored here.
 
 ## Design pattern
