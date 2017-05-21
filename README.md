@@ -56,6 +56,9 @@ Default admin credentials are located in the `server/config/users.json` file.
 `server/routes/` - Stores all the servers API handlers.
 `server/utils/` - Any common utility classes for the server are stored here.
 
+## Design pattern
+The application was designed based on the MVC (Model, View, Controller) design pattern
+
 ## Installing Swagger UI
 
 To install swagger ui please pull the Git submodules by running the following command
