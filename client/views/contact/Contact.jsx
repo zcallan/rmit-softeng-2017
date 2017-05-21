@@ -1,9 +1,12 @@
+/* Import any depenencies */
 import './contact.scss';
 import React, { Component } from 'react';
 import { Row, Col } from 'flex-react';
 import config from 'config/branding.json';
 
+/* Create the contact page component */
 class Contact extends Component {
+  /* When the component mounts, set the document title */
   componentDidMount() {
     document.title = `Contact | ${config.companyName}`;
     this.props.setPageTitle( 'Contact', 'Our company contact information can be viewed here' );

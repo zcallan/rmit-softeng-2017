@@ -1,3 +1,4 @@
+/* Import depenencies */
 import './bookings.scss';
 import React, { Component } from 'react';
 import config from 'config/branding.json';
@@ -6,13 +7,16 @@ import moment from 'moment';
 import { IconCard, Button } from 'views/generic';
 import API from 'utils/api/api';
 
+/* Create the bookings component */
 class Bookings extends Component {
+  /* Define the initial state */
   state = {
     fetching: true,
     error: null,
     bookings: null,
   }
 
+  /* When the component mounts set the page title and request a list of bookings */
   componentDidMount() {
     document.title = `Bookings | ${config.companyName}`;
     this.props.setPageTitle( 'Bookings', 'A list of bookings for your business can be viewed here' );
@@ -22,22 +26,23 @@ class Bookings extends Component {
       .catch( error => this.handleError( error ));
   }
 
+  /* Handle a successful booking */
   handleSuccess( success ) {
-    console.log( success );
     this.setState({
       bookings: success.data,
       fetching: false,
     });
   }
 
+  /* Handle an error when fetching bookings */
   handleError( error ) {
-    console.log( error );
     this.setState({
       error,
       fetching: false,
     });
   }
 
+  /* Render the booking list */
   renderBookings() {
     const { bookings } = this.state;
     let counter = 1;
